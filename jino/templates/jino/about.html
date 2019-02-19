@@ -1,0 +1,169 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+{#    <link rel="stylesheet" type="text/css" href="style.css">#}
+      <link rel="stylesheet" type="text/css" href="{% static 'jino/style.css' %}">
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Jino - О нас</title>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </head>
+  <body>
+
+    <nav>
+      <div class="container">
+
+        <div class="row">
+          <a href="index.html" class="brand-logo col s2 l2">
+{#            <img class="nLogo" src="img/logo_w.png" />#}
+              <img class="nLogo" src="{% static 'jino/img/logo_w.png' %}" />
+          </a>
+
+          <!-- <ul id="dropdown2" class="dropdown-content">
+            <li><a href="#!">one</a></li>
+            <li><a href="#!">two</a></li>
+            <li><a href="#!">three</a></li>
+          </ul>
+          <a class="btn dropdown-trigger col s1 offset-s4 m1 offset-m3 xl1 offset-xl2 chooseCity light-blue lighten-5" href="#!" data-target="dropdown2">Пермь</a> -->
+
+          <ul id="nav-mobile" class="dNav right">
+            <li><a href="#!">Вход</a></li>
+            <li><a href="#!">Регистрация</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+
+    <main>
+      <section class="mainScreen">
+        <div class="container">
+
+          <div class="row">
+            <h3 class="center-align col s12 m12">Забота о ваших зубах</h3>
+          </div>
+          <div class="mainScreenDesc row">
+            <p class="center-align col s6 offset-s3 m10 offset-m1 xl6 offset-xl3">
+              Ваши зубы должны сиять и придавать уверенности в жизни. Наша задача сделать это доступным, удобным и прозрачным. Jino  - это не просто платформа, это новый вид заботы о вашем здоровье, в частности зубах. У наших пациентов только лучшие врачи и материалы
+            </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="trigBlock">
+      <div class="container">
+
+        <div class="aTriggers row center-align">
+          <article class="searchTriggersItem col s12 m12 l4">
+{#            <img src="img/icon_5.svg" />#}
+              <img src="{% static 'jino/img/icon_5.svg' %}" />
+            <h4>Лучшая цена</h4>
+            <p>
+              Фильтр поиска позволяет подобрать клинику подходящую под запросы вашего кармана и качества.
+            </p>
+          </article>
+          <article class="searchTriggersItem col s12 m12 l4">
+{#            <img src="img/icon_6.svg" />#}
+              <img src="{% static 'jino/img/icon_6.svg' %}" />
+            <h4>Качественные отзывы</h4>
+            <p>
+              Система отзывов Jino позволяет оставить отзыв совместно с искусственным интеллектом, что дает полное понимание врача и клиники.
+            </p>
+          </article>
+          <article class="searchTriggersItem col s12 m12 l4">
+{#            <img src="img/icon_7.svg" />#}
+               <img src="{% static 'jino/img/icon_7.svg' %}"/>
+            <h4>Консультация врача</h4>
+            <p>
+              Благодаря налаженной связи с ведущими стоматологами, вы сможете получать бесплатную поддержку 24/7
+            </p>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="advBlock center-align light-blue lighten-5">
+      <div class="container">
+
+        <h3>Кристально чистая улыбка стала ближе</h3>
+        <div class="row">
+          <p class="col s10 offset-s1 m10 offset-m1">
+            Jino - это сервис по поиску стоматологов. Мы стремимся оперативно подобрать качественного доктора в любом городе и записаться к нему на приём. Для этого мы создали адаптивный поиск с фильтром, который помогает пациенту найти подходящий вариант клиники и врача
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- <section class="geoBlock center-align white-text">
+      <div class="container">
+
+        <h3>JINO в России</h3>
+        <div class="row">
+          <ul class="col s4 offset-s4 m4 offset-m4 left-align">
+            <li>
+              Пермь
+            </li>
+            <li>
+              Екатеринбург
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section> -->
+
+    </main>
+
+    <footer class="page-footer">
+      <div class="container">
+
+        <div class="row">
+          <div class="col s12 l4">
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="about.html">О нас</a></li>
+              <li><a class="grey-text text-lighten-3" href="examplePage.html">Пример компании</a></li>
+            </ul>
+          </div>
+          <div class="col s12 l2 offset-l6 right-align">
+            <div class="row">
+              <a href="index.html" class="brand-logo">
+{#                <img class="nLogo" src="img/logo_b.png" />#}
+                  <img class="nLogo" src="{% static 'jino/img/logo_b.png' %}" />
+              </a>
+            </div>
+            <div class="row">
+              <a class="grey-text text-lighten-3" href="#!">Напишите нам</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+
+          © JINO.RU 2019
+
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.collapsible');
+        var instances = M.Collapsible.init(elems, {
+          accordion: true
+        });
+      });
+    </script>
+  </body>
+</html>

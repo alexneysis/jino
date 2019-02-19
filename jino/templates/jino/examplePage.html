@@ -1,0 +1,433 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+{#    <link rel="stylesheet" type="text/css" href="style.css">#}
+    <link rel="stylesheet" type="text/css" href="{% static 'jino/style.css' %}">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Jino - Компания Зубодел</title>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  </head>
+  <body>
+
+    <nav>
+      <div class="container">
+
+        <div class="row">
+          <a href="index.html" class="brand-logo col s2 l2">
+{#            <img class="nLogo" src="img/logo_w.png" />#}
+              <img class="nLogo" src="{% static 'jino/img/logo_w.png' %}" />
+          </a>
+
+          <!-- <ul id="dropdown2" class="dropdown-content">
+            <li><a href="#!">one</a></li>
+            <li><a href="#!">two</a></li>
+            <li><a href="#!">three</a></li>
+          </ul>
+          <a class="btn dropdown-trigger col s1 offset-s4 m1 offset-m3 xl1 offset-xl2   chooseCity" href="#!" data-target="dropdown2">Пермь</a> -->
+
+          <ul id="nav-mobile" class="dNav right">
+            <li><a href="#!">Вход</a></li>
+            <li><a href="#!">Регистрация</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+
+    <main>
+      <div class="row">
+        <div class="container">
+
+          <div class="mainSections col s12 m12 l8">
+            <section class="companyHeader">
+              <p>
+                СТОМАТОЛОГИЧЕСКАЯ КОМПАНИЯ
+              </p>
+              <h3 class="companyName">Зубодел</h3>
+              <p>
+                г. Пермь, ул. Пушкина, д. 84
+              </p>
+              <!-- <p class="companyTrig">
+                *7 врачей ~3 кабинета #5 кресел
+              </p> -->
+            </section>
+            <section class="services light-blue lighten-5">
+              <h3 class="cServices companyHeaders">Услуги</h3>
+              <article class="cServItem">
+                <h4 class="cServItemH">Внешний осмотр</h4>
+                <p class="cServItemD">
+                  Первичный объективный осмотр полости рта
+                </p>
+              </article>
+              <article class="cServItem">
+                <h4 class="cServItemH">Запись на повторный прием</h4>
+                <p class="cServItemD">
+                  Только при наличии первого приёма и указаниями врача на дальнейшую запись
+                </p>
+              </article>
+              <article class="cServItem">
+                <h4 class="cServItemH">Чистка полости рта</h4>
+                <p class="cServItemD">
+                  Использование механической щётки и специализированных средств для чистки зубов
+                </p>
+              </article>
+              <article class="cServItem">
+                <h4 class="cServItemH">Отбеливание зубов</h4>
+                <p class="cServItemD">
+                  Изменение цвета зубов, процедура не единичного приёма
+                </p>
+              </article>
+            </section>
+            <section class="description">
+              <p>
+                Мы считаем, что для современной стоматологической клиники мало обеспечить высокое качество лечения. Необходимо сделать так, чтобы пациенту было комфортно, начиная с момента, когда он зашёл на наш сайт или позвонил в клинику, и заканчивая моментом, когда он вышел из дверей нашей клиники со здоровой и красивой улыбкой. Именно поэтому мы стараемся сделать всё для удобства и хорошего настроения наших пациентов:
+              </p>
+              <ul>
+                <li>
+                  круглосуточная работа нашей стоматологической клиники, 24 часа в сутки и 7 дней в неделю (включая выходные и праздничные дни);
+                </li>
+                <li>
+                  запись не только по телефону, но и онлайн-запись через интернет в любое удобное время;
+                </li>
+                <li>
+                  в холле клиники есть бесплатный интернет WI-FI, бесплатный чай, кофе, вода, горький шоколад (с очень низким содержанием сахара), приятная музыка, журналы;
+                </li>
+                <li>
+                  во время стоматологического лечения пациент может слушать музыку, смотреть ТВ, кино или мультфильмы;
+                </li>
+                <li>
+                  врач-стоматолог объясняет пациенту весь ход лечения зубов с помощью специальных видеороликов и изображений, полученных с помощью интраоральной камеры;
+                </li>
+                <li>
+                  по желанию пациента мы предоставляем полный пакет документов для получения налогового вычета (13% от стоимости стоматологического лечения);
+                </li>
+                <li>
+                  мы дарим подарки всем пациентам!
+                </li>
+              </ul>
+              <a class="actLink" href="#!">Связаться с менеджером</a>
+            </section>
+            <section class="facilities light-blue lighten-5">
+              <h3 class="cFacilities companyHeaders">Удобства</h3>
+              <div class="row">
+                <ul class="col s9">
+                  <li class="col s4">
+                    Wi-Fi
+                  </li>
+                  <li class="col s4">
+                    Диваны
+                  </li>
+                  <li class="col s4">
+                    Чай
+                  </li>
+                  <li class="col s4">
+                    Телевизор
+                  </li>
+                  <li class="col s4">
+                    Камин
+                  </li>
+                </ul>
+              </div>
+            </section>
+            <section class="faces">
+              <h3 class="cFaces companyHeaders">Клиника в лицах</h3>
+              <div class="fItemList row center-align">
+                <article class="fItem col s4">
+{#                  <img src="img/pic_5.jpg" alt="face1">#}
+                    <img src="{% static 'jino/img/pic_5.jpg' %} " alt="face1">
+                  <h4>Иван Васильевич Петров</h4>
+                  <p>Доктор медицинских наук</p>
+                </article>
+                <article class="fItem col s4">
+{#                  <img src="img/pic_10.jpg" alt="face2">#}
+                    <img src="{% static 'jino/img/pic_10.jpg' %}" alt="face2">
+                  <h4>Петр Иванович Васильев</h4>
+                  <p>Специалист 1 категории, доцент</p>
+                </article>
+                <article class="fItem col s4">
+{#                  <img src="img/pic_11.jpg" alt="face3">#}
+                    <img src="{% static 'jino/img/pic_11.jpg' %}" alt="face3">
+                  <h4>Василий Петрович Иванов</h4>
+                  <p>Специалист 1 категории, доцент</p>
+                </article>
+              </div>
+            </section>
+            <section class="apointments light-blue lighten-5">
+              <h3 class="cApointments companyHeaders">Количество записей</h3>
+              <div class="row">
+                <table class="mounthCount col s4 offset-s3 m4 offset-m4 l4 offset-l1">
+                  <tr>
+                    <th>Пн</th>
+                    <th>Вт</th>
+                    <th>Ср</th>
+                    <th>Чт</th>
+                    <th>Пт</th>
+                    <th>Сб</th>
+                    <th>Вс</th>
+                  </tr>
+                  <tr>
+                    <td>31</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                  </tr>
+                  <tr>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                    <td>11</td>
+                    <td>12</td>
+                    <td>13</td>
+                  </tr>
+                  <tr>
+                    <td>14</td>
+                    <td>15</td>
+                    <td>16</td>
+                    <td>17</td>
+                    <td>18</td>
+                    <td>19</td>
+                    <td>20</td>
+                  </tr>
+                  <tr>
+                    <td>21</td>
+                    <td>22</td>
+                    <td>23</td>
+                    <td>24</td>
+                    <td>25</td>
+                    <td>26</td>
+                    <td>27</td>
+                  </tr>
+                  <tr>
+                    <td>28</td>
+                    <td>29</td>
+                    <td>30</td>
+                    <td>31</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                  </tr>
+                </table>
+                <table class="mounthCount col m4 offset-m4 l4 offset-sl2 hide-on-small-only hide-on-large-only">
+                  <tr>
+                    <th>Пн</th>
+                    <th>Вт</th>
+                    <th>Ср</th>
+                    <th>Чт</th>
+                    <th>Пт</th>
+                    <th>Сб</th>
+                    <th>Вс</th>
+                  </tr>
+                  <tr>
+                    <td>31</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                  </tr>
+                  <tr>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                    <td>11</td>
+                    <td>12</td>
+                    <td>13</td>
+                  </tr>
+                  <tr>
+                    <td>14</td>
+                    <td>15</td>
+                    <td>16</td>
+                    <td>17</td>
+                    <td>18</td>
+                    <td>19</td>
+                    <td>20</td>
+                  </tr>
+                  <tr>
+                    <td>21</td>
+                    <td>22</td>
+                    <td>23</td>
+                    <td>24</td>
+                    <td>25</td>
+                    <td>26</td>
+                    <td>27</td>
+                  </tr>
+                  <tr>
+                    <td>28</td>
+                    <td>29</td>
+                    <td>30</td>
+                    <td>31</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                  </tr>
+                </table>
+              </div>
+            </section>
+            <section class="reviews">
+              <h4 class="cReviews companyHeaders">
+                5 отзывов
+                <i class="material-icons stars">star_rate</i>
+                <i class="material-icons stars">star_rate</i>
+                <i class="material-icons stars">star_rate</i>
+                <i class="material-icons stars">star_rate</i>
+                <i class="material-icons stars">star_rate</i>
+              </h4>
+              <div class="row">
+                <ul class="reviewsMarkList col s12 m8 l12">
+                  <li class="col s6">
+                    Чистота <span class="col s12">
+                      <i class="material-icons stars smallll">star_rate</i>
+                      <i class="material-icons stars smallll">star_rate</i>
+                      <i class="material-icons stars smallll">star_rate</i>
+                      <i class="material-icons stars smallll">star_rate</i>
+                      <i class="material-icons stars smallll">star_rate</i>
+                    </span>
+                  </li>
+                  <li class="col s6">
+                    Комфортное лечение <span class="col s12">
+                      <i class="material-icons stars smallll">star_rate</i>
+                      <i class="material-icons stars smallll">star_rate</i>
+                      <i class="material-icons stars smallll">star_rate</i>
+                      <i class="material-icons stars smallll">star_rate</i>
+                      <i class="material-icons stars smallll">star_rate</i>
+                    </span>
+                  </li>
+                  <li class="col s6">
+                    Аккуратность <span class="col s12">
+                      <i class="material-icons stars smallll">star_rate</i>
+                      <i class="material-icons stars smallll">star_rate</i>
+                      <i class="material-icons stars smallll">star_rate</i>
+                      <i class="material-icons stars smallll">star_rate</i>
+                      <i class="material-icons stars smallll">star_rate</i>
+                    </span>
+                  </li>
+                  <li class="col s6">
+                    Врач <span class="col s12">
+                      <i class="material-icons stars smallll">star_rate</i>
+                      <i class="material-icons stars smallll">star_rate</i>
+                      <i class="material-icons stars smallll">star_rate</i>
+                      <i class="material-icons stars smallll">star_rate</i>
+                      <i class="material-icons stars smallll">star_rate</i>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <div class="reviewsList">
+                <article class="reviewItem">
+                  <div class="row">
+{#                    <img class="col s2" src="img/pic_6.jpg"  />#}
+                      <img class="col s2" src="{% static 'jino/img/pic_6.jpg' %}"  />
+                    <div class="reviewItemHeader">
+                      <h5 class="reviewItemName">Вася</h5>
+                      <span class="rDate">01.01.2019</span>
+                    </div>
+                  </div>
+                  <p class="reviewText">
+                    В среднем все норм...
+                  </p>
+                </article>
+                <article class="reviewItem">
+                  <div class="row">
+{#                    <img class="col s2" src="img/pic_7.jpg"  />#}
+                      <img class="col s2" src="{% static 'jino/img/pic_7.jpg' %}"  />
+                    <div class="reviewItemHeader">
+                      <h5 class="reviewItemName">Костя</h5>
+                      <span class="rDate">31.12.2018</span>
+                    </div>
+                  </div>
+                  <p class="reviewText">
+                    А мне вот не понравилось, Вася врет.
+                  </p>
+                </article>
+                <article class="reviewItem">
+                  <div class="row">
+{#                    <img class="col s2" src="img/pic_8.jpg"  />#}
+                      <img class="col s2" src="{% static 'jino/img/pic_8.jpg' %}"  />
+                    <div class="reviewItemHeader">
+                      <h5 class="reviewItemName">Вася</h5>
+                      <span class="rDate">20.12.2018</span>
+                    </div>
+                  </div>
+                  <p class="reviewText">
+                    Тут все очень хорошо
+                  </p>
+                </article>
+              </div>
+            </section>
+            <section class="map">
+              <h4 class="cMap companyHeaders">Как нас найти</h4>
+              <div id="map_contacts" class="col s12">
+
+              </div>
+            </section>
+          </div>
+          <div id="movedBlock" class="test col s4 light-blue lighten-5 center-align hide-on-med-and-down">
+            <h5 class="tCallback">Запишитесь на прием!</h3>
+            <form>
+              <label>Введите имя:</label>
+              <input type="text" placeholder="Василий" />
+              <label>В какой день?</label>
+              <input type="text" placeholder="13.02.2019" />
+              <a class="waves-effect waves-light btn-large searchBtn">Записаться</a>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+    <footer class="page-footer">
+      <div class="container">
+
+        <div class="row">
+          <div class="col s12 l4">
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="about.html">О нас</a></li>
+              <li><a class="grey-text text-lighten-3" href="examplePage.html">Пример компании</a></li>
+            </ul>
+          </div>
+          <div class="col s12 l2 offset-l6 right-align">
+            <div class="row">
+              <a href="index.html" class="brand-logo">
+{#                <img class="nLogo" src="img/logo_b.png" />#}
+                  <img class="nLogo" src="{% static 'jino/img/logo_b.png' %}" />
+              </a>
+            </div>
+            <div class="row">
+              <a class="grey-text text-lighten-3" href="#!">Напишите нам</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+
+          © JINO.RU 2019
+
+        </div>
+      </div>
+    </footer>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+{#    <script src="main.js" type="text/javascript"></script>#}
+  <script src="{% static 'jino/main.js' %}" type="text/javascript"></script>
+  </body>
+</html>

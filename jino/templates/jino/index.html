@@ -1,0 +1,194 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+{#    <link rel="stylesheet" type="text/css" href="style.css">#}
+      <link rel="stylesheet" type="text/css" href="{% static 'jino/style.css' %}">
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+{#      For index google seach#}
+    <meta name="google-site-verification" content="TYe8uS6i-YiDeTGqzeiKmhhZkmLUpqy4ca5qtlLzY8M" />
+    <title>Jino - Главная страница</title>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </head>
+  <body>
+
+    <nav>
+      <div class="container">
+
+        <div class="row">
+          <a href="index.html" class="brand-logo col s2 l2">
+{#            <img class="nLogo" src="img/logo_w.png" />#}
+              <img class="nLogo" src="{% static 'jino/img/logo_w.png' %}" />
+          </a>
+
+          <!-- <ul id="dropdown2" class="dropdown-content">
+            <li><a href="#!">one</a></li>
+            <li><a href="#!">two</a></li>
+            <li><a href="#!">three</a></li>
+          </ul>
+          <a class="btn dropdown-trigger col s1 offset-s4 m1 offset-m3 xl1 offset-xl2   chooseCity " href="#!" data-target="dropdown2">Пермь</a> -->
+
+          <ul id="nav-mobile" class="dNav right">
+            <li><a href="#!">Вход</a></li>
+            <li><a href="#!">Регистрация</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+
+    <main>
+      <section class="searchBlock">
+        <div class="container">
+
+          <div class="row">
+            <h1 class="center-align col s12 m12 xl10 offset-xl1">Найдите проверенного стоматолога и защитите ваши зубы</h1>
+            <form class="searchForm">
+              <input class="col s11 m9 offset-m1 l10 xl7 offset-xl2" type="text" name="" value="" />
+              <button class="btn waves-effect waves-light col s1 m1 l2 xl1 searchBtn" type="submit" name="action"><span class="hide-on-med-and-down">Поиск</span><i class="material-icons hide-on-large-only">search</i></button>
+            </form>
+          </div>
+          <div class="searchTriggers row center-align">
+            <div class="searchTriggersItem col s4 m4 l3 offset-l1 xl2 offset-xl3">
+{#              <img src="img/icon_1.svg" alt="Запись на диагностику" />#}
+                <img src="{% static 'jino/img/icon_1.svg' %}" alt="Запись на диагностику" />
+              <p>
+                Записаться на диагностику
+              </p>
+            </div>
+            <div class="searchTriggersItem col s4 m4 l3 xl2">
+{#              <img src="img/icon_3.svg" alt="Запись на прием" />#}
+                <img src="{% static 'jino/img/icon_3.svg' %}" alt="Запись на прием" />
+              <p>
+                Запись на прием
+              </p>
+            </div>
+            <div class="searchTriggersItem col s4 m4 l3 xl2">
+{#              <img src="img/icon_2.svg" alt="Онлайн консультация" />#}
+                <img src="{% static 'jino/img/icon_2.svg' %}" alt="Онлайн консультация" />
+              <p>
+                Онлайн консультация
+              </p>
+            </div>
+          </div>
+
+        </div>
+        </section>
+
+        <section class="faqBlock light-blue lighten-5">
+          <div class="container">
+
+            <h3 class="center-align">Ответы на частые вопросы</h3>
+            <div class="row valign-wrapper">
+{#              <img class="col s3 m3" src="img/icon_4.svg"/>#}
+                <img class="col s3 m3" src="{% static 'jino/img/icon_4.svg' %}"/>
+              <div class="row col s9 m9">
+                <ul class="collapsible popout">
+                  <li>
+                    <div class="collapsible-header light-blue accent-1">
+                      <i class="material-icons">expand_more</i>Как записаться на прием?
+                    </div>
+                    <div class="collapsible-body light-blue accent-1">
+                      <span>Выберите стоматологию и врача, а после удобную дату и время приема для записи на прием онлайн.</span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header light-blue lighten-5">
+                      <i class="material-icons">expand_more</i>Как оплатить прием врача?
+                    </div>
+                    <div class="collapsible-body light-blue lighten-5">
+                      <span>Прием врача оплачивается в клинике. На платформе Jino ничего оплачивать не нужно.</span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header light-blue accent-1">
+                      <i class="material-icons">expand_more</i>Как оставить отзыв?
+                    </div>
+                    <div class="collapsible-body light-blue accent-1">
+                      <span>Посетите приём врача и вам откроется возможность оценки приёма.</span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header light-blue lighten-5">
+                      <i class="material-icons">expand_more</i>Почему моего города нет в поиске?
+                    </div>
+                    <div class="collapsible-body light-blue lighten-5">
+                      <span>В скором времени мы появимся в других городах.</span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header light-blue accent-1">
+                      <i class="material-icons">expand_more</i>Как скачать мобильное приложение?
+                    </div>
+                    <div class="collapsible-body light-blue accent-1">
+                      <span>В данный момент мобильное приложение в разработке, как только оно будет готово, мы оповестим вас.</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <section class="anQuestions center-align">
+          <div class="container">
+
+            <h3 class="hCallback">Поможем найти врача</h3>
+            <p>
+              Свяжитесь с нами <a href="!#">ВКонтакте</a> и мы вам ответим в течение 10 минут
+            </p>
+
+          </div>
+        </section>
+      </main>
+
+    <footer class="page-footer">
+      <div class="container">
+
+        <div class="row">
+          <div class="col s12 l4">
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="about.html">О нас</a></li>
+              <li><a class="grey-text text-lighten-3" href="examplePage.html">Пример компании</a></li>
+            </ul>
+          </div>
+          <div class="col s12 l2 offset-l6 right-align">
+            <div class="row">
+              <a href="index.html" class="brand-logo">
+{#                <img class="nLogo" src="img/logo_b.png" />#}
+                  <img class="nLogo" src="{% static 'jino/img/logo_b.png' %}" />
+              </a>
+            </div>
+            <div class="row">
+              <a class="grey-text text-lighten-3" href="#!">Напишите нам</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+
+          © JINO.RU 2019
+
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.collapsible');
+        var instances = M.Collapsible.init(elems, {
+          accordion: true
+        });
+      });
+    </script>
+  </body>
+</html>
