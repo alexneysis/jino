@@ -6,14 +6,11 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 
-def about(request):
-    return render(request, 'jino/about.html')
-
-def index(request):
+def home(request):
     return render(request, 'jino/index.html')
+
+def email(request):
+    return render(request, 'jino/email.html')
 
 def test(request):
     return render(request, 'jino/test.html')
-
-def examplePage(request):
-    return render(request, 'jino/examplePage.html')

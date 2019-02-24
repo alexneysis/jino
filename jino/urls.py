@@ -21,9 +21,8 @@ from startup import settings
 
 urlpatterns = [
     url('test', views.test),
-    url('about', views.about),
-    url('examplePage', views.examplePage),
-    url('', views.index),
+    url('email', views.email),
+    url('', views.home),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

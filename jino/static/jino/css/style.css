@@ -1,0 +1,194 @@
+@font-face {
+  font-family: 'MullerBold';
+  src: url('../fonts/Fontfabric - MullerBold.otf') format('opentype');
+}
+@font-face {
+  font-family: "Helvetica-Neue-Cyr-L";
+  src: url("../fonts/HelveticaNeueCyr-Light.ttf");
+}
+@font-face {
+  font-family: "Helvetica-Neue-Cyr-M";
+  src: url("../fonts/HelveticaNeueCyr-Medium.ttf");
+}
+
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  font-family: "Helvetica-Neue-Cyr-M";
+  font-weight: 400;
+
+}
+h1, h2, h3 {
+  margin: 100px 0 70px;
+  color: #002c85;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-family: 'MullerBold';
+}
+nav .row { height: 100px; }
+nav {
+  height: 100px;
+  background: #52C5FF;
+ }
+nav .container { position: relative; }
+footer { background: #002c85 !important; }
+
+.nLogo {
+  margin-bottom: -3px;
+  height: 70px;
+}
+nav .brand-logo {
+  position: absolute;
+  bottom: 0;
+}
+.dNav {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.searchBlock { margin: 100px 0; }
+.searchTriggers { margin: 100px; }
+/* .btnDesc {
+  font-size: 3rem;
+} */
+.toothBtn {
+  padding-top: 11px !important;
+  width: 370px;
+  height: 80px;
+  font-size: 40px;
+  /* font-size: 2rem; */
+  color: white;
+  background-color: #f76c47;
+  border-radius: 40px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-family: 'MullerBold';
+}
+.toothBtn:hover {
+  background-color: #f76c47;
+}
+
+.expMore { margin-bottom: -105px; }
+.expMore i { font-size: 50px; }
+.searchTriggersItem { margin-bottom: 30px; }
+.searchTriggersItem img {
+  margin-bottom: 15px;
+  width: 115px;
+}
+
+.faqBlock {
+  padding: 100px 0;
+  margin-bottom: 100px;
+  font-family: "Helvetica-Neue-Cyr-L";
+}
+.clinicHeader {
+  color: #002c85;
+  font-family: "MullerBold";
+}
+.hCallback { margin-bottom: 10px; }
+.anQuestions { margin-bottom: 100px; }
+.page-footer { padding-top: 50px; }
+
+.formBlock {
+  display: none;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 44, 133, 0.45);
+  z-index: 1000;
+}
+.formContainer {
+  display: none;
+  padding: 25px 30px 0;
+  max-width: 420px;
+  background: #002c85;
+  color: white;
+  border-radius: 10px;
+}
+.formContainer h5, .formContainer p { font-family: "MullerBold"; }
+.formContainer label {
+  font-family: "MullerBold";
+  margin: 20px 0;
+}
+.formContainer input {
+  margin-bottom: 25px !important;
+  background: white !important;
+  border-radius: 10px !important;
+}
+.formContainer button {
+  margin-bottom: 35px;
+  padding: 15px 30px;
+  font-family: "MullerBold";
+  border-radius: 50px;
+  background: #f76c47;
+  color: white;
+}
+.subFormContainer {
+  display: none;
+  padding: 25px 30px 0;
+  max-width: 420px;
+  background: #52c5fe;
+  color: white;
+  border-radius: 10px;
+}
+.subFormContainer h5, .subFormContainer p {
+  font-family: "MullerBold";
+  color: #002c85;
+}
+.subFormContainer label {
+  color: white;
+  font-family: "MullerBold";
+  margin: 20px 0;
+}
+.subFormContainer input {
+  margin-bottom: 25px !important;
+  background: white !important;
+  border-radius: 10px !important;
+}
+.subFormContainer button {
+  margin-bottom: 35px;
+  padding: 15px 30px;
+  font-family: "MullerBold";
+  border-radius: 50px;
+  background: #f76c47;
+  color: white;
+}
+.social li {
+  display: inline-block;
+  margin: 0 10px;
+}
+.social img {
+  filter: brightness(0) invert(1);
+}
+.social img:hover {
+  filter: invert(0);
+}
+.subLink { color: #002c85; }
+.subLink:hover { color: #fff; }
+
+
+@media screen and (max-width: 480px) {
+  .toothBtn {
+    padding-top: 17px !important;
+    font-size: 2rem;
+    letter-spacing: 3px;
+  }
+  h1, h2, h3 {
+    letter-spacing: 3px;
+    font-size: 2.4rem;
+  }
+  /* .nLogo {
+    height: 50px;
+  } */
+  .social li {
+    display: block;
+    margin: 10px 0;
+  }
+  .social img {
+    width: 30px;
+  }
+}

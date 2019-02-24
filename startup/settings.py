@@ -25,7 +25,8 @@ SECRET_KEY = '1rsx$lp(v3*mlwr1n2=!4*$#dfv&q6*d#eig=c4tapgf!x&f25'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['jino.hopto.org', '127.0.0.1']
+# ALLOWED_HOSTS = ['jino.hopto.org', '127.0.0.1']
+ALLOWED_HOSTS = ['jino24.ru', '127.0.0.1', '85.175.194.153']
 #  85.175.194.153 home
 # ALLOWED_HOSTS = []
 
