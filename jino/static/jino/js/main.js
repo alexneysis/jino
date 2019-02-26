@@ -11,6 +11,7 @@ $(".formBlock").on("click", function() {
   if (notClose == 1) {
     notClose = 0;
   } else {
+    $(".sendFormBlock input").val("");
     $(this).hide();
     $(".subFormContainer").hide();
     $(".formContainer").hide();
@@ -24,3 +25,5 @@ $(".formContainer").on("click", function() {
 $(".subFormContainer").on("click", function() {
   notClose = 1;
 });
+
+$("#telephone").mask("+7 (999) 99 - 99 - 999", {placeholder: "-" });

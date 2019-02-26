@@ -3,6 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    {#    User settings#}
+    {#    END#}
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-93952064-3"></script>
     <script>
@@ -31,32 +33,51 @@
         gtag('config', 'UA-93952064-2');
     </script>
 
+    <meta name="yandex-verification" content="ab484731ce9a2f0a"/>
+    {#    Alex Panichev yandex#}
+    <meta name="yandex-verification" content="8ddcc606db60ccb4"/>
+    {#    Stanislav #}
+    <meta name="yandex-verification" content="6b137c6729fdd6d7"/>
+    <meta name="google-site-verification" content="I7Q0Q7uar8awEclHtWGrSF2yDY0z6yeG9A8fiGv2roc"/>
+    <meta name='wmail-verification' content='23d5e1463baaf9eba62216a76326937f'/>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(52553323, "init", {
+            id: 52553323,
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/52553323" style="position:absolute; left:-9999px;" alt=""/></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+    {#    User settings#}
+    {#    END#}
 
     <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="{% static 'jino/css/materialize.min.css' %} ">
-
+    <link rel="stylesheet" href="{% static 'jino/css/materialize.min.css' %}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="shortcut icon" href="{% static 'jino/img/favicon.png' %}" type="image/png">
     <link rel="stylesheet" type="text/css" href="{% static 'jino/css/style.css' %}">
 
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="yandex-verification" content="ab484731ce9a2f0a"/>
-{#    Alex Panichev yandex#}
-    <meta name="yandex-verification" content="8ddcc606db60ccb4" />
-{#    Stanislav #}
-    <meta name="yandex-verification" content="6b137c6729fdd6d7" />
-    <meta name="google-site-verification" content="I7Q0Q7uar8awEclHtWGrSF2yDY0z6yeG9A8fiGv2roc"/>
-    <meta name='wmail-verification' content='23d5e1463baaf9eba62216a76326937f'/>
 
     <title>Jino - Главная страница</title>
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="{% static 'jino/js/materialize.min.js' %}"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -64,7 +85,7 @@
     <div class="container">
 
         <div class="row">
-            <a href="index.html" class="brand-logo col s2 l2">
+            <a href="/index.html" class="brand-logo col s2 l2">
                 <img class="nLogo" src="{% static 'jino/img/logo_w.png' %}"/>
             </a>
             <div class="dNav right">
@@ -220,7 +241,7 @@
             </div>
             <div class="col s12 l2 offset-l6 right-align">
                 <div class="row valign-wrapper">
-                    <a href="index.html" class="brand-logo">
+                    <a href="/index.html" class="brand-logo">
                         <img class="nLogo logoBottom" src="{% static 'jino/img/logo_b.png' %}"/>
                     </a>
                 </div>
@@ -233,7 +254,7 @@
     <div class="footer-copyright">
         <div class="container">
 
-            © JINO.RU 2019
+            © JINO24.RU 2019
 
         </div>
     </div>
@@ -243,18 +264,18 @@
         <div class="formContainer">
             <h5>ЗАПОЛНИТЕ ФОРМУ</h5>
             <p>Остальное сделаем мы</p>
-            <form class="sendFormBlock">
+            <form class="sendFormBlock" action="/data/" method="get">
                 <label>
-                    ФИО
-                    <input type="text" required/>
+                    ФИО*
+                    <input type="text" placeholder="Введите имя" required name="FIO"/>
                 </label>
                 <label>
-                    ТЕЛЕФОН
-                    <input type="text" required/>
+                    ТЕЛЕФОН*
+                    <input type="text" id="telephone" placeholder="+7 (---) -- - -- - ---" required name="PHONE"/>
                 </label>
                 <label>
                     E-MAIL
-                    <input type="text"/>
+                    <input type="text" placeholder="Введите E-mail" name="MAIL"/>
                 </label>
                 <button type="submit">ОТПРАВИТЬ</button>
             </form>
@@ -263,18 +284,23 @@
             <h5>ЗАПОЛНИТЕ ФОРМУ</h5>
             <form class="sendFormBlock">
                 <label>
-                    ФИО
+                    ФИО*
                     <input type="text" required/>
                 </label>
                 <label>
-                    E-MAIL
-                    <input type="text"/>
+                    E-MAIL*
+                    <input type="text" required/>
                 </label>
                 <button type="submit">ОТПРАВИТЬ</button>
             </form>
         </div>
     </div>
 </div>
+<!-- Compiled and minified JavaScript -->
+<script src="{% static 'jino/js/materialize.min.js' %}"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="{% static 'jino/js/jquery.maskedinput.min.js' %}"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         var elems = document.querySelectorAll('.collapsible');
@@ -284,5 +310,6 @@
     });
 </script>
 <script src="{% static 'jino/js/main.js' %}"></script>
+
 </body>
 </html>
