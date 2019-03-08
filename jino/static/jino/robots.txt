@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /admin
+Disallow: /data
+Allow: /
+Host: https://jino24.ru
+Sitemap: http://jino24.ru/sitemap.xml
+Sitemap: https://jino24.ru/sitemap.xml

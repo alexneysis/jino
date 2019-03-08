@@ -20,12 +20,7 @@ from jino import views
 from startup import settings
 
 urlpatterns = [
-    url('test', views.test),
-    url('email', views.email),
     url('data', views.data),
     url('', views.home),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
-
-

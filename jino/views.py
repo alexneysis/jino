@@ -15,15 +15,6 @@ from django.http import HttpResponse
 def home(request):
     return render(request, 'jino/index.html')
 
-
-def email(request):
-    return render(request, 'jino/email.html')
-
-
-def test(request):
-    return render(request, 'jino/test.html')
-
-
 def data(request):
     # if this is a POST request we need to process the form data
     # if request.method == 'POST':
@@ -31,7 +22,8 @@ def data(request):
     # print("Reques get = ") + str(request.GET)
     # if "FIO" in request.GET:
     print("Input to send mail")
-    mail_receiver = "sorokin.a.n.post@gmail.com,callcentr@32praktika.ru"
+    # mail_receiver = "sorokin.a.n.post@gmail.com,callcentr@32praktika.ru"
+    mail_receiver = "sorokin.a.n.post@gmail.com"
     mail_sender = "Jino.platform@gmail.com"
     # mail_receiver = "sorokin.a.n.post@gmail.com"
     username = "Jino.platform@gmail.com"
