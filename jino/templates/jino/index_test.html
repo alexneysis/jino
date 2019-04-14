@@ -9,7 +9,7 @@
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="https://jino24.ru"/>
     <meta property="og:site_name" content="Jino"/>
-    <meta property="og:image" content="https://jino24.ru/static/jino/img/logo_w.png"/>
+    <meta property="og:image" content="https://jino24.ru/static/jino/img/compress/logo_w.png"/>
     <meta property="og:locale" content="ru_RU"/>
     <meta property="og:description"
           content="Платформа, соединяющая стоматологов и пациентов. Воспользуйтесь Jino для того, чтобы выбрать клинику и врача и записаться на прием в удобное для вас время"/>
@@ -90,7 +90,7 @@
     "@context": "http://schema.org",
     "@type": "Organization",
     "url" : "https://jino24.ru",
-    "logo" : "https://jino24.ru/static/jino/img/logo_w.png",
+    "logo" : "https://jino24.ru/static/jino/img/compress/logo_w.png",
     "email": "jino.platform@gmail.com",
     "name": "Jino",
     "telephone": "+79523338228"
@@ -99,8 +99,8 @@
 
     <link rel="stylesheet" href="{% static 'jino/css/materialize.min.css' %}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="shortcut icon" href="{% static 'jino/img/favicon.png' %}" type="image/png">
-    <link rel="stylesheet" type="text/css" href="{% static 'jino/css/style.css' %}">
+    <link rel="shortcut icon" href="{% static 'jino/img/compress/favicon.png' %}" type="image/png" alt="favicon">
+    <link rel="stylesheet" type="text/css" href="{% static 'jino/css/style.compress.css' %}">
 
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -115,11 +115,11 @@
 
         <div class="row">
             <a href="/" class="brand-logo col s2 l2">
-                <img class="nLogo" src="{% static 'jino/img/logo_w.png' %}"/>
+                <img class="nLogo" src="{% static 'jino/img/compress/logo_w.png' %}" alt="logo"/>
             </a>
-{#            <div class="dNav right">#}
-{#                <a href="#!" class="subLink">Подписка</a>#}
-{#            </div>#}
+            {#            <div class="dNav right">#}
+            {#                <a href="#!" class="subLink">Подписка</a>#}
+            {#            </div>#}
         </div>
 
     </div>
@@ -140,19 +140,19 @@
             </div>
             <div class="searchTriggers row center-align">
                 <div class="searchTriggersItem col s12 m4 l3 offset-l1 xl2 offset-xl3">
-                    <img src="{% static 'jino/img/icon_1.png' %}" alt="Круглосуточно"/>
+                    <img src="{% static 'jino/img/compress/icon_1.png' %}" alt="Круглосуточно"/>
                     <p>
                         Срочная стоматология
                     </p>
                 </div>
                 <div class="searchTriggersItem col s12 m4 l3 xl2">
-                    <img src="{% static 'jino/img/icon_2.png' %}" alt="Звонок"/>
+                    <img src="{% static 'jino/img/compress/icon_2.png' %}" alt="Звонок"/>
                     <p>
                         Звонок администратора
                     </p>
                 </div>
                 <div class="searchTriggersItem col s12 m4 l3 xl2">
-                    <img src="{% static 'jino/img/icon_3.png' %}" alt="Близко к дому"/>
+                    <img src="{% static 'jino/img/compress/icon_3.png' %}" alt="Близко к дому"/>
                     <p>
                         Рядом с домом
                     </p>
@@ -170,7 +170,8 @@
 
             <h3 class="center-align">Ответы на частые вопросы</h3>
             <div class="row valign-wrapper">
-                <img class="col m3 hide-on-small-only" src="{% static 'jino/img/icon_4.png' %}"/>
+                <img class="col m3 hide-on-small-only" src="{% static 'jino/img/compress/icon_4.png' %}"
+                     alt="question"/>
                 <div class="row col s12 m9">
                     <ul class="collapsible popout">
                         <li>
@@ -257,17 +258,17 @@
                 <ul class="social">
                     <li>
                         <a class="grey-text text-lighten-3" href="https://www.instagram.com/jinoplatform/?hl=ru">
-                            <img src="{% static 'jino/img/icon_5.png' %}"/>
+                            <img src="{% static 'jino/img/compress/icon_5.png' %}" alt="instagram"/>
                         </a>
                     </li>
                     <li>
                         <a class="grey-text text-lighten-3" href="https://www.facebook.com/jinoplatform">
-                            <img src="{% static 'jino/img/icon_6.png' %}"/>
+                            <img src="{% static 'jino/img/compress/icon_6.png' %}" alt="facebook"/>
                         </a>
                     </li>
                     <li>
                         <a class="grey-text text-lighten-3" href="https://vk.com/jinoplatform">
-                            <img src="{% static 'jino/img/icon_7.png' %}"/>
+                            <img src="{% static 'jino/img/compress/icon_7.png' %}" alt="vk"/>
                         </a>
                     </li>
                 </ul>
@@ -275,7 +276,7 @@
             <div class="col s12 l2 offset-l6 right-align">
                 <div class="row valign-wrapper">
                     <a href="/" class="brand-logo">
-                        <img class="nLogo logoBottom" src="{% static 'jino/img/logo_b.png' %}"/>
+                        <img class="nLogo logoBottom" src="{% static 'jino/img/compress/logo_b.png' %}" alt="logo n"/>
                     </a>
                 </div>
                 <!-- <div class="row">
@@ -303,18 +304,18 @@
         <div class="formContainer">
             <h5>ЗАПОЛНИТЕ ФОРМУ</h5>
             <p>Остальное сделаем мы</p>
-            <form class="sendFormBlock" action="/data/" method="get" >
+            <form class="sendFormBlock" action="/data/" method="get">
                 <label>
                     ФИО*
-                    <input type="text" placeholder="Введите имя" required name="FIO" autocomplete="off"  autocapitalize="off" spellcheck="false"/>
+                    <input type="text" placeholder="Введите имя" required name="FIO"/>
                 </label>
                 <label>
                     ТЕЛЕФОН*
-                    <input type="text" id="telephone" placeholder="+7 (---) -- - -- - ---" required name="PHONE" autocomplete="off" autocapitalize="off" spellcheck="false"/>
+                    <input type="text" id="telephone" placeholder="+7 (---) -- - -- - ---" required name="PHONE"/>
                 </label>
                 <label>
                     E-MAIL
-                    <input type="text" placeholder="Введите E-mail" name="MAIL"  autocomplete="off" autocapitalize="off" spellcheck="false"/>
+                    <input type="text" placeholder="Введите E-mail" name="MAIL"/>
                 </label>
                 <button type="submit">ОТПРАВИТЬ</button>
                 <p style="padding-bottom: 35px">
@@ -323,13 +324,27 @@
 
             </form>
         </div>
+        <div class="subFormContainer">
+            <h5>ЗАПОЛНИТЕ ФОРМУ</h5>
+            <form class="sendFormBlock">
+                <label>
+                    ФИО*
+                    <input type="text" required/>
+                </label>
+                <label>
+                    E-MAIL*
+                    <input type="text" required/>
+                </label>
+                <button type="submit">ОТПРАВИТЬ</button>
+            </form>
+        </div>
     </div>
 </div>
 <!-- Compiled and minified JavaScript -->
 <script src="{% static 'jino/js/materialize.min.js' %}"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script src="{% static 'jino/js/jquery.maskedinput.min.js' %}"></script>
+<script src="{% static 'jino/js/jquery.maskedinput.min.compress.js' %}"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         var elems = document.querySelectorAll('.collapsible');
@@ -338,7 +353,7 @@
         });
     });
 </script>
-<script src="{% static 'jino/js/main.js' %}"></script>
+<script src="{% static 'jino/js/main.compress.js' %}"></script>
 
 </body>
 </html>

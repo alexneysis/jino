@@ -20,7 +20,14 @@ from jino import views
 from startup import settings
 
 urlpatterns = [
-    url('data', views.data),
-    url('', views.home),
+                  url('data', views.data),
+                  url('compressed', views.compressed),
+                  url('task_2', views.task_2),
+                  url('task_3_1', views.task_3_1),
+                  url('task_3', views.task_3),
+                  url('task_4_1', views.task_4_1),
+                  url('task_4_2', views.task_4_2),
+                  url('clinic', views.clinic),
+                  url('', views.home)
 
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+              ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

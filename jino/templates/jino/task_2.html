@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#
+          profile: http://ogp.me/ns/profile#">
+<head>
+    <title>Task 2</title>
+</head>
+
+
+<html>
+<head><title>Geolocation</title></head>
+<body>
+
+<canvas height='320' width='480' id='first_example'>Пример</canvas>
+
+<p>Geolocation</p>
+<script>
+
+
+    function successCallback(position) {
+        alert('Lat:' + position.coords.latitude +
+            ' Log:' + position.coords.longitude +
+            ' H:' + position.coords.altitude);
+    }
+
+    function errorCallback(positionError) {
+
+        switch (positionError.code) {
+            case 1:
+                alert("PERMISSION_DENIED");
+                break;
+            case 2:
+                alert("POSITION_UNAVAILABLE");
+                break;
+            case 3:
+                alert("TIMEOUT");
+                break;
+        }
+    }
+
+    navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+</script>
+</body>
+</html>
+
