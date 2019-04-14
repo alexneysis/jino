@@ -117,9 +117,9 @@
             <a href="/" class="brand-logo col s2 l2">
                 <img class="nLogo" src="{% static 'jino/img/logo_w.png' %}"/>
             </a>
-{#            <div class="dNav right">#}
-{#                <a href="#!" class="subLink">Подписка</a>#}
-{#            </div>#}
+            {#            <div class="dNav right">#}
+            {#                <a href="#!" class="subLink">Подписка</a>#}
+            {#            </div>#}
         </div>
 
     </div>
@@ -303,18 +303,21 @@
         <div class="formContainer">
             <h5>ЗАПОЛНИТЕ ФОРМУ</h5>
             <p>Остальное сделаем мы</p>
-            <form class="sendFormBlock" action="/data/" method="get" >
+            <form class="sendFormBlock" action="/data/" method="get">
                 <label>
                     ФИО*
-                    <input type="text" placeholder="Введите имя" required name="FIO" autocomplete="off"  autocapitalize="off" spellcheck="false"/>
+                    <input type="text" placeholder="Введите имя" required name="FIO" autocomplete="off"
+                           autocapitalize="off" spellcheck="false"/>
                 </label>
                 <label>
                     ТЕЛЕФОН*
-                    <input type="text" id="telephone" placeholder="+7 (---) -- - -- - ---" required name="PHONE" autocomplete="off" autocapitalize="off" spellcheck="false"/>
+                    <input type="text" id="telephone" placeholder="+7 (---) -- - -- - ---" required name="PHONE"
+                           autocomplete="off" autocapitalize="off" spellcheck="false"/>
                 </label>
                 <label>
                     E-MAIL
-                    <input type="text" placeholder="Введите E-mail" name="MAIL"  autocomplete="off" autocapitalize="off" spellcheck="false"/>
+                    <input type="text" placeholder="Введите E-mail" name="MAIL" autocomplete="off" autocapitalize="off"
+                           spellcheck="false"/>
                 </label>
                 <button type="submit">ОТПРАВИТЬ</button>
                 <p style="padding-bottom: 35px">

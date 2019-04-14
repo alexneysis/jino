@@ -5,30 +5,6 @@ from email.mime.text import MIMEText
 from django.shortcuts import render
 
 
-def task_4_2(request):
-    return render(request, 'jino/task_4_2.html')
-
-
-def task_4_1(request):
-    return render(request, 'jino/task_4_1.html')
-
-
-def task_3_1(request):
-    return render(request, 'jino/task_3_1.html')
-
-
-def task_2(request):
-    return render(request, 'jino/task_2.html')
-
-
-def task_3(request):
-    return render(request, 'jino/task_3.html')
-
-
-def compressed(request):
-    return render(request, 'jino/index_test_compress.html')
-
-
 def home(request):
     return render(request, 'jino/index.html')
 

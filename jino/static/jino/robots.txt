@@ -1,11 +1,6 @@
 User-agent: *
 Disallow: /admin
 Disallow: /data
-Disallow: /compressed
-Disallow: /task_2
-Disallow: /task_3_1
-Disallow: /task_4_1
-Disallow: /task_4_2
 Disallow: /clinic
 Allow: /
 Host: https://jino24.ru
