@@ -33,6 +33,7 @@ nav {
  }
 nav .container { position: relative; }
 footer { background: #002c85 !important; }
+.bold { font-weight: bold; }
 
 .nLogo {
   margin-bottom: -3px;
@@ -169,6 +170,8 @@ nav .brand-logo {
 }
 .subLink { color: #002c85; }
 .subLink:hover { color: #fff; }
+
+.reactionBtnBlock { margin-top: 70px;}
 
 
 @media screen and (max-width: 480px) {
