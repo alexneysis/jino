@@ -2,7 +2,7 @@ import smtplib
 from email.header import Header
 from email.mime.text import MIMEText
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 
 def home(request):
@@ -96,4 +96,5 @@ def data(request):
     server.login(username, password)
     server.sendmail(mail_sender, mail_receiver.split(","), msg.as_string())
     server.quit()
-    return render(request, 'jino/index.html')
+    # return render(request, 'jino/index.html')
+    return redirect("/")

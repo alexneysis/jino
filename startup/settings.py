@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+import secret
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -20,19 +22,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '1rsx$lp(v3*mlwr1n2=!4*$#dfv&q6*d#eig=c4tapgf!x&f25'
+SECRET_KEY = secret.SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-# ALLOWED_HOSTS = ['jino.hopto.org', '127.0.0.1']
-ALLOWED_HOSTS = ['jino24.ru', '127.0.0.1', '85.175.194.153']
-#  85.175.194.153 home
-# ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['jino24.ru', '127.0.0.1', secret.PRIVATE_IP]
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -41,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'jino.apps.JinoConfig',
+    'loginsys'
 ]
 
 MIDDLEWARE = [
@@ -80,14 +78,12 @@ WSGI_APPLICATION = 'startup.wsgi.application'
 
 DATABASES = {
     'default': {
-        '#ENGINE': 'django.db.backends.sqlite3',
-        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        # 'NAME': 'db_startup',
-        # 'USER': 'pi',
-        # 'PASSWORD': '1111',
-        # 'HOST': 'localhost',
-        # 'PORT': '',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': secret.DB_NAME,
+        'USER': secret.LOGIN_DB,
+        'PASSWORD': secret.PASSWORD_DB,
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 

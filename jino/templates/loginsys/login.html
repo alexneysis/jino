@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<section>
+    <ul class="right">
+        {% if user.is_authenticated %}
+            <li><a href="/auth/logout">Выйти ({{ user.username }})</a> </li>
+        {% else %}
+            <li><a href="/auth/login">Войти</a> </li>
+        {%  endif %}
+    </ul>
+</section>
+
+
+<div>
+    <h5>ЗАПОЛНИТЕ ФОРМУ</h5>
+    <p>Остальное сделаем мы</p>
+    <form class="sendFormBlock" action="/auth/login" method="post">
+        {% csrf_token %}
+        <label>
+            Логин
+            <br>
+            <input type="text" placeholder="Введите логин" name="username" id="username"/>
+            <br>
+        </label>
+        <label>
+            Пароль
+            <br>
+            <input type="password" placeholder="Введите пароль" name="password" id="password"/>
+            {% if login_error %}
+                <label> {{ login_error }}</label>
+            {% endif %}
+            <br>
+        </label>
+        <button type="submit">Войти</button>
+    </form>
+</div>
+
+<br>
+<br>
+<div>
+    <h5>ЗАПОЛНИТЕ ФОРМУ</h5>
+    <p>Остальное сделаем мы</p>
+    <form action="/auth/reg" method="post">
+        {% csrf_token %}
+        <label>
+            Логин
+            <br>
+            <input type="text" placeholder="Введите логин" name="username" id="username"/>
+            <br>
+        </label>
+        <label>
+            Пароль
+            <br>
+            <input type="password" placeholder="Введите пароль" name="password" id="password"/>
+            <br>
+        </label>
+        <label>
+            Имя
+            <br>
+            <input type="text" placeholder="Введите имя" name="name" id="name"/>
+            <br>
+        </label>
+        <label>
+            Почту
+            <br>
+            <input type="text" placeholder="Введите почту" name="mail" id="mail"/>
+            <br>
+        </label>
+        <button type="submit">Зарегистрироваться</button>
+    </form>
+</div>
+</body>
+</html>
+
+
+
+
