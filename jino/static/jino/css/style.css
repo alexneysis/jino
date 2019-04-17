@@ -340,3 +340,19 @@ letter-spacing: 0.2px;
   left: 85%;
   z-index: 101;
 }
+
+/* patients_pool.html */
+.patientsList {
+  margin: 200px;
+}
+.collection-item {
+  color: #3246ae !important;
+  font-weight: bold;
+  font-family: "Futura Book C";
+}
+.temp-icon-green {
+  color: green;
+}
+.temp-icon-red {
+  color: red;
+}
