@@ -9,10 +9,10 @@
 <section>
     <ul class="right">
         {% if user.is_authenticated %}
-            <li><a href="/auth/logout">Выйти ({{ user.username }})</a> </li>
+            <li><a href="/auth/logout">Выйти ({{ user.username }})</a></li>
         {% else %}
-            <li><a href="/auth/login">Войти</a> </li>
-        {%  endif %}
+            <li><a href="/auth/login">Войти</a></li>
+        {% endif %}
     </ul>
 </section>
 
@@ -75,6 +75,56 @@
         <button type="submit">Зарегистрироваться</button>
     </form>
 </div>
+
+<br>
+<button onclick="loadSyn()">Загрузить sitemap sin!</button>
+<button onclick="loadAsyn()" id="button">Загрузить sitemap asyn!</button>
+
+<script>
+    function loadSyn() {
+        var xhr = new XMLHttpRequest();
+
+        xhr.open('GET', 'https://jino24.ru/sitemap.xml', false);
+        xhr.send();
+
+        if (xhr.status != 200) {
+            // обработать ошибку
+            alert('Ошибка ' + xhr.status + ': ' + xhr.statusText);
+        } else {
+            // вывести результат
+            alert(xhr.responseText);
+        }
+    }
+
+    function loadAsyn() {
+        var xhr = new XMLHttpRequest();
+
+        xhr.open('GET', 'phones.json', true);
+
+        xhr.send();
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState != 4) return;
+
+            button.innerHTML = 'Готово!';
+
+            if (xhr.status != 200) {
+                // обработать ошибку
+                alert(xhr.status + ': ' + xhr.statusText);
+            } else {
+                // вывести результат
+                alert(xhr.responseText);
+            }
+
+        }
+
+        button.innerHTML = 'Загружаю...';
+        button.disabled = true;
+    }
+
+
+</script>
+
 </body>
 </html>
 
