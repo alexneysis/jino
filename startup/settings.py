@@ -127,19 +127,4 @@ USE_TZ = True
 
 STATIC_ROOT = '/home/jino/startup/static/'
 STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, "static"),
-#     'jino/static/',
-# ]
-# STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static')
 
-# STATICFILES_FINDERS = (
-#     "django.contrib.staticfiles.finders.FileSystemFinder",
-#     # "django.contrib.staticfiles.finders.AppDirectoriesFinder"
-# )
-#
-# # STATIC_URL = os.path.join(BASE_DIR, 'static').replace('\\','')+'/'
-# STATICFILES_DIRS = (
-#     os.path.join(BASE_DIR, 'jino/static'),
-# )

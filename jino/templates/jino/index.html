@@ -179,6 +179,8 @@
       <div class="circle circle-5"></div>
       <img class="decore decore-5 foregroundForCircle" src="{% static 'jino/img/decor-icon-5.png' %}" />
     </section>
+
+    {% block foot %}
     <footer class="page-footer foregroundForCircle">
       <div class="container">
         <div class="row">
@@ -213,6 +215,7 @@
         </div>
       </div>
     </footer>
+    {% endblock %}
 
     <script
   src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
