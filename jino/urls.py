@@ -20,12 +20,6 @@ from jino import views
 from startup import settings
 
 urlpatterns = [
-    url('test', views.test),
-    url('about', views.about),
-    url('examplePage', views.examplePage),
-    url('', views.index),
-
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
-
-
+                  url('data', views.data),
+                  url('', views.home)
+              ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
