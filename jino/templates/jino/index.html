@@ -1,230 +1,288 @@
-{% load static %}
+  <!DOCTYPE html>
+  <html lang="ru">
+    <head>
+      <meta charset="utf-8">
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<!DOCTYPE html>
-<html lang="ru">
-  <head>
-    <meta charset="utf-8">
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <!-- Compiled and minified CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+      <link rel="stylesheet" href="css/style.css">
 
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'jino/css/style.css' %}">
+      <title>Jino - home page</title>
 
-    <title>Jino - home page</title>
+    </head>
+    <body>
 
-  </head>
-  <body>
+      <!-- menu for mobile -->
+      <ul class="sidenav" id="mobile-demo">
+        <li><a href="#">О нас</a></li>
+        <li><a href="#">Соглашение</a></li>
+      </ul>
+      <section class="mainSection">
+        <header>
+          <nav class="pageNavigation N/A transparent z-depth-0 foregroundForCircle">
+            <div class="nav-wrapper container row valign-wrapper">
+              <a href="#" class="brand-logo col s2">
+                <img src="img/logo-white-bg.png" />
+              </a>
+              <ul id="nav-mobile" class="col s5 m6 l7 offset-s3 offset-l2 offset-xl3 hide-on-small-only">
+                <li><a href="#"  class="temp-text-dark-blue pageNavigation-text">О нас</a></li>
+                <li><a href="#"  class="temp-text-dark-blue pageNavigation-text">Соглашение</a></li>
+              </ul>
+              <div class="cityChooser col s7 m4 l3 xl2 offset-s3 valign-wrapper">
+                <!-- Dropdown Trigger -->
+                <a class='temp-inline-dropdown dropdown-trigger btn N/A transparent temp-text-dark-blue pageNavigation-text z-depth-0' href='#' data-target='dropdown1'>Город<i class="temp-inline-icon material-icons">arrow_drop_down</i></a>
 
-
-    <section class="mainSection">
-      <header>
-        <nav class="pageNavigation N/A transparent z-depth-0 foregroundForCircle">
-          <div class="nav-wrapper container row valign-wrapper">
-            <a href="#" class="brand-logo col xl2">
-              <img src="{% static 'jino/img/logo-white-bg.png' %}" />
+                <!-- Dropdown Structure -->
+                <ul id='dropdown1' class='dropdown-content'>
+                  <li><a href="#!">Пермь</a></li>
+                  <li><a href="#!">Екатеринбург</a></li>
+                </ul>
+              </div>
+              <a href="#" data-target="mobile-demo" class="sidenav-trigger temp-text-dark-blue col s1 offset-s1 hide-on-med-and-up"><i class="material-icons">menu</i></a>
+            </div>
+          </nav>
+        </header>
+        <div class="circle circle-1"></div>
+        <img class="decore decore-1" src="img/decor-icon-1.png" />
+        <div class="container">
+          <div class="socialBlock foregroundForCircle hide-on-small-only">
+            <div class="socialLine"></div>
+            <a href="https://www.facebook.com/jinoplatform" class="socialItem">
+              <img class="socialItemIcon" src="img/social-icon-1.png" />
+              <span class="socialItemText temp-text-dark-blue">Facebook</span>
             </a>
-            <ul id="nav-mobile" class="col xl8 offset-xl2">
-              <li><a href="#"  class="temp-text-dark-blue pageNavigation-text">О нас</a></li>
-              <li><a href="#"  class="temp-text-dark-blue pageNavigation-text">****</a></li>
-            </ul>
-            <div class="cityChooser col xl2 valign-wrapper">
-              <!-- Dropdown Trigger -->
-              <a class='temp-inline-dropdown dropdown-trigger btn N/A transparent temp-text-dark-blue pageNavigation-text z-depth-0' href='#' data-target='dropdown1'>Город<i class="temp-inline-icon material-icons">arrow_drop_down</i></a>
+            <a href="https://www.instagram.com/jinoplatform/?hl=ru" class="socialItem">
+              <img class="socialItemIcon" src="img/social-icon-2.png" />
+              <span class="socialItemText temp-text-dark-blue">Instagram</span>
+            </a>
+            <a href="https://vk.com/jinoplatform" class="socialItem">
+              <img class="socialItemIcon" src="img/social-icon-3.png" />
+              <span class="socialItemText temp-text-dark-blue">Vkontakte</span>
+            </a>
+          </div>
+          <div class="row">
+            <div class="headers foregroundForCircle col s12 m9 l7 s6">
+              <h1 class="temp-text-dark-blue">Экстренная помощь стоматолога</h1>
+              <h2>Jino – это бесплатный сервис для быстрой записи к стоматологу</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="callBtn foregroundForCircle">
+              <span class="callBtnText temp-text-dark-blue center-align col s12">Вызов</span>
+            </div>
+          </div>
+          <div class="circle circle-2"></div>
+        </div>
 
-              <!-- Dropdown Structure -->
-              <ul id='dropdown1' class='dropdown-content'>
-                <li><a href="#!">Пермь</a></li>
-                <li><a href="#!">Екатеринбург</a></li>
-                <li><a href="#!">Краснодар</a></li>
+      </section>
+      <section class="howWorkSection">
+        <div class="container">
+          <h3><span class="sectionHeaderBg">
+            <span class="sectionHeader temp-text-dark-blue">Как работает платформа?</span>
+          </span></h3>
+          <div class="instructionBlock">
+            <div class="circle circle-3"></div>
+            <div class="row">
+              <div class="instructionItem col s12 l5 xl4 offset-l1">
+                <img src="img/instruction-punct-1.png" />
+                <!-- <img src="img/instruction-numb-1.png" />
+                <p class="instructionItemText firstPoint temp-text-dark-blue">
+                  Нажмите на кнопку "Вызов"
+                </p> -->
+              </div>
+            </div>
+            <div class="row">
+              <img class="decore decore-2" src="img/decor-icon-2.png" />
+              <div class="instructionItem right col s12 m12 l6 xl5 secondPoint">
+                <img class="foregroundForCircle" src="img/instruction-punct-2.png" />
+                <!-- <img class="foregroundForCircle rightNumb" src="img/instruction-numb-2.png" />
+                <p class="instructionItemText secondPoint temp-text-dark-blue foregroundForCircle">
+                  Заполните данные <br /> и отправьте заявку
+                </p> -->
+              </div>
+            </div>
+            <div class="row">
+              <div class="instructionItem col s12 l6 xl5 offset-l1">
+                <img class="foregroundForCircle" src="img/instruction-punct-3.png" />
+                <!-- <img src="img/instruction-numb-3.png" />
+                <p class="instructionItemText thirdPoint temp-text-dark-blue ">
+                  Система подберет стоматологию
+                </p> -->
+              </div>
+              <img class="decore decore-3 foregroundForCircle" src="img/decor-icon-3.png" />
+            </div>
+            <div class="row">
+              <div class="instructionItem right col s12 m12 l8 xl6">
+                <img class="foregroundForCircle" src="img/instruction-punct-4.png" />
+                <!-- <img class="foregroundForCircle rightNumb" src="img/instruction-numb-4.png" />
+                <p class="instructionItemText fourPoint temp-text-dark-blue foregroundForCircle right-align">
+                  Ответьте на звонок записишитесь на прием
+                </p> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="partnersSection foregroundForCircle">
+        <div class="container">
+          <h3><span class="sectionHeaderBg">
+            <span class="sectionHeader temp-text-dark-blue">Наши партнеры</span>
+          </span></h3>
+          <div class="partnersBlock row">
+            <div class="partrersItem col s12 m6 l3 center-align">
+              <img src="img/empty_partner.png" />
+              <p class="temp-text-dark-blue">
+                <span class="partnersItemText">32 Практика</span>
+              </p>
+            </div>
+            <div class="partrersItem col s12 m6 l3 center-align">
+              <img src="img/empty_partner.png" />
+              <p class="temp-text-dark-blue">
+                <span class="partnersItemText">Dental Tagline</span>
+              </p>
+            </div>
+            <div class="partrersItem col s12 m6 l3 center-align">
+              <img src="img/empty_partner.png" />
+              <p class="temp-text-dark-blue">
+                <span class="partnersItemText">Зубосверл</span>
+              </p>
+            </div>
+            <div class="partrersItem col s12 m6 l3 center-align">
+              <img src="img/empty_partner.png" />
+              <p class="temp-text-dark-blue">
+                <span class="partnersItemText">Зубозуб</span>
+              </p>
+            </div>
+          </div>
+          <img class="decore decore-4" src="img/decor-icon-4.png" />
+        </div>
+      </section>
+      <section class="faqSection">
+        <div class="circle circle-4"></div>
+        <div class="container">
+          <h3><span class="sectionHeaderBg">
+            <span class="sectionHeader temp-text-dark-blue">Вопросы и ответы</span>
+          </span></h3>
+          <div class="faqBlock row valign-wrapper">
+            <img class="col l3 hide-on-med-and-down" src="img/faq-icon.png" />
+            <ul class="collapsible foregroundForCircle col s12 z-depth-0">
+              <li>
+                <div class="temp-text-dark-blue collapsible-header"><i class="faqArrow temp-inline-icon material-icons">arrow_drop_down</i><span class="faqQuestion">Как оплатить прием врача?</span></div>
+                <div class="collapsible-body temp-text-dark-blue"><span>Прием врача вы оплачиваете в стоматологии. На Jino ничего оплачивать не нужно.</span></div>
+              </li>
+              <li>
+                <div class="temp-text-dark-blue collapsible-header"><i class="faqArrow temp-inline-icon material-icons">arrow_drop_down</i><span class="faqQuestion">Записываться через Jino дороже, чем напрямую в стоматологии?</span></div>
+                <div class="collapsible-body temp-text-dark-blue"><span>Нет. Jino не берет комиссии за свои услуги, поэтому вы записываетесь на прием по ценам стоматологии.</span></div>
+              </li>
+              <li>
+                <div class="temp-text-dark-blue collapsible-header"><i class="faqArrow temp-inline-icon material-icons">arrow_drop_down</i><span class="faqQuestion">Как оставить отзыв о приеме?</span></div>
+                <div class="collapsible-body temp-text-dark-blue"><span>После приема вы получите сообщение на электронную почту, которую указали при записи. Перейдя по ссылке в письме, вы сможете оставить отзыв о приеме. Если вам не понравился прием, мы передадим эти данные в клинику и примем меры по улучшению качества обслуживания.</span></div>
+              </li>
+              <li>
+                <div class="temp-text-dark-blue collapsible-header"><i class="faqArrow temp-inline-icon material-icons">arrow_drop_down</i><span class="faqQuestion">Как стать партнером Jino?</span></div>
+                <div class="collapsible-body temp-text-dark-blue"><span>Все вопросы по партнерской программе нашего сайта можно задать Сатюкову Станиславу: <a class="temp-text-dark-blue temp-text-underline" href="mailto:jinoplatform@gmail.com">jinoplatform@gmail.com</a></span></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="circle circle-5"></div>
+        <img class="decore decore-5 foregroundForCircle" src="img/decor-icon-5.png" />
+      </section>
+      <footer class="page-footer foregroundForCircle">
+        <div class="container">
+          <div class="row">
+            <div class="col s6 m3 l3">
+              <div class="row">
+                <a href="#" class="brand-logo col xl2">
+                  <img src="img/logo-white-bg.png" />
+                </a>
+              </div>
+              <ul>
+                <li><a class="footerLink temp-footer-text" href="#!">О нас</a></li>
+                <li><a class="footerLink temp-footer-text" href="#!">Пользовательское соглашение</a></li>
               </ul>
             </div>
-          </div>
-        </nav>
-      </header>
-      <div class="circle circle-1"></div>
-      <img class="decore decore-1" src="{% static 'jino/img/decor-icon-1.png' %}" />
-      <div class="container">
-        <div class="socialBlock foregroundForCircle">
-          <div class="socialLine"></div>
-          <a href="#" class="socialItem">
-            <img class="socialItemIcon" src="{% static 'jino/img/social-icon-1.png' %}" />
-            <span class="socialItemText temp-text-dark-blue">Facebook</span>
-          </a>
-          <a href="#" class="socialItem">
-            <img class="socialItemIcon" src="{% static 'jino/img/social-icon-2.png' %}" />
-            <span class="socialItemText temp-text-dark-blue">Instagram</span>
-          </a>
-          <a href="#" class="socialItem">
-            <img class="socialItemIcon" src="{% static 'jino/img/social-icon-3.png' %}" />
-            <span class="socialItemText temp-text-dark-blue">Vkontakte</span>
-          </a>
-        </div>
-        <div class="row">
-          <div class="headers col s6">
-            <h1 class="temp-text-dark-blue">Экстренная помощь стоматолога</h1>
-            <h2>Jino – это бесплатный сервис для быстрой записи к стоматологу</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="callBtn foregroundForCircle">
-            <span class="callBtnText temp-text-dark-blue center-align col s12">Вызов</span>
-          </div>
-        </div>
-        <div class="circle circle-2"></div>
-      </div>
-
-    </section>
-    <section class="howWorkSection">
-      <div class="container">
-        <h3 class="sectionHeader temp-text-dark-blue">Как работает платформа?</h3>
-        <div class="instructionBlock">
-          <div class="circle circle-3"></div>
-          <div class="row">
-            <div class="instructionItem col s4 offset-s1">
-              <img src="{% static 'jino/img/instruction-numb-1.png' %}" />
-              <p class="instructionItemText firstPoint temp-text-dark-blue">
-                Нажмите на кнопку "Вызов"
+            <div class="col s1 m1 l1 offset-s4 offset-l2 hide-on-med-and-up">
+                <ul>
+                  <li><a class="" href="https://www.facebook.com/jinoplatform"><img src="img/social-icon-1.png" /></a></li>
+                  <li><a class="" href="https://www.instagram.com/jinoplatform/?hl=ru"><img src="img/social-icon-2.png" /></a></li>
+                  <li><a class="" href="https://vk.com/jinoplatform"><img src="img/social-icon-3.png" /></a></li>
+                </ul>
+            </div>
+            <div class="col s12 m6 l6">
+              <p class="connectToUs temp-footer-text center-align">
+                Пишите нам: <a class="temp-footer-text temp-text-underline" href="mailto:jinoplatform@gmail.com">jinoplatform@gmail.com</a>
+                <br />
+                Звоните нам: <a class="temp-footer-text" href="tel: +79523338228">8 (952) 333-82-28</a>
               </p>
+            </div>
+            <div class="col m1 l1 offset-l2 hide-on-small-only">
+                <ul>
+                  <li><a class="" href="https://www.facebook.com/jinoplatform"><img src="img/social-icon-1.png" /></a></li>
+                  <li><a class="" href="https://www.instagram.com/jinoplatform/?hl=ru"><img src="img/social-icon-2.png" /></a></li>
+                  <li><a class="" href="https://vk.com/jinoplatform"><img src="img/social-icon-3.png" /></a></li>
+                </ul>
             </div>
           </div>
           <div class="row">
-            <img class="decore decore-2" src="{% static 'jino/img/decor-icon-2.png' %}" />
-            <div class="instructionItem right col s4">
-              <img class="foregroundForCircle" src="{% static 'jino/img/instruction-numb-2.png' %}" />
-              <p class="instructionItemText secondPoint temp-text-dark-blue right-align foregroundForCircle">
-                Заполните данные <br /> и отправьте заявку
-              </p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="instructionItem col s5 offset-s1">
-              <img src="{% static 'jino/img/instruction-numb-3.png' %}" />
-              <p class="instructionItemText thirdPoint temp-text-dark-blue ">
-                Система подберет стоматологию
-              </p>
-            </div>
-            <img class="decore decore-3 foregroundForCircle" src="{% static 'jino/img/decor-icon-3.png' %}" />
-          </div>
-          <div class="row">
-            <div class="instructionItem right col s5">
-              <img src="{% static 'jino/img/instruction-numb-4.png' %}" />
-              <p class="instructionItemText fourPoint temp-text-dark-blue right-align">
-                Ответьте на звонок и запишитесь на прием
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="partnersSection foregroundForCircle">
-      <div class="container">
-        <h3 class="sectionHeader temp-text-dark-blue">Наши партнеры</h3>
-        <div class="partnersBlock row">
-          <div class="partrersItem col s3 center-align">
-            <img src="{% static 'jino/img/empty_partner.png' %}" />
-            <p class="partnersItemText temp-text-dark-blue">
-              32 Практика
-            </p>
-          </div>
-          <div class="partrersItem col s3 center-align">
-            <img src="{% static 'jino/img/empty_partner.png' %}" />
-            <p class="partnersItemText temp-text-dark-blue">
-              Dental Tagline
-            </p>
-          </div>
-          <div class="partrersItem col s3 center-align">
-            <img src="{% static 'jino/img/empty_partner.png' %}" />
-            <p class="partnersItemText temp-text-dark-blue">
-              Зубосверл
-            </p>
-          </div>
-          <div class="partrersItem col s3 center-align">
-            <img src="{% static 'jino/img/empty_partner.png' %}" />
-            <p class="partnersItemText temp-text-dark-blue">
-              Зубозуб
-            </p>
-          </div>
-        </div>
-        <img class="decore decore-4" src="{% static 'jino/img/decor-icon-4.png' %}" />
-      </div>
-    </section>
-    <section class="faqSection">
-      <div class="circle circle-4"></div>
-      <div class="container">
-        <h3 class="sectionHeader temp-text-dark-blue">Вопросы и ответы</h3>
-        <div class="faqBlock row">
-          <img class="col s3 offset-1" src="{% static 'jino/img/faq-icon.png' %}" />
-          <ul class="collapsible col s9 z-depth-0">
-            <li>
-              <div class="temp-text-dark-blue collapsible-header"><i class="faqArrow temp-inline-icon material-icons">arrow_drop_down</i>Как оплатить прием врача?</div>
-              <div class="collapsible-body temp-text-dark-blue"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-            <li>
-              <div class="temp-text-dark-blue collapsible-header"><i class="faqArrow temp-inline-icon material-icons">arrow_drop_down</i>Записываться через Jino дороже, чем напрямую в стоматологии?</div>
-              <div class="collapsible-body temp-text-dark-blue"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-            <li>
-              <div class="temp-text-dark-blue collapsible-header"><i class="faqArrow temp-inline-icon material-icons">arrow_drop_down</i>Как оставить отзыв о приеме?</div>
-              <div class="collapsible-body temp-text-dark-blue"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-            <li>
-              <div class="temp-text-dark-blue collapsible-header"><i class="faqArrow temp-inline-icon material-icons">arrow_drop_down</i>Как стать партнером Jino?</div>
-              <div class="collapsible-body temp-text-dark-blue"><span>Все вопросы по партнерской программе нашего сайта можно задать Сатюкову Станиславу: jinoplatform@gmail.com</span></div>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="circle circle-5"></div>
-      <img class="decore decore-5 foregroundForCircle" src="{% static 'jino/img/decor-icon-5.png' %}" />
-    </section>
-
-    {% block foot %}
-    <footer class="page-footer foregroundForCircle">
-      <div class="container">
-        <div class="row">
-          <div class="col l3 s12">
-            <div class="row">
-              <a href="#" class="brand-logo col xl2">
-                <img src="{% static 'jino/img/logo-white-bg.png' %}" />
-              </a>
-            </div>
-            <ul>
-              <li><a class="footerLink temp-footer-text" href="#!">О нас</a></li>
-              <li><a class="footerLink temp-footer-text" href="#!">Пользовательское соглашение</a></li>
-            </ul>
-          </div>
-          <div class="col l8">
-            <p class="connectToUs temp-footer-text center-align">
-              Пишите нам: jinoplatform@gmail.com
-              <br />
-              Звоните нам: 8 (952) 333-82-28
-            </p>
             <p class="copyright center-align">
               © JINO24.RU 2019
             </p>
           </div>
-          <div class="col l1 s12">
-              <ul>
-                <li><a class="" href="#!"><img src="{% static 'jino/img/social-icon-1.png' %}" /></a></li>
-                <li><a class="" href="#!"><img src="{% static 'jino/img/social-icon-2.png' %}" /></a></li>
-                <li><a class="" href="#!"><img src="{% static 'jino/img/social-icon-3.png' %}" /></a></li>
-              </ul>
+        </div>
+      </footer>
+
+      <div class="popupSection">
+        <div class="popupBackground row valign-wrapper">
+          <div class="row col l6 xl4">
+            <div class="popupFormBlock white-text">
+              <h3 class="popupHeader">Заполните форму</h3>
+              <p class="popupSubtitle">Остальное сделаем мы</p>
+              <div class="closeIcon right">
+                <img src="img/close-icon.png" />
+              </div>
+              <form>
+                <label class="popupLabel">
+                  ФИО
+                  <input type="text" class="popupInput"/>
+                </label>
+                <div class="row">
+                  <label class="popupLabel col s6">
+                    Телефон
+                    <input type="tel" class="popupInput"/>
+                  </label>
+                  <label class="popupLabel col s6">
+                    E-mail
+                    <input type="email" class="popupInput"/>
+                  </label>
+                </div>
+                <label class="popupLabel">
+                  Адрес
+                  <input type="text" class="popupInput"/>
+                </label>
+                <p class="popupAddrDesc">
+                  Укажите где вы сейчас находитесь чтобы мы нашли ближайшую к вам стоматологию
+                </p>
+                <div class="row center-align">
+                  <button type="submit" class="popupBtn temp-text-dark-blue">Отправить</button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
-    </footer>
-    {% endblock %}
 
-    <script
+     <script
   src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
   integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
   crossorigin="anonymous"></script>
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script type="text/javascript" src="{% static 'jino/js/main.js' %}"></script>
-  </body>
-</html>
+      <!-- Compiled and minified JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    </body>
+  </html>
