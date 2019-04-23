@@ -6,16 +6,24 @@ $(document).ready(function(){
 
 $(".collection-item").on("click", function () {
   var result = $(this).text().substring(12);
-  var striptURL = "https://jino24.ru/clinic/valid";
+  var URL = "https://jino24.ru/pool/send";
+  var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
   console.log(result);
 
+
   $.ajax({
-    url: scriptURL,
+    url: URL,
     type: "POST",
-    dataType: "html",
-    data: ({name: result}),
+    data: {name: result},
+    dataType: "text",
+    beforeSend: function(xhr, settings) {
+      xhr.setRequestHeader("X-CSRFToken", csrftoken);
+    },
     success: function(response) {
-      console.log(response);
+      console.log("Success response" + " " + result);
+    },
+    error: function (response) {
+      console.log("Error in method");
     }
   });
 });

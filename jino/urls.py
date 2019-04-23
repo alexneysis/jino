@@ -21,6 +21,5 @@ from startup import settings
 
 urlpatterns = [
                   url('data', views.data),
-                  url('clinic', views.clinic),
                   url('', views.home)
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

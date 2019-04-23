@@ -11,15 +11,17 @@ from django.template.context_processors import csrf
 
 def login(request):
     args = {}
-    args.update(csrf(request))
-    if request.POST:
+    if request.method == "POST":
         try:
+            args.update(csrf(request))
             username = request.POST.get('username')
             password = request.POST.get('password')
             user = auth.authenticate(username=username, password=password)
             if user is not None:
+                print("if None")
                 auth.login(request, user)
-                return redirect('/auth/login')
+                # return redirect('/auth/login')
+                return redirect('/pool/ ')
             else:
                 args['login_error'] = "Пользователь не найден"
                 return render(request, 'loginsys/login.html', args)
@@ -27,12 +29,20 @@ def login(request):
             print(e)
             return render(request, 'loginsys/error.html')
     else:
-        return render(request, 'loginsys/login.html', args)
+        return redirect('/pool')
+
+
+def auth(request):
+    return render(request, 'loginsys/login.html')
 
 
 def logout(request):
-    auth.logout(request)
-    return redirect('/auth/login')
+    try:
+        auth.logout(request)
+    except Exception as e:
+        print(e)
+        return render(request, 'loginsys/error.html')
+    return redirect('/pool')
 
 
 def registr(request):
@@ -47,4 +57,4 @@ def registr(request):
     except Exception as e:
         print(e)
         return render(request, 'loginsys/error.html')
-    return render(request, 'loginsys/login.html')
+    return render(request, 'jino/patients_pool.html')

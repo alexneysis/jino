@@ -7,5 +7,6 @@ from startup import settings
 urlpatterns = [
                   url('login', views.login),
                   url('logout', views.logout),
-                  url('reg', views.registr)
+                  url('reg', views.registr),
+                  url('', views.auth)
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
