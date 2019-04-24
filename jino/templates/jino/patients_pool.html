@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
+<head>
     <meta charset="utf-8">
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -13,85 +13,98 @@
 
     <title>Jino - home page</title>
 
-  </head>
-  <body>
+</head>
+<body>
 
-    <header>
-      <nav class="pageNavigation N/A transparent z-depth-0" style="margin-bottom:0;">
+<header>
+    <nav class="pageNavigation N/A transparent z-depth-0" style="margin-bottom:0;">
         <div class="nav-wrapper container row valign-wrapper">
-          <a href="#" class="brand-logo col xl2">
-            <img src="../../static/jino/img/logo-white-bg.png" />
-          </a>
-          <ul id="nav-mobile" class="col xl8 offset-xl2">
-            <li><a href="#"  class="temp-text-dark-blue pageNavigation-text">О нас</a></li>
-            <li><a href="#"  class="temp-text-dark-blue pageNavigation-text">****</a></li>
-          </ul>
-          <div class="cityChooser col xl2 valign-wrapper">
-            <!-- Dropdown Trigger -->
-            <a class='temp-inline-dropdown dropdown-trigger btn N/A transparent temp-text-dark-blue pageNavigation-text z-depth-0' href='#' data-target='dropdown1'>Город<i class="temp-inline-icon material-icons">arrow_drop_down</i></a>
+            <a href="#" class="brand-logo col xl2">
+                <img src="../../static/jino/img/logo-white-bg.png"/>
+            </a>
+            <ul id="nav-mobile" class="col xl8 offset-xl2">
+                <li><a href="#" class="temp-text-dark-blue pageNavigation-text">О нас</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="/auth/logout" class="temp-text-dark-blue pageNavigation-text">Выйти ({{ user.username }})</a></li>
+                {% else %}
+                    <li><a href="/auth/ " class="temp-text-dark-blue pageNavigation-text">Войти</a></li>
+                {% endif %}
+                <li><a href="#" class="temp-text-dark-blue pageNavigation-text"></a></li>
 
-            <!-- Dropdown Structure -->
-            <ul id='dropdown1' class='dropdown-content'>
-              <li><a href="#!">Пермь</a></li>
-              <li><a href="#!">Екатеринбург</a></li>
             </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
+            <div class="cityChooser col xl2 valign-wrapper">
+                <!-- Dropdown Trigger -->
+                <a class='temp-inline-dropdown dropdown-trigger btn N/A transparent temp-text-dark-blue pageNavigation-text z-depth-0'
+                   href='#' data-target='dropdown1'>Город<i class="temp-inline-icon material-icons">arrow_drop_down</i></a>
 
-    <section class="patientsList">
-      <div class="container">
+                <!-- Dropdown Structure -->
+                <ul id='dropdown1' class='dropdown-content'>
+                    <li><a href="#!">Пермь</a></li>
+                    <li><a href="#!">Екатеринбург</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+{% csrf_token %}
+<section class="patientsList">
+    <div class="container">
         <h3 class="sectionHeader temp-text-dark-blue">Список нуждающихся в помощи</h3>
         <div class="collection">
-          <a href="#!" class="collection-item"><span class="badge"><i class="material-icons temp-icon-green">brightness_1</i></span>Василий Петрович</a>
-          <a href="#!" class="collection-item"><span class="badge"><i class="material-icons temp-icon-green">brightness_1</i></span>Иван Васильевич</a>
-          <a href="#!" class="collection-item"><span class="badge"><i class="material-icons temp-icon-green">brightness_1</i></span>Лапкин</a>
-          <a href="#!" class="collection-item"><span class="badge"><i class="material-icons temp-icon-red">brightness_1</i></span>Еж</a>
-          <a href="#!" class="collection-item"><span class="badge"><i class="material-icons temp-icon-red">brightness_1</i></span>Иржан</a>
-          <a href="#!" class="collection-item"><span class="badge"><i class="material-icons temp-icon-red">brightness_1</i></span>Вы какашки</a>
-        </div>
-      </div>
-    </section>
 
-    <footer class="page-footer">
-      <div class="container">
+            <a href="#!" class="collection-item"><span class="badge"><i class="material-icons temp-icon-green">brightness_1</i></span>Василий
+                Петрович</a>
+            <a href="#!" class="collection-item"><span class="badge"><i class="material-icons temp-icon-green">brightness_1</i></span>Иван
+                Васильевич</a>
+            <a href="#!" class="collection-item"><span class="badge"><i class="material-icons temp-icon-green">brightness_1</i></span>Лапкин</a>
+            <a href="#!" class="collection-item"><span class="badge"><i class="material-icons temp-icon-red">brightness_1</i></span>Еж</a>
+            <a href="#!" class="collection-item"><span class="badge"><i class="material-icons temp-icon-red">brightness_1</i></span>Иржан</a>
+            <a href="#!" class="collection-item"><span class="badge"><i class="material-icons temp-icon-red">brightness_1</i></span>Вы
+                какашки</a>
+        </div>
+    </div>
+</section>
+
+<footer class="page-footer">
+    <div class="container">
         <div class="row">
-          <div class="col l3 s12">
-            <div class="row">
-              <a href="#" class="brand-logo col xl2">
-                <img src="../../static/jino/img/logo-white-bg.png" />
-              </a>
+            <div class="col l3 s12">
+                <div class="row">
+                    <a href="#" class="brand-logo col xl2">
+                        <img src="../../static/jino/img/logo-white-bg.png"/>
+                    </a>
+                </div>
+                <ul>
+                    <li><a class="footerLink temp-footer-text" href="#!">О нас</a></li>
+                    <li><a class="footerLink temp-footer-text" href="#!">Пользовательское соглашение</a></li>
+                </ul>
             </div>
-            <ul>
-              <li><a class="footerLink temp-footer-text" href="#!">О нас</a></li>
-              <li><a class="footerLink temp-footer-text" href="#!">Пользовательское соглашение</a></li>
-            </ul>
-          </div>
-          <div class="col l8">
-            <p class="connectToUs temp-footer-text center-align">
-              Пишите нам: jinoplatform@gmail.com
-              <br />
-              Звоните нам: 8 (952) 333-82-28
-            </p>
-            <p class="copyright center-align">
-              © JINO24.RU 2019
-            </p>
-          </div>
-          <div class="col l1 s12">
-              <ul>
-                <li><a class="" href="#!"><img src="../../static/jino/img/social-icon-1.png" /></a></li>
-                <li><a class="" href="#!"><img src="../../static/jino/img/social-icon-2.png" /></a></li>
-                <li><a class="" href="#!"><img src="../../static/jino/img/social-icon-3.png" /></a></li>
-              </ul>
-          </div>
+            <div class="col l8">
+                <p class="connectToUs temp-footer-text center-align">
+                    Пишите нам: jinoplatform@gmail.com
+                    <br/>
+                    Звоните нам: 8 (952) 333-82-28
+                </p>
+                <p class="copyright center-align">
+                    © JINO24.RU 2019
+                </p>
+            </div>
+            <div class="col l1 s12">
+                <ul>
+                    <li><a class="" href="#!"><img src="../../static/jino/img/social-icon-1.png"/></a></li>
+                    <li><a class="" href="#!"><img src="../../static/jino/img/social-icon-2.png"/></a></li>
+                    <li><a class="" href="#!"><img src="../../static/jino/img/social-icon-3.png"/></a></li>
+                </ul>
+            </div>
         </div>
-      </div>
-    </footer>
+    </div>
+</footer>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script type="text/javascript" src="../../static/jino/js/main.js"></script>
-  </body>
+
+<script src="https://code.jquery.com/jquery-3.4.0.js" integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="
+        crossorigin="anonymous"></script>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script type="text/javascript" src="../../static/jino/js/main.js"></script>
+</body>
 </html>
