@@ -21,8 +21,8 @@ from django.conf.urls import url, include
 
 urlpatterns = [
     url('admin/', admin.site.urls),
-    url('auth/', include('loginsys.urls')),
-    url('pool/', include('users.urls')),
+    url('auth', include('loginsys.urls')),
+    url('pool', include('users.urls')),
     url('', include('jino.urls'))
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

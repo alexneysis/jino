@@ -3,23 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="icon" href="/static/jino/img/favicon.png">
+    <style>
+        h2, label, input {
+            margin: 10px;
+        }
+
+        button {
+            width: 200px;
+        }
+
+        div {
+            margin: 200px 600px 200px 600px;
+        }
+    </style>
 </head>
 <body>
 
-<section>
-    <ul class="right">
-        {% if user.is_authenticated %}
-            <li><a href="/auth/logout">Выйти ({{ user.username }})</a></li>
-        {% else %}
-            <li><a href="/auth/login">Войти</a></li>
-        {% endif %}
-    </ul>
-</section>
-
-
 <div>
-    <h5>ЗАПОЛНИТЕ ФОРМУ</h5>
-    <p>Остальное сделаем мы</p>
+    <h2>Авторизируйтесь </h2>
     <form class="sendFormBlock" action="/auth/login" method="post">
         {% csrf_token %}
         <label>
@@ -40,91 +42,6 @@
         <button type="submit">Войти</button>
     </form>
 </div>
-
-<br>
-<br>
-<div>
-    <h5>ЗАПОЛНИТЕ ФОРМУ</h5>
-    <p>Остальное сделаем мы</p>
-    <form action="/auth/reg" method="post">
-        {% csrf_token %}
-        <label>
-            Логин
-            <br>
-            <input type="text" placeholder="Введите логин" name="username" id="username"/>
-            <br>
-        </label>
-        <label>
-            Пароль
-            <br>
-            <input type="password" placeholder="Введите пароль" name="password" id="password"/>
-            <br>
-        </label>
-        <label>
-            Имя
-            <br>
-            <input type="text" placeholder="Введите имя" name="name" id="name"/>
-            <br>
-        </label>
-        <label>
-            Почту
-            <br>
-            <input type="text" placeholder="Введите почту" name="mail" id="mail"/>
-            <br>
-        </label>
-        <button type="submit">Зарегистрироваться</button>
-    </form>
-</div>
-
-<br>
-<button onclick="loadSyn()">Загрузить sitemap sin!</button>
-<button onclick="loadAsyn()" id="button">Загрузить sitemap asyn!</button>
-
-<script>
-    function loadSyn() {
-        var xhr = new XMLHttpRequest();
-
-        xhr.open('GET', 'https://jino24.ru/sitemap.xml', false);
-        xhr.send();
-
-        if (xhr.status != 200) {
-            // обработать ошибку
-            alert('Ошибка ' + xhr.status + ': ' + xhr.statusText);
-        } else {
-            // вывести результат
-            alert(xhr.responseText);
-        }
-    }
-
-    function loadAsyn() {
-        var xhr = new XMLHttpRequest();
-
-        xhr.open('GET', 'phones.json', true);
-
-        xhr.send();
-
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState != 4) return;
-
-            button.innerHTML = 'Готово!';
-
-            if (xhr.status != 200) {
-                // обработать ошибку
-                alert(xhr.status + ': ' + xhr.statusText);
-            } else {
-                // вывести результат
-                alert(xhr.responseText);
-            }
-
-        }
-
-        button.innerHTML = 'Загружаю...';
-        button.disabled = true;
-    }
-
-
-</script>
-
 </body>
 </html>
 

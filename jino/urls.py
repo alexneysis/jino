@@ -21,5 +21,7 @@ from startup import settings
 
 urlpatterns = [
                   url('data', views.data),
+                  url('homework/request', views.get),
+                  url('homework', views.homework),
                   url('', views.home)
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

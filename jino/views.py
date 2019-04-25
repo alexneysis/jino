@@ -11,6 +11,14 @@ def home(request):
     return render(request, 'jino/index.html')
 
 
+def homework(request):
+    return render(request, 'homework/main.html')
+
+
+@csrf_exempt
+def get(request):
+    print("I get request: ", request.body)
+    return HttpResponse(status=200)
 
 
 def data(request):

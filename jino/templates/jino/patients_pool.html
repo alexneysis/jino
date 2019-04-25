@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
     <link rel="stylesheet" href="../../static/jino/css/style.css">
-
+    <link rel="icon" href="/static/jino/img/favicon.png">
     <title>Jino - home page</title>
 
 </head>
@@ -25,9 +25,10 @@
             <ul id="nav-mobile" class="col xl8 offset-xl2">
                 <li><a href="#" class="temp-text-dark-blue pageNavigation-text">О нас</a></li>
                 {% if user.is_authenticated %}
-                    <li><a href="/auth/logout" class="temp-text-dark-blue pageNavigation-text">Выйти ({{ user.username }})</a></li>
+                    <li><a href="/auth/logout" class="temp-text-dark-blue pageNavigation-text">Выйти
+                        ({{ user.username }})</a></li>
                 {% else %}
-                    <li><a href="/auth/ " class="temp-text-dark-blue pageNavigation-text">Войти</a></li>
+                    <li><a href="/auth" class="temp-text-dark-blue pageNavigation-text">Войти</a></li>
                 {% endif %}
                 <li><a href="#" class="temp-text-dark-blue pageNavigation-text"></a></li>
 
@@ -47,22 +48,28 @@
     </nav>
 </header>
 {% csrf_token %}
-<section class="patientsList">
-    <div class="container">
-        <h3 class="sectionHeader temp-text-dark-blue">Список нуждающихся в помощи</h3>
-        <div class="collection">
 
-            <a href="#!" class="collection-item"><span class="badge"><i class="material-icons temp-icon-green">brightness_1</i></span>Василий
-                Петрович</a>
-            <a href="#!" class="collection-item"><span class="badge"><i class="material-icons temp-icon-green">brightness_1</i></span>Иван
-                Васильевич</a>
-            <a href="#!" class="collection-item"><span class="badge"><i class="material-icons temp-icon-green">brightness_1</i></span>Лапкин</a>
-            <a href="#!" class="collection-item"><span class="badge"><i class="material-icons temp-icon-red">brightness_1</i></span>Еж</a>
-            <a href="#!" class="collection-item"><span class="badge"><i class="material-icons temp-icon-red">brightness_1</i></span>Иржан</a>
-            <a href="#!" class="collection-item"><span class="badge"><i class="material-icons temp-icon-red">brightness_1</i></span>Вы
-                какашки</a>
+
+<section class="patientsList">
+    {% if user.is_authenticated %}
+        <div class="container">
+            <h3 class="sectionHeader temp-text-dark-blue">Список нуждающихся в помощи</h3>
+            <div class="collection">
+
+                <a href="#!" class="collection-item"><span class="badge"><i class="material-icons temp-icon-green">brightness_1</i></span>Василий
+                    Петрович</a>
+                <a href="#!" class="collection-item"><span class="badge"><i class="material-icons temp-icon-green">brightness_1</i></span>Иван
+                    Васильевич</a>
+                <a href="#!" class="collection-item"><span class="badge"><i class="material-icons temp-icon-green">brightness_1</i></span>Лапкин</a>
+                <a href="#!" class="collection-item"><span class="badge"><i class="material-icons temp-icon-red">brightness_1</i></span>Еж</a>
+                <a href="#!" class="collection-item"><span class="badge"><i class="material-icons temp-icon-red">brightness_1</i></span>Иржан</a>
+                <a href="#!" class="collection-item"><span class="badge"><i class="material-icons temp-icon-red">brightness_1</i></span>Вы
+                    какашки</a>
+            </div>
         </div>
-    </div>
+    {% else %}
+        <h3 class="sectionHeader temp-text-dark-blue">Вам нужно войти в свою учетную запись</h3>
+    {% endif %}
 </section>
 
 <footer class="page-footer">
