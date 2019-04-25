@@ -593,6 +593,17 @@ left: 10px;
 cursor: pointer;
 }
 
+/*agreement.html*/
+.agreementText {
+  text-indent: 1.5em;
+  text-align: justify;
+  font-size: 24px;
+  line-height: 24px;
+  letter-spacing: 0.24px;
+}
+.agreementList {
+  list-style-type: disc;
+}
 
 
 @media screen and (max-width: 1400px) {
