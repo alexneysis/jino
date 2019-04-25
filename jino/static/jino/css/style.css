@@ -41,7 +41,8 @@ h2 {
   height: auto !important;
 }
 .pageNavigation-text {
-  padding-bottom: 6px;
+  padding: 0 0 6px 0 !important;
+  margin: 0 15px;
   font-size: 21px;
   font-weight: 400;
   line-height: 11px;
@@ -50,7 +51,7 @@ h2 {
   text-transform: none;
 }
 .pageNavigation-text:hover {
-  padding-bottom: 3px;
+  padding-bottom: 3px !important;
   border-bottom: 3px solid #fee96d;
   background-color: rgba(0,0,0,0);
 }
