@@ -55,6 +55,11 @@ h2 {
   border-bottom: 3px solid #fee96d;
   background-color: rgba(0,0,0,0);
 }
+.sidenavLink {
+  font-size: 18px !important;
+  letter-spacing: 0.18px;
+  color: #001d62 !important;
+}
 h3 {
   font-size: 1.17em;
 }
@@ -202,7 +207,6 @@ h3 {
 
 /* FAQ */
 .faqSection {
-  max-height: 1050px;
   overflow: hidden;
   /* margin: -150px 0 -540px 0; old variation*/
   margin: -150px 0 -150px 0;
@@ -329,6 +333,7 @@ letter-spacing: 0.2px;
   position: relative;
   bottom: 100px;
   right: 20%;
+  margin-bottom: -600px;
   width: 600px;
   height: 600px;
   background-color: #8dd9ff;
@@ -388,8 +393,8 @@ letter-spacing: 0.2px;
 }
 .decore-5 {
   position: relative;
-  /* bottom: 335px; old varietion*/
-  bottom: 475px;
+  bottom: 25px;
+  margin-bottom: -83px;
   left: 85%;
   z-index: 991;
 }
