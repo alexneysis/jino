@@ -18,7 +18,7 @@ class User(models.Model):
     patronymic = models.CharField(max_length=30, blank=True, null=True)
     phone = models.CharField(max_length=19)
     email = models.CharField(max_length=255, blank=True, null=True)
-    status = models.ForeignKey(Status, on_delete=models.CASCADE)
+    status = models.ForeignKey(Status, on_delete=models.CASCADE, null=True)
 
 
 class Clinic(models.Model):
