@@ -10,33 +10,33 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
     <link rel="stylesheet" href="../../static/jino/css/style.css">
-    <link rel="icon" href="/static/jino/img/favicon.png">
+    <link rel="icon" href="../../static/jino/img/favicon.png">
     <title>Jino - home page</title>
 
 </head>
 <body>
 
 <header>
-    <nav class="pageNavigation N/A transparent z-depth-0" style="margin-bottom:0;">
+    <nav class="pageNavigation N/A transparent z-depth-0 foregroundForCircle">
         <div class="nav-wrapper container row valign-wrapper">
-            <a href="#" class="brand-logo col xl2">
+            <a href="#" class="brand-logo col left">
                 <img src="../../static/jino/img/logo-white-bg.png"/>
             </a>
-            <ul id="nav-mobile" class="col xl8 offset-xl2">
+            <ul id="nav-mobile" class="col m6 l7 offset-m2 offset-l2 offset-xl3 hide-on-small-only">
                 <li><a href="#" class="temp-text-dark-blue pageNavigation-text">О нас</a></li>
                 {% if user.is_authenticated %}
-                    <li><a href="/auth/logout" class="temp-text-dark-blue pageNavigation-text">Выйти
-                        ({{ user.username }})</a></li>
+                <li><a href="/auth/logout" class="temp-text-dark-blue pageNavigation-text">Выйти
+                    ({{ user.username }})</a></li>
                 {% else %}
-                    <li><a href="/auth" class="temp-text-dark-blue pageNavigation-text">Войти</a></li>
+                <li><a href="/auth" class="temp-text-dark-blue pageNavigation-text">Войти</a></li>
                 {% endif %}
-                <li><a href="#" class="temp-text-dark-blue pageNavigation-text"></a></li>
-
+                <li><a href="#faq" class="temp-text-dark-blue pageNavigation-text"></a></li>
             </ul>
-            <div class="cityChooser col xl2 valign-wrapper">
+            <div class="cityChooser col s5 m4 l3 xl2 offset-s3 valign-wrapper">
                 <!-- Dropdown Trigger -->
                 <a class='temp-inline-dropdown dropdown-trigger btn N/A transparent temp-text-dark-blue pageNavigation-text z-depth-0'
-                   href='#' data-target='dropdown1'>Город<i class="temp-inline-icon material-icons">arrow_drop_down</i></a>
+                   href='#' data-target='dropdown1'>Пермь<i
+                        class="temp-inline-icon material-icons">arrow_drop_down</i></a>
 
                 <!-- Dropdown Structure -->
                 <ul id='dropdown1' class='dropdown-content'>
@@ -44,6 +44,9 @@
                     <li><a href="#!">Екатеринбург</a></li>
                 </ul>
             </div>
+            <a href="#" data-target="mobile-demo"
+               class="sidenav-trigger temp-text-dark-blue col s1 offset-s2 hide-on-med-and-up"><i
+                    class="material-icons">menu</i></a>
         </div>
     </nav>
 </header>
@@ -56,21 +59,47 @@
             <h3 class="sectionHeader temp-text-dark-blue">Список нуждающихся в помощи</h3>
             <div class="collection">
 
-                <a href="#!" class="collection-item"><span class="badge"><i class="material-icons temp-icon-green">brightness_1</i></span>Василий
-                    Петрович</a>
-                <a href="#!" class="collection-item"><span class="badge"><i class="material-icons temp-icon-green">brightness_1</i></span>Иван
-                    Васильевич</a>
-                <a href="#!" class="collection-item"><span class="badge"><i class="material-icons temp-icon-green">brightness_1</i></span>Лапкин</a>
-                <a href="#!" class="collection-item"><span class="badge"><i class="material-icons temp-icon-red">brightness_1</i></span>Еж</a>
-                <a href="#!" class="collection-item"><span class="badge"><i class="material-icons temp-icon-red">brightness_1</i></span>Иржан</a>
-                <a href="#!" class="collection-item"><span class="badge"><i class="material-icons temp-icon-red">brightness_1</i></span>Вы
-                    какашки</a>
+                <a href="#modal1" class="collection-item modal-trigger">
+                    <span class="badge"><i class="material-icons temp-icon-green">brightness_1</i></span>Василий
+                    Петрович
+                </a>
+                <a href="#modal1" class="collection-item modal-trigger">
+                    <span class="badge"><i class="material-icons temp-icon-green">brightness_1</i></span>Иван
+                    Васильевич
+                </a>
+                <a href="#modal1" class="collection-item modal-trigger">
+                    <span class="badge"><i class="material-icons temp-icon-green">brightness_1</i></span>Лапкин
+                </a>
+                <a href="#modal1" class="collection-item modal-trigger">
+                    <span class="badge"><i class="material-icons temp-icon-red">brightness_1</i></span>Еж
+                </a>
+                <a href="#modal1" class="collection-item modal-trigger">
+                    <span class="badge"><i class="material-icons temp-icon-red">brightness_1</i></span>Иржан
+                </a>
+                <a href="#modal1" class="collection-item modal-trigger">
+                    <span class="badge"><i class="material-icons temp-icon-red">brightness_1</i></span>Вы
+                    какашки
+                </a>
             </div>
         </div>
     {% else %}
         <h3 class="sectionHeader temp-text-dark-blue">Вам нужно войти в свою учетную запись</h3>
     {% endif %}
+
 </section>
+
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <h4>ИМЯ НАЖАТОГО ЧЕЛА</h4>
+        <p><b>Телефон:</b> <a href="tel:ТЕЛЕФОН">ЕГО ТЕЛЕФОН</a></p>
+        <p><b>E-mail:</b> <a href="mailto:ПОЧТА">ЕГО ПОЧТА</a></p>
+    </div>
+    <div class="modal-footer">
+        <a class="waves-effect waves-light btn teal accent-3">Записали</a>
+        <a class="waves-effect waves-light btn red accent-4">Не записали</a>
+        <a class="waves-effect waves-light btn grey">Неадекват</a>
+    </div>
+</div>
 
 <footer class="page-footer">
     <div class="container">

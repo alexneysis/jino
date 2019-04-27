@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f7f6d588-dfb4-4956-8a3f-9582ac890f18" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jino/static/jino/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/jino/static/jino/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jino/templates/jino/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/jino/templates/jino/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jino/templates/jino/agreement.html" beforeDir="false" afterPath="$PROJECT_DIR$/jino/templates/jino/agreement.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jino/templates/jino/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/jino/templates/jino/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jino/templates/jino/patients_pool.html" beforeDir="false" afterPath="$PROJECT_DIR$/jino/templates/jino/patients_pool.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,17 +19,35 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jino/templates/jino/agreement.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4092">
-              <caret line="185" column="13" selection-start-line="185" selection-start-column="13" selection-end-line="185" selection-end-column="13" />
+            <state relative-caret-position="286">
+              <caret line="119" column="29" lean-forward="true" selection-start-line="119" selection-start-column="29" selection-end-line="119" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/jino/templates/jino/patients_pool.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="484">
+              <caret line="46" column="49" lean-forward="true" selection-start-line="46" selection-start-column="49" selection-end-line="46" selection-end-column="49" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jino/templates/jino/patients_pool.html">
+        <entry file="file://$PROJECT_DIR$/jino/templates/jino/about.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1804">
-              <caret line="82" column="29" selection-start-line="82" selection-start-column="29" selection-end-line="82" selection-end-column="29" />
+            <state relative-caret-position="660">
+              <caret line="45" column="9" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jino/static/jino/js/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="44">
+              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
@@ -39,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jino/templates/jino/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1464">
-              <caret line="376" column="102" selection-start-line="376" selection-start-column="102" selection-end-line="376" selection-end-column="102" />
+            <state relative-caret-position="655">
+              <caret line="138" column="13" lean-forward="true" selection-start-line="111" selection-start-column="4" selection-end-line="138" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -63,9 +85,12 @@
       <find>pageNavigation-text</find>
       <find>/static</find>
       <find>decore</find>
+      <find>/static/</find>
+      <find>&quot;/static/</find>
     </findStrings>
     <replaceStrings>
       <replace>../../static</replace>
+      <replace>&quot;../../static/</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -100,9 +125,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/jino/templates/jino/agreement.html" />
         <option value="$PROJECT_DIR$/jino/static/jino/css/style.css" />
+        <option value="$PROJECT_DIR$/jino/static/jino/js/main.js" />
         <option value="$PROJECT_DIR$/jino/templates/jino/index.html" />
+        <option value="$PROJECT_DIR$/jino/templates/jino/agreement.html" />
+        <option value="$PROJECT_DIR$/jino/templates/jino/about.html" />
+        <option value="$PROJECT_DIR$/jino/templates/jino/patients_pool.html" />
       </list>
     </option>
   </component>
@@ -154,6 +182,14 @@
               <item name="jino" type="b2602c69:ProjectViewProjectNode" />
               <item name="jino" type="462c0819:PsiDirectoryNode" />
               <item name="jino" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="jino" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jino" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jino" type="462c0819:PsiDirectoryNode" />
+              <item name="jino" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -200,12 +236,12 @@
       <updated>1556123114716</updated>
       <workItem from="1556123116847" duration="1784000" />
       <workItem from="1556212619883" duration="7265000" />
-      <workItem from="1556354547894" duration="270000" />
+      <workItem from="1556354547894" duration="6991000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9319000" />
+    <option name="totallyTimeSpent" value="16040000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -218,6 +254,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.124200426" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -231,7 +268,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49946696" weight="0.50666666" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49946696" weight="0.26977247" />
       <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49946696" visible="true" weight="0.19609967" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50053304" side_tool="true" weight="0.32936078" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -251,20 +288,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jino/templates/jino/agreement.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4092">
-          <caret line="185" column="13" selection-start-line="185" selection-start-column="13" selection-end-line="185" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jino/templates/jino/patients_pool.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1804">
-          <caret line="82" column="29" selection-start-line="82" selection-start-column="29" selection-end-line="82" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jino/static/jino/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1320">
@@ -272,10 +295,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/jino/static/jino/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jino/templates/jino/agreement.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="119" column="29" lean-forward="true" selection-start-line="119" selection-start-column="29" selection-end-line="119" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jino/templates/jino/clinic_reaction.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1562">
+          <caret line="114" column="25" selection-start-line="114" selection-start-column="25" selection-end-line="114" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jino/templates/jino/about.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="45" column="9" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/jino/templates/jino/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1464">
-          <caret line="376" column="102" selection-start-line="376" selection-start-column="102" selection-end-line="376" selection-end-column="102" />
+        <state relative-caret-position="655">
+          <caret line="138" column="13" lean-forward="true" selection-start-line="111" selection-start-column="4" selection-end-line="138" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jino/templates/jino/patients_pool.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="46" column="49" lean-forward="true" selection-start-line="46" selection-start-column="49" selection-end-line="46" selection-end-column="49" />
         </state>
       </provider>
     </entry>

@@ -1,9 +1,11 @@
 $(document).ready(function () {
-    $('.dropdown-trigger').dropdown();
+    // $('.dropdown-trigger').dropdown();
 
     $('.sidenav').sidenav();
 
     $('.collapsible').collapsible();
+
+    $('.modal').modal();
 });
 
 $(".collection-item").on("click", function () {
