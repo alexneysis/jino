@@ -6,13 +6,24 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
 
+from users.forms import FormClient
+from users.models import Client, Status
+
 
 def home(request):
     return render(request, 'jino/index.html')
 
 
-def homework(request):
-    return render(request, 'homework/main.html')
+def task_3(request):
+    return render(request, 'homework/task_3.html')
+
+
+def task_4(request):
+    return render(request, 'homework/task_4.html')
+
+
+def about(request):
+    return render(request, 'jino/about.html')
 
 
 @csrf_exempt
@@ -22,6 +33,37 @@ def get(request):
 
 
 def data(request):
+    print("In data method")
+    args = {}
+    if request.method == "POST":
+        try:
+            form = FormClient(request.POST)
+            if form.is_valid():
+                FIO = form.cleaned_data["FIO"]
+                phone = form.cleaned_data["phone"]
+                email = form.cleaned_data["email"]
+                first_name = FIO.strip().split(" ")[0]
+                surname = FIO.strip().split(" ")[1]
+                patronymic = ""
+                status = Status.objects.get(pk=10)
+                if len(FIO.strip().split(" ")) == 3:
+                    patronymic = FIO.strip().split(" ")[2]
+                print("Create all fields")
+                client = Client(first_name=first_name, surname=surname, patronymic=patronymic, phone=phone, email=email,
+                                status=status)
+                print("don't save object", client)
+                client.save()
+                print("save object", client)
+        except Exception as e:
+            print(e)
+    else:
+        form = FormClient()
+        args["login_error"] = "Используйте метод POST для отправки"
+    print("This all")
+    return render(request, "jino/index.html", {"from": form})
+
+
+def data_post(request):
     # if this is a POST request we need to process the form data
     # if request.method == 'POST':
     print("Input to send mail")

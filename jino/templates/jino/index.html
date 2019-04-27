@@ -105,7 +105,7 @@
 
 <!-- menu for mobile -->
 <ul class="sidenav" id="mobile-demo">
-    <li><a href="#">О нас</a></li>
+    <li><a href="/about">О нас</a></li>
     <li><a href="#">Соглашение</a></li>
 </ul>
 <section class="mainSection">
@@ -116,7 +116,7 @@
                     <img src="/static/jino/img/logo-white-bg.png"/>
                 </a>
                 <ul id="nav-mobile" class="col s5 m6 l7 offset-s3 offset-l2 offset-xl3 hide-on-small-only">
-                    <li><a href="#" class="temp-text-dark-blue pageNavigation-text">О нас</a></li>
+                    <li><a href="/about" class="temp-text-dark-blue pageNavigation-text">О нас</a></li>
                     <li><a href="#" class="temp-text-dark-blue pageNavigation-text">Соглашение</a></li>
                 </ul>
                 <div class="cityChooser col s7 m4 l3 xl2 offset-s3 valign-wrapper">
@@ -358,28 +358,26 @@
                 <div class="closeIcon right">
                     <img src="/static/jino/img/close-icon.png"/>
                 </div>
-                <form>
-                    <label class="popupLabel">
+                {{ form.non_field_errors }}
+                <form method="post" action="/data">
+                    {% csrf_token %}
+                    {{ form.FIO.errors }}
+                    <label for="FIO" class="popupLabel">
                         ФИО
-                        <input type="text" class="popupInput"/>
+                        <input type="text" class="popupInput" name="FIO"/>
                     </label>
                     <div class="row">
-                        <label class="popupLabel col s6">
+                        {{ form.phone.errors }}
+                        <label for="phone" class="popupLabel col s6">
                             Телефон
-                            <input type="tel" class="popupInput"/>
+                            <input type="tel" class="popupInput" name="phone"/>
                         </label>
-                        <label class="popupLabel col s6">
+                        {{ form.email.errors }}
+                        <label for="email" class="popupLabel col s6">
                             E-mail
-                            <input type="email" class="popupInput"/>
+                            <input type="email" class="popupInput" name="email"/>
                         </label>
                     </div>
-                    <label class="popupLabel">
-                        Адрес
-                        <input type="text" class="popupInput"/>
-                    </label>
-                    <p class="popupAddrDesc">
-                        Укажите где вы сейчас находитесь чтобы мы нашли ближайшую к вам стоматологию
-                    </p>
                     <div class="row center-align">
                         <button type="submit" class="popupBtn temp-text-dark-blue">Отправить</button>
                     </div>
