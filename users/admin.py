@@ -1,8 +1,8 @@
 from django.contrib import admin
 
-from users.models import User, Clinic
+from users.models import Client, Clinic
 
 # Register your models here.
 
-admin.site.register(User)
+admin.site.register(Client)
 admin.site.register(Clinic)

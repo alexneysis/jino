@@ -8,9 +8,9 @@ class Status(models.Model):
     status = models.IntegerField(primary_key=True)
 
 
-class User(models.Model):
+class Client(models.Model):
     class Meta:
-        db_table = "users"
+        db_table = "clients"
 
     id_user = models.AutoField(primary_key=True)
     surname = models.CharField(max_length=30)
@@ -36,7 +36,7 @@ class History(models.Model):
         db_table = "history"
 
     id_history = models.AutoField(primary_key=True)
-    id_user = models.ForeignKey(User, on_delete=models.CASCADE)
+    id_user = models.ForeignKey(Client, on_delete=models.CASCADE)
     id_clinic = models.ForeignKey(Clinic, on_delete=models.CASCADE)
     status_before = models.ForeignKey(Status, on_delete=models.CASCADE, related_name='status_before')
     status_after = models.ForeignKey(Status, on_delete=models.CASCADE, related_name='status_after')
