@@ -10,7 +10,7 @@ $(document).ready(function () {
 
 $(".collection-item").on("click", function () {
     var result = $(this).text().substring(12);
-    var URL = "https://jino24.ru/pool/send";
+    var URL = "https://jino24.ru/clinic/send";
     var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
     console.log(result);
 

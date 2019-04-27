@@ -27,7 +27,7 @@ def login(request):
                 logging.debug(u"Go to user is not None")
                 auth.login(request, users)
                 logging.debug(u"Login user")
-                return redirect('/pool')
+                return redirect('/clinic')
             else:
                 args['login_error'] = "Пользователь не найден"
                 return render(request, 'loginsys/login.html', args)
@@ -35,7 +35,7 @@ def login(request):
             print(e)
             return render(request, 'loginsys/error.html')
     else:
-        return redirect('/pool')
+        return redirect('/clinic')
 
 
 def auth_rend(request):
@@ -53,4 +53,4 @@ def logout(request):
         print(e)
         return render(request, 'loginsys/error.html')
     logging.debug(u"It is end")
-    return redirect('/pool')
+    return redirect('/clinic')
