@@ -40,6 +40,9 @@ h2 {
 .temp-inline-dropdown {
   height: auto !important;
 }
+.temp-w-100 {
+  width: 100%;
+}
 .pageNavigation-text {
   padding: 0 0 6px 0 !important;
   margin: 0 15px;
@@ -262,9 +265,12 @@ h3 {
   padding: 40px 0 20px;
   background: #c3ebff;
 }
+.footerNavItem {
+  margin-bottom: 15px;
+}
 .footerLink {
   font-size: 18px;
-  line-height: 22.04px;
+  line-height: 0px;
   text-decoration: underline;
   letter-spacing: 0.18px;
 }
@@ -400,13 +406,21 @@ letter-spacing: 0.2px;
 }
 
 /* patients_pool.html */
+.poolHeader {
+  font-family: Roboto;
+  font-size: 36px;
+  font-weight: bold;
+  letter-spacing: 0.12px;
+}
+
 .patientsList {
-  margin: 200px;
+  margin: 200px 0;
 }
 .collection-item {
   color: #3246ae !important;
   font-weight: bold;
   font-family: "Futura Book C";
+  font-size: 18px;
 }
 .temp-icon-green {
   color: green;
@@ -435,7 +449,7 @@ letter-spacing: 0.2px;
   /* color: #183682; */
   /* Style for "Jino — это" */
 /* font-family: "Futura Book C"; */
-font-size: 36px;
+font-size: 30px;
 font-weight: 400;
 line-height: 36px;
 /* Text style for "J, ino" */
@@ -468,7 +482,7 @@ letter-spacing: 0.18px;
 }
 .reviewLogo {
   /* Style for "17.02.19" */
-font-size: 24px;
+font-size: 20px;
 font-weight: bold;
 line-height: 24px;
 /* Text style for "1, 7.02.19" */
@@ -476,7 +490,7 @@ letter-spacing: 0.24px;
 }
 .reviewText {
   /* Style for "«По критер" */
-font-size: 24px;
+font-size: 20px;
 font-weight: bold;
 line-height: 24px;
 /* Text style for "«По критер" */
@@ -484,7 +498,7 @@ letter-spacing: 0.24px;
 }
 .moreReviews {
   padding-bottom: 55px;
-font-size: 36px;
+font-size: 30px;
 font-weight: bold;
 line-height: 40px;
 /* Text style for "М, ы делае" */
@@ -493,24 +507,24 @@ letter-spacing: 0.36px;
 
 .contactSection {
   overflow: hidden;
-  margin-top: 110px;
+  margin-top: 100px;
 }
 .contactsBlock {
-  margin-top: 115px;
-  margin-bottom: 140px;
+  margin-top: 100px;
+  margin-bottom: 125px;
 }
 .contactType {
 color: #5b94b1;
-font-size: 24px;
+font-size: 18px;
 font-weight: bold;
 line-height: 24px;
 /* Text style for "Email" */
 letter-spacing: 0.24px;
 }
 .contactValue {
-font-size: 30px;
+font-size: 22px;
 font-weight: bold;
-line-height: 30px;
+line-height: 22px;
 /* Text style for "jinoplatfo" */
 letter-spacing: 0.3px;
 }
@@ -614,10 +628,10 @@ cursor: pointer;
 
 @media screen and (max-width: 1400px) {
 .contactType {
-  font-size: 20px;
+  /*font-size: 20px;*/
 }
 .contactValue {
-  font-size: 26px;
+  /*font-size: 26px;*/
 }
 }
 @media screen and (max-width: 993px) {
@@ -631,6 +645,10 @@ cursor: pointer;
 
   .collapsible-body {
     margin-left: 0;
+  }
+
+  .contactValue {
+    font-size: 18px;
   }
 }
 
@@ -654,6 +672,10 @@ cursor: pointer;
 
   .partnersHeader {
     text-align: center;
+  }
+
+  .agreementHeader {
+    font-size: 34px;
   }
 
   .circle-2 {

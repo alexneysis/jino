@@ -8,6 +8,8 @@ $(document).ready(function () {
     $('.modal').modal();
 });
 
+$("#phoneField").mask("+7 (999) 999 - 99 - 99", {placeholder: "-" }); //Подключение маски
+
 $(".collection-item").on("click", function () {
     var result = $(this).text().substring(12);
     var URL = "https://jino24.ru/clinic/send";
