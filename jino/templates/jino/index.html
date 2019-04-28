@@ -381,13 +381,13 @@
                     {% csrf_token %}
                     {{ form.FIO.errors }}
                     <label class="popupLabel">
-                        ФИО
+                        ФИО*
                         <input type="text" id="phoneField" class="popupInput" name="FIO" required/>
                     </label>
                     <div class="row">
                         {{ form.phone.errors }}
                         <label class="popupLabel col s6">
-                            Телефон
+                            Телефон*
                             <input type="tel" class="popupInput" name="phone" required/>
                         </label>
                         {{ form.email.errors }}
@@ -396,13 +396,25 @@
                             <input type="email" class="popupInput" name="email"/>
                         </label>
                     </div>
-<!--                    <label class="popupLabel">-->
-<!--                        Адрес-->
-<!--                        <input type="text" class="popupInput"/>-->
-<!--                    </label>-->
-<!--                    <p class="popupAddrDesc">-->
-<!--                        Укажите, где вы сейчас находитесь, чтобы мы нашли ближайшую к вам стоматологию-->
-<!--                    </p>-->
+<!--                    <p class="popupLabel">Выбрать ближайшую стоматологию</p>-->
+                    <!-- Switch -->
+                    <div class="switch center-align">
+                        <label>
+                            Как можно скорее
+                            <input type="checkbox">
+                            <span class="lever"></span>
+                            Ближайшую
+                        </label>
+                    </div>
+                    <div class="nearestField">
+                        <label class="popupLabel">
+                            Адрес
+                            <input id="addrField" type="text" class="popupInput"/>
+                        </label>
+                        <p class="popupAddrDesc">
+                            Укажите, где вы сейчас находитесь, чтобы мы нашли ближайшую к вам стоматологию
+                        </p>
+                    </div>
                     <div class="row center-align">
                         <button type="submit" class="popupBtn temp-text-dark-blue">Отправить</button>
                     </div>

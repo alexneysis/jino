@@ -585,6 +585,12 @@ letter-spacing: 1.1px;
 border-radius: 13px !important;
 background-color: #ffffff !important;
 }
+.switch {
+  margin-bottom: 20px;
+}
+.nearestField {
+  display: none;
+}
 .popupAddrDesc {
   margin: 10px 0 20px;
 font-family: Roboto;

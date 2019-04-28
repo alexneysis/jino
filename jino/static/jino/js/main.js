@@ -8,6 +8,22 @@ $(document).ready(function () {
     $('.modal').modal();
 });
 
+var nearest = false;
+var nearestClick = 0;
+$(".switch").on("click", function(e) {
+    nearestClick++;
+    if (nearestClick == 2) {
+        console.log("НАЖАЛИ");
+        nearest = !nearest;
+        if (nearest) {
+            $(".nearestField").show();
+        } else {
+            $(".nearestField").hide();
+        }
+        nearestClick = 0;
+    }
+});
+
 $("#phoneField").mask("+7 (999) 999 - 99 - 99", {placeholder: "-" }); //Подключение маски
 
 $(".collection-item").on("click", function () {
