@@ -6,6 +6,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
 
+import secret
 from users.forms import FormClient
 from users.models import Client, Status
 
@@ -57,7 +58,8 @@ def data(request):
                                 status=status)
                 print("don't save object", client)
                 client.save()
-                print("save object", client)
+                print("save object")
+                data_post(request, FIO, phone, email)
         except Exception as e:
             print(e)
     else:
@@ -67,7 +69,7 @@ def data(request):
     return render(request, "jino/index.html", {"from": form})
 
 
-def data_post(request):
+def data_post(request, FIO, phone, email):
     # if this is a POST request we need to process the form data
     # if request.method == 'POST':
     print("Input to send mail")
@@ -75,13 +77,12 @@ def data_post(request):
     mail_receiver = "sorokin.a.n.post@gmail.com"
     mail_sender = "Jino.platform@gmail.com"
     username = "Jino.platform@gmail.com"
-    password = "546879Jino"
+    password = secret.PASSWORD_MAIL
     server = smtplib.SMTP('smtp.gmail.com:587')
 
     # Формируем тело письма
     subject = u'Запись'
-    print("FIO: , " + str(request.GET["FIO"]) + ". phone: " + str(request.GET["PHONE"]) + ", mail: " + str(
-        request.GET["MAIL"]))
+    print("FIO: , " + str(FIO) + ". phone: " + str(phone) + ", mail: " + str(email))
 
     html = """\
     <!doctype html>
@@ -103,7 +104,7 @@ def data_post(request):
                 </tr>
                 <tr>
                   <td style="padding: 20px 20px 0 20px; font-weight: bold;" colspan="2" align="center">
-                """ + str(request.GET["FIO"]) + """
+                """ + str(FIO) + """
                   </td>
                   <td></td>
                 </tr>
@@ -116,10 +117,10 @@ def data_post(request):
 
                 <tr>
                   <td style="padding: 30px">
-                  Телефон: """ + str(request.GET["PHONE"]) + """
+                  Телефон: """ + str(phone) + """
                   </td>
                   <td style="padding: 30px">
-                  E-mail: """ + str(request.GET["MAIL"]) + """
+                  E-mail: """ + str(email) + """
                   </td>
                 </tr>
               </table>
