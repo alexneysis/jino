@@ -21,6 +21,8 @@ def task_3(request):
 def task_4(request):
     return render(request, 'homework/task_4.html')
 
+def agreement(request):
+    return render(request, 'jino/agreement.html')
 
 def about(request):
     return render(request, 'jino/about.html')
@@ -43,11 +45,13 @@ def data(request):
                 phone = form.cleaned_data["phone"]
                 email = form.cleaned_data["email"]
                 first_name = FIO.strip().split(" ")[0]
-                surname = FIO.strip().split(" ")[1]
+                surname = ""
+                if len(FIO.strip().split(" ")) >= 2:
+                    surname = FIO.strip().split(" ")[1]
                 patronymic = ""
-                status = Status.objects.get(pk=10)
-                if len(FIO.strip().split(" ")) == 3:
+                if len(FIO.strip().split(" ")) >= 3:
                     patronymic = FIO.strip().split(" ")[2]
+                status = Status.objects.get(pk=10)
                 print("Create all fields")
                 client = Client(first_name=first_name, surname=surname, patronymic=patronymic, phone=phone, email=email,
                                 status=status)
