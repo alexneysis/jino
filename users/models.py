@@ -16,9 +16,10 @@ class Client(models.Model):
     surname = models.CharField(max_length=30, null=True)
     first_name = models.CharField(max_length=30)
     patronymic = models.CharField(max_length=30, blank=True, null=True)
-    phone = models.CharField(max_length=19)
+    phone = models.CharField(max_length=50)
     email = models.CharField(max_length=255, blank=True, null=True)
     status = models.ForeignKey(Status, on_delete=models.CASCADE, null=True)
+    address = models.CharField(max_length=200, null=True)
 
 
 class Clinic(models.Model):

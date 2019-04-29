@@ -18,13 +18,10 @@ from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.contrib import admin
 
-from chat import views
-
 urlpatterns = [
                   url('admin/', admin.site.urls),
                   url('auth', include('loginsys.urls')),
                   url('clinic', include('users.urls')),
-                  url('socket', views.socket),
                   url('', include('jino.urls'))
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
