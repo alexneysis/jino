@@ -177,9 +177,9 @@
 
 <div id="modal1" class="modal">
     <div class="modal-content">
-        <h4>ИМЯ НАЖАТОГО ЧЕЛА</h4>
-        <p><b>Телефон:</b> <a href="tel:ТЕЛЕФОН">ЕГО ТЕЛЕФОН</a></p>
-        <p><b>E-mail:</b> <a href="mailto:ПОЧТА">ЕГО ПОЧТА</a></p>
+        <h4 id="patientName"></h4>
+        <p><b>Телефон:</b> <a id="patientPhone"></a></p>
+        <p><b>E-mail:</b> <a id="patientEmail"></a></p>
     </div>
     <div class="modal-footer">
         <a class="waves-effect waves-light btn teal accent-3">Записали</a>
@@ -238,8 +238,11 @@
 </footer>
 
 <script>
+    var JSONobjects;
+
     var createList = function (responseText) {
         JSONobjects = JSON.parse(responseText);
+
 
         for (let i = 0; i < JSONobjects.length; i++) {
             let listElement = document.createElement("a");

@@ -24,7 +24,7 @@ $(".switch").on("click", function(e) {
     }
 });
 
-$("#phoneField").mask("+7 (999) 999 - 99 - 99", {placeholder: "-" }); //Подключение маски
+// $("#phoneField").mask("+7 (999) 999 - 99 - 99", {placeholder: "-" }); //Подключение маски
 
 $(".collection-item").on("click", function () {
     var result = $(this).text().substring(12);
@@ -79,4 +79,20 @@ $(".popupFormBlock").on("click", function () {
 
 $(".closeIcon").on("click", function () {
     closeIconFlag = true;
+});
+
+//Обработка кликов в pool
+$(".collection-item").on("click", function () {
+    let itemId = $(this).attr("id");
+    let objectId = itemId.substring(10);
+    console.log(objectId);
+    for (let j = 0; j < JSONobjects.length; j++) {
+       if (JSONobjects[j].pk == objectId) {
+           $("#patientName").text(JSONobjects[j].fields.first_name + " " + JSONobjects[j].fields.surname + " " + JSONobjects[j].fields.patronymic);
+           $("#patientPhone").attr("href", "tel:" + JSONobjects[j].fields.phone);
+           $("#patientPhone").text(JSONobjects[j].fields.phone);
+           $("#patientEmail").attr("href", "mailto:" + JSONobjects[j].fields.email);
+           $("#patientEmail").text(JSONobjects[j].fields.email);
+       }
+   }
 });
