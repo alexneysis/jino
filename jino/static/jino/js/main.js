@@ -85,7 +85,6 @@ $(".closeIcon").on("click", function () {
 $(".collection-item").on("click", function () {
     let itemId = $(this).attr("id");
     let objectId = itemId.substring(10);
-    console.log(objectId);
     for (let j = 0; j < JSONobjects.length; j++) {
        if (JSONobjects[j].pk == objectId) {
            $("#patientName").text(JSONobjects[j].fields.first_name + " " + JSONobjects[j].fields.surname + " " + JSONobjects[j].fields.patronymic);
