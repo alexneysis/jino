@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Обмен сообщениями в режиме реального времени</title>
+</head>
+<body>
+<script>
+    let localMessages = [];
+
+    var xhr = new XMLHttpRequest();
+    var URL = "https://jino24.ru/clinic/send";
+    xhr.open('GET', URL, false);
+    xhr.send();
+    if (xhr.status != 200) {
+        alert(xhr.status + ': ' + xhr.statusText);
+    } else {
+        alert("Initial " + xhr.responseText);
+    }
+
+    // начальное обновление локального сообщения
+    //  axios.get('https://jino24.ru/clinic/send')
+    //      .then(({data}) => localMessages = data.messages);
+
+    // обновляем список сообщений
+    const updateMessages = () => {
+//        axios.get('https://jino24.ru/clinic/send')
+//            .then(({data}) => {
+//                const difference = data.messages.splice(localMessages.length);
+//                difference.forEach(message => {
+//                    console.log(message);
+//                    localMessages.push(message);
+//                });
+//            })
+//            .catch(console.log);
+        xhr.open('GET', URL, false);
+        xhr.send();
+        if (xhr.status != 200) {
+            alert(xhr.status + ': ' + xhr.statusText);
+        } else {
+            alert("Update " + xhr.responseText);
+        }
+    }
+
+    // отправляем сообщение
+    const sendMessage = text => {
+        //   axios.post('https://jino24.ru/clinic/send', {text});
+        var URL = "https://jino24.ru/homework/request";
+        xhr.open('POST', URL, false);
+        xhr.setRequestHeader("content-type", "text/xml");
+        xhr.send("comment=Hello, World!");
+        if (xhr.status != 200) {
+            alert(xhr.status + ': ' + xhr.statusText);
+        }
+    }
+    // каждые 200 мс проверяем, есть ли новые сообщения
+    setInterval(updateMessages, 1000 * 60);
+</script>
+</body>
+</html>

@@ -38,8 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'jino.apps.JinoConfig',
     'loginsys',
-    'users',
-    'chat'
+    'users'
 ]
 
 MIDDLEWARE = [
@@ -85,13 +84,6 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '',
     }
-}
-
-CHANNEL_LAYERS = {
-    'default': {
-        'BACKEND': 'asgiref.inmemory',
-        'ROUTING': 'jino.routinng.py',
-    },
 }
 
 # Password validation

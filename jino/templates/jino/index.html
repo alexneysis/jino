@@ -303,15 +303,15 @@
                             class="temp-text-dark-blue temp-text-underline" href="mailto:jinoplatform@gmail.com">jinoplatform@gmail.com</a></span>
                     </div>
                 </li>
-<!--                Пример старого элемента чтобы можно было вернуться-->
-<!--                <li>-->
-<!--                    <div class="temp-text-dark-blue collapsible-header"><i-->
-<!--                            class="faqArrow temp-inline-icon material-icons">arrow_drop_down</i><span-->
-<!--                            class="faqQuestion">Как стать партнером Jino?</span></div>-->
-<!--                    <div class="collapsible-body temp-text-dark-blue"><span>Все вопросы по партнерской программе нашего сайта можно задать Сатюкову Станиславу: <a-->
-<!--                            class="temp-text-dark-blue temp-text-underline" href="mailto:jinoplatform@gmail.com">jinoplatform@gmail.com</a></span>-->
-<!--                    </div>-->
-<!--                </li>-->
+                <!--                Пример старого элемента чтобы можно было вернуться-->
+                <!--                <li>-->
+                <!--                    <div class="temp-text-dark-blue collapsible-header"><i-->
+                <!--                            class="faqArrow temp-inline-icon material-icons">arrow_drop_down</i><span-->
+                <!--                            class="faqQuestion">Как стать партнером Jino?</span></div>-->
+                <!--                    <div class="collapsible-body temp-text-dark-blue"><span>Все вопросы по партнерской программе нашего сайта можно задать Сатюкову Станиславу: <a-->
+                <!--                            class="temp-text-dark-blue temp-text-underline" href="mailto:jinoplatform@gmail.com">jinoplatform@gmail.com</a></span>-->
+                <!--                    </div>-->
+                <!--                </li>-->
             </ul>
         </div>
     </div>
@@ -329,8 +329,10 @@
                 </div>
                 <ul>
                     <li class="footerNavItem"><a class="footerLink temp-footer-text" href="/about">О нас</a></li>
-                    <li class="footerNavItem"><a class="footerLink temp-footer-text" href="/agreement">Пользовательское соглашение</a></li>
-                    <li class="footerNavItem"><a class="footerLink temp-footer-text" href="/pool">Вход для клиник</a></li>
+                    <li class="footerNavItem"><a class="footerLink temp-footer-text" href="/agreement">Пользовательское
+                        соглашение</a></li>
+                    <li class="footerNavItem"><a class="footerLink temp-footer-text" href="/clinic">Вход для клиник</a>
+                    </li>
                 </ul>
             </div>
             <div class="col s1 m1 l1 offset-s4 offset-l2 hide-on-med-and-up">
@@ -386,13 +388,13 @@
                     {{ form.FIO.errors }}
                     <label class="popupLabel">
                         ФИО*
-                        <input type="text" id="phoneField" class="popupInput" name="FIO" required/>
+                        <input type="text" class="popupInput" name="FIO" required/>
                     </label>
                     <div class="row">
                         {{ form.phone.errors }}
                         <label class="popupLabel col s6">
                             Телефон*
-                            <input type="tel" class="popupInput" name="phone" required/>
+                            <input type="tel" class="popupInput" name="phone" id="phoneField" required/>
                         </label>
                         {{ form.email.errors }}
                         <label class="popupLabel col s6">
@@ -400,7 +402,7 @@
                             <input type="email" class="popupInput" name="email"/>
                         </label>
                     </div>
-<!--                    <p class="popupLabel">Выбрать ближайшую стоматологию</p>-->
+                    <!--                    <p class="popupLabel">Выбрать ближайшую стоматологию</p>-->
                     <!-- Switch -->
                     <div class="switch center-align">
                         <label>
@@ -413,7 +415,7 @@
                     <div class="nearestField">
                         <label class="popupLabel">
                             Адрес
-                            <input id="addrField" type="text" class="popupInput"/>
+                            <input id="addrField" type="text" class="popupInput" name="address"/>
                         </label>
                         <p class="popupAddrDesc">
                             Укажите, где вы сейчас находитесь, чтобы мы нашли ближайшую к вам стоматологию
