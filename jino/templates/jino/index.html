@@ -263,35 +263,55 @@
             <img class="col l3 hide-on-med-and-down" src="../../static/jino/img/faq-icon.png"/>
             <ul class="collapsible foregroundForCircle col s12 z-depth-0">
                 <li>
-                    <div class="temp-text-dark-blue collapsible-header"><i
-                            class="faqArrow temp-inline-icon material-icons">arrow_drop_down</i><span
-                            class="faqQuestion">Как оплатить прием врача?</span></div>
+                    <div class="temp-text-dark-blue collapsible-header">
+                        <div class="row temp-w-100">
+                            <i class="faqArrow temp-inline-icon material-icons col s1">arrow_drop_down</i>
+                            <span class="faqQuestion col s10">Как оплатить прием врача?</span>
+                        </div>
+                    </div>
                     <div class="collapsible-body temp-text-dark-blue"><span>Прием врача вы оплачиваете в стоматологии. На Jino ничего оплачивать не нужно.</span>
                     </div>
                 </li>
                 <li>
-                    <div class="temp-text-dark-blue collapsible-header"><i
-                            class="faqArrow temp-inline-icon material-icons">arrow_drop_down</i><span
-                            class="faqQuestion">Записываться через Jino дороже, чем напрямую в стоматологии?</span>
+                    <div class="temp-text-dark-blue collapsible-header">
+                        <div class="row temp-w-100">
+                            <i class="faqArrow temp-inline-icon material-icons col s1">arrow_drop_down</i>
+                            <span class="faqQuestion col s10">Записываться через Jino дороже, чем напрямую в стоматологии?</span>
+                        </div>
                     </div>
                     <div class="collapsible-body temp-text-dark-blue"><span>Нет. Jino не берет комиссии за свои услуги, поэтому вы записываетесь на прием по ценам стоматологии.</span>
                     </div>
                 </li>
                 <li>
-                    <div class="temp-text-dark-blue collapsible-header"><i
-                            class="faqArrow temp-inline-icon material-icons">arrow_drop_down</i><span
-                            class="faqQuestion">Как оставить отзыв о приеме?</span></div>
+                    <div class="temp-text-dark-blue collapsible-header">
+                        <div class="row temp-w-100">
+                            <i class="faqArrow temp-inline-icon material-icons col s1">arrow_drop_down</i>
+                            <span class="faqQuestion col s10">Как оставить отзыв о приеме?</span>
+                        </div>
+                    </div>
                     <div class="collapsible-body temp-text-dark-blue"><span>После приема вы получите сообщение на электронную почту, которую указали при записи. Перейдя по ссылке в письме, вы сможете оставить отзыв о приеме. Если вам не понравился прием, мы передадим эти данные в клинику и примем меры по улучшению качества обслуживания.</span>
                     </div>
                 </li>
                 <li>
-                    <div class="temp-text-dark-blue collapsible-header"><i
-                            class="faqArrow temp-inline-icon material-icons">arrow_drop_down</i><span
-                            class="faqQuestion">Как стать партнером Jino?</span></div>
+                    <div class="temp-text-dark-blue collapsible-header">
+                        <div class="row temp-w-100">
+                            <i class="faqArrow temp-inline-icon material-icons col s1">arrow_drop_down</i>
+                            <span class="faqQuestion col s10">Как стать партнером Jino?</span>
+                        </div>
+                    </div>
                     <div class="collapsible-body temp-text-dark-blue"><span>Все вопросы по партнерской программе нашего сайта можно задать Сатюкову Станиславу: <a
                             class="temp-text-dark-blue temp-text-underline" href="mailto:jinoplatform@gmail.com">jinoplatform@gmail.com</a></span>
                     </div>
                 </li>
+<!--                Пример старого элемента чтобы можно было вернуться-->
+<!--                <li>-->
+<!--                    <div class="temp-text-dark-blue collapsible-header"><i-->
+<!--                            class="faqArrow temp-inline-icon material-icons">arrow_drop_down</i><span-->
+<!--                            class="faqQuestion">Как стать партнером Jino?</span></div>-->
+<!--                    <div class="collapsible-body temp-text-dark-blue"><span>Все вопросы по партнерской программе нашего сайта можно задать Сатюкову Станиславу: <a-->
+<!--                            class="temp-text-dark-blue temp-text-underline" href="mailto:jinoplatform@gmail.com">jinoplatform@gmail.com</a></span>-->
+<!--                    </div>-->
+<!--                </li>-->
             </ul>
         </div>
     </div>
@@ -308,8 +328,9 @@
                     </a>
                 </div>
                 <ul>
-                    <li><a class="footerLink temp-footer-text" href="/about">О нас</a></li>
-                    <li><a class="footerLink temp-footer-text" href="/agreement">Пользовательское соглашение</a></li>
+                    <li class="footerNavItem"><a class="footerLink temp-footer-text" href="/about">О нас</a></li>
+                    <li class="footerNavItem"><a class="footerLink temp-footer-text" href="/agreement">Пользовательское соглашение</a></li>
+                    <li class="footerNavItem"><a class="footerLink temp-footer-text" href="/pool">Вход для клиник</a></li>
                 </ul>
             </div>
             <div class="col s1 m1 l1 offset-s4 offset-l2 hide-on-med-and-up">
@@ -364,14 +385,14 @@
                     {% csrf_token %}
                     {{ form.FIO.errors }}
                     <label class="popupLabel">
-                        ФИО
-                        <input type="text" class="popupInput" name="FIO"/>
+                        ФИО*
+                        <input type="text" id="phoneField" class="popupInput" name="FIO" required/>
                     </label>
                     <div class="row">
                         {{ form.phone.errors }}
                         <label class="popupLabel col s6">
-                            Телефон
-                            <input type="tel" class="popupInput" name="phone"/>
+                            Телефон*
+                            <input type="tel" class="popupInput" name="phone" required/>
                         </label>
                         {{ form.email.errors }}
                         <label class="popupLabel col s6">
@@ -379,13 +400,25 @@
                             <input type="email" class="popupInput" name="email"/>
                         </label>
                     </div>
-                    <!--                    <label class="popupLabel">-->
-                    <!--                        Адрес-->
-                    <!--                        <input type="text" class="popupInput"/>-->
-                    <!--                    </label>-->
-                    <!--                    <p class="popupAddrDesc">-->
-                    <!--                        Укажите, где вы сейчас находитесь, чтобы мы нашли ближайшую к вам стоматологию-->
-                    <!--                    </p>-->
+<!--                    <p class="popupLabel">Выбрать ближайшую стоматологию</p>-->
+                    <!-- Switch -->
+                    <div class="switch center-align">
+                        <label>
+                            Как можно скорее
+                            <input type="checkbox">
+                            <span class="lever"></span>
+                            Ближайшую
+                        </label>
+                    </div>
+                    <div class="nearestField">
+                        <label class="popupLabel">
+                            Адрес
+                            <input id="addrField" type="text" class="popupInput"/>
+                        </label>
+                        <p class="popupAddrDesc">
+                            Укажите, где вы сейчас находитесь, чтобы мы нашли ближайшую к вам стоматологию
+                        </p>
+                    </div>
                     <div class="row center-align">
                         <button type="submit" class="popupBtn temp-text-dark-blue">Отправить</button>
                     </div>
@@ -400,6 +433,7 @@
 
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="../../static/jino/js/jquery.maskedinput.min.js"></script>
 <script type="text/javascript" src="../../static/jino/js/main.js"></script>
 </body>
 </html>
