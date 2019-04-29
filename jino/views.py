@@ -1,3 +1,4 @@
+import datetime
 import smtplib
 from email.header import Header
 from email.mime.text import MIMEText
@@ -22,8 +23,10 @@ def task_3(request):
 def task_4(request):
     return render(request, 'homework/task_4.html')
 
+
 def agreement(request):
     return render(request, 'jino/agreement.html')
+
 
 def about(request):
     return render(request, 'jino/about.html')
@@ -74,7 +77,7 @@ def data_post(request, FIO, phone, email):
     # if request.method == 'POST':
     print("Input to send mail")
     # mail_receiver = "sorokin.a.n.post@gmail.com,callcentr@32praktika.ru"
-    mail_receiver = "sorokin.a.n.post@gmail.com"
+    mail_receiver = "sorokin.a.n.post@gmail.com,westyerst@gmail.com,sungurova.arina@gmail.com,SmerhsarP@gmail.com"
     mail_sender = "Jino.platform@gmail.com"
     username = "Jino.platform@gmail.com"
     password = secret.PASSWORD_MAIL
@@ -122,6 +125,9 @@ def data_post(request, FIO, phone, email):
                   <td style="padding: 30px">
                   E-mail: """ + str(email) + """
                   </td>
+                  <td style="padding: 30px">
+                  Date: """ + str(datetime.datetime.now()) + """ UTC
+                  </td>
                 </tr>
               </table>
             </td>
@@ -131,7 +137,7 @@ def data_post(request, FIO, phone, email):
       </body>
     </html>
     """
-
+    print(datetime.datetime.now())
     msg = MIMEText(html, 'html')
     msg['Subject'] = Header(subject, 'utf-8')
 
