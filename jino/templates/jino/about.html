@@ -1,6 +1,82 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+
+    {# BEGGIN #}
+    {# Open grapg begin#}
+    <meta property="og:title" content="Jino"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://jino24.ru"/>
+    <meta property="og:site_name" content="Jino"/>
+    <meta property="og:image" content="https://jino24.ru/static/jino/img/logo-white-bg.png"/>
+    <meta property="og:locale" content="ru_RU"/>
+    <meta property="og:description"
+          content="Мы считаем, что улыбка — это важная часть стиля и образа человека, а значит за ней нужен постоянный и тщательный уход"/>
+    {# Open grapg end#}
+    <!— Global site tag (gtag.js) - Google Analytics —>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-93952064-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-93952064-3');
+    </script>
+    <!— Global site tag (gtag.js) - Google Analytics —>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-93952064-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-93952064-2');
+    </script>
+    <meta name="yandex-verification" content="ab484731ce9a2f0a"/>
+    {# Alex Panichev yandex#}
+    <meta name="yandex-verification" content="8ddcc606db60ccb4"/>
+    {# Stanislav #}
+    <meta name="yandex-verification" content="6b137c6729fdd6d7"/>
+    <meta name="google-site-verification" content="I7Q0Q7uar8awEclHtWGrSF2yDY0z6yeG9A8fiGv2roc"/>
+    <meta name='wmail-verification' content='23d5e1463baaf9eba62216a76326937f'/>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+        ym(52553323, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/52553323" style="position:absolute; left:-9999px;" alt=""/></div>
+    </noscript>
+    <!— /Yandex.Metrika counter —>
+    <script type="application/ld+json">
+    {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "url" : "https://jino24.ru",
+    "logo" : "https://jino24.ru/static/jino/img/logo-white-bg.png",
+    "email": "jino.platform@gmail.com",
+    "name": "Jino",
+    "telephone": "+79523338228"
+    }
+</script>
+    {# END#}
+
+    <meta name="description"
+          content="Мы считаем, что улыбка — это важная часть стиля и образа человека, а значит за ней нужен постоянный и тщательный уход"/>
+
     <meta charset="utf-8">
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -9,27 +85,34 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="/static/jino/css/style.css">
-    <link rel="icon" href="/static/jino/img/favicon.png">
-    <title>Jino - about</title>
+    <link rel="stylesheet" href="../../static/jino/css/style.css">
+    <link rel="icon" href="../../static/jino/img/favicon.png">
+    <title>Jino24 - О нас</title>
 
 </head>
 <body>
 
+<!-- menu for mobile -->
+<ul class="sidenav" id="mobile-demo">
+    <li><a href="/about" class="sidenavLink">О нас</a></li>
+    <li><a href="/#faq" class="sidenavLink">FAQ</a></li>
+</ul>
+
 <header>
-    <nav class="pageNavigation N/A transparent z-depth-0 temp-mb-0">
+    <nav class="pageNavigation N/A transparent z-depth-0 foregroundForCircle temp-mb-0">
         <div class="nav-wrapper container row valign-wrapper">
-            <a href="/" class="brand-logo col s2">
-                <img src="/static/jino/img/logo-white-bg.png"/>
+            <a href="#" class="brand-logo col left">
+                <img src="../../static/jino/img/logo-white-bg.png"/>
             </a>
-            <ul id="nav-mobile" class="col s5 m6 l7 offset-s3 offset-l2 offset-xl3 hide-on-small-only">
+            <ul id="nav-mobile" class="col m6 l7 offset-m2 offset-l2 offset-xl3 hide-on-small-only">
                 <li><a href="#" class="temp-text-dark-blue pageNavigation-text">О нас</a></li>
-                <li><a href="#" class="temp-text-dark-blue pageNavigation-text">Соглашение</a></li>
+                <li><a href="#faq" class="temp-text-dark-blue pageNavigation-text">FAQ</a></li>
             </ul>
-            <div class="cityChooser col s7 m4 l3 xl2 offset-s3 valign-wrapper">
+            <div class="cityChooser col s5 m4 l3 xl2 offset-s3 valign-wrapper">
                 <!-- Dropdown Trigger -->
                 <a class='temp-inline-dropdown dropdown-trigger btn N/A transparent temp-text-dark-blue pageNavigation-text z-depth-0'
-                   href='#' data-target='dropdown1'>Город<i class="temp-inline-icon material-icons">arrow_drop_down</i></a>
+                   href='#' data-target='dropdown1'>Пермь<i
+                        class="temp-inline-icon material-icons">arrow_drop_down</i></a>
 
                 <!-- Dropdown Structure -->
                 <ul id='dropdown1' class='dropdown-content'>
@@ -38,7 +121,7 @@
                 </ul>
             </div>
             <a href="#" data-target="mobile-demo"
-               class="sidenav-trigger temp-text-dark-blue col s1 offset-s1 hide-on-med-and-up"><i
+               class="sidenav-trigger temp-text-dark-blue col s1 offset-s2 hide-on-med-and-up"><i
                     class="material-icons">menu</i></a>
         </div>
     </nav>
@@ -49,16 +132,16 @@
     <div class="container">
         <div class="socialBlock foregroundForCircle hide-on-small-only">
             <div class="socialLine"></div>
-            <a href="https://www.facebook.com/jinoplatform" class="socialItem">
-                <img class="socialItemIcon" src="/static/jino/img/social-icon-1.png"/>
+            <a href="https://www.facebook.com/jinoplatform" class="socialItem" target="_blank">
+                <img class="socialItemIcon" src="../../static/jino/img/social-icon-1.png"/>
                 <span class="socialItemText temp-text-dark-blue">Facebook</span>
             </a>
-            <a href="https://www.instagram.com/jinoplatform/?hl=ru" class="socialItem">
-                <img class="socialItemIcon" src="/static/jino/img/social-icon-2.png"/>
+            <a href="https://www.instagram.com/jinoplatform/?hl=ru" class="socialItem" target="_blank">
+                <img class="socialItemIcon" src="../../static/jino/img/social-icon-2.png"/>
                 <span class="socialItemText temp-text-dark-blue">Instagram</span>
             </a>
-            <a href="https://vk.com/jinoplatform" class="socialItem">
-                <img class="socialItemIcon" src="/static/jino/img/social-icon-3.png"/>
+            <a href="https://vk.com/jinoplatform" class="socialItem" target="_blank">
+                <img class="socialItemIcon" src="../../static/jino/img/social-icon-3.png"/>
                 <span class="socialItemText temp-text-dark-blue">Vkontakte</span>
             </a>
         </div>
@@ -91,14 +174,14 @@
         <div class="triggers">
             <div class="triggersBlock temp-text-dark-blue row">
                 <div class="triggerItem col s6 m4 offset-m2 center-align">
-                    <img src="/static/jino/img/trigger-icon-1.png"/>
+                    <img src="../../static/jino/img/trigger-icon-1.png"/>
                     <h4 class="triggerHeader">близко</h4>
                     <p class="triggerDescription">
                         Готовы прямо сейчас подобрать вам ближайшую стоматологию от дома
                     </p>
                 </div>
                 <div class="triggerItem col s6 m4 center-align">
-                    <img src="/static/jino/img/trigger-icon-2.png"/>
+                    <img src="../../static/jino/img/trigger-icon-2.png"/>
                     <h4 class="triggerHeader">срочно</h4>
                     <p class="triggerDescription">
                         Подбор стоматологии, которая в течение 60 минут готова принять вас без записи, даже ночью
@@ -115,13 +198,13 @@
           <span class="sectionHeader temp-text-dark-blue">Пресса о Jino</span>
         </span></h3>
         <div class="reviewsBlock temp-text-dark-blue">
-            <div class="row valign-wrapper">
+            <div class="row">
                 <div class="reviewLogo col l3">
                     <p>17.02.19</p>
-                    <img src="/static/jino/img/review-icon-1.png" alt="Разведка боем">
+                    <img class="col s12" src="../../static/jino/img/review-icon-1.png" alt="Разведка боем">
                 </div>
                 <div class="reviewContent col l8">
-                    <p><a href="https://razvedka-boem.ru/" class="temp-text-dark-blue temp-text-underline">razvedka-boem.ru</a>
+                    <p><a href="https://razvedka-boem.ru/news/proekty-rb-jino-i-tsentr-po-remontu-stankov/" class="temp-text-dark-blue temp-text-underline" target="_blank">razvedka-boem.ru</a>
                     </p>
                     <p class="reviewText">
                         «По критериям подготовленности презентации, питча, понятной финансовой моделью, пониманием
@@ -130,13 +213,13 @@
                     </p>
                 </div>
             </div>
-            <div class="row valign-wrapper">
-                <div class="reviewLogo col s3">
+            <div class="row">
+                <div class="reviewLogo col l3">
                     <p>17.02.19</p>
-                    <img src="/static/jino/img/review-icon-2.png" alt="Разведка боем">
+                    <img class="col s12" src="../../static/jino/img/review-icon-2.png" alt="Разведка боем">
                 </div>
-                <div class="reviewContent col s8">
-                    <p><a href="https://www.forbes.ru/" class="temp-text-dark-blue temp-text-underline">forbes.ru</a>
+                <div class="reviewContent col l8">
+                    <p><a href="https://www.forbes.ru/" class="temp-text-dark-blue temp-text-underline" target="_blank">forbes.ru</a>
                     </p>
                     <p class="reviewText">
                         «Все участники стартапа Jino теперь красуются в списке Forbes! А именно: Стас, Леша, Саша, Настя
@@ -159,26 +242,26 @@
           <span class="sectionHeader temp-text-dark-blue">Контакты Jino</span>
         </span></h3>
         <div class="contactsBlock row">
-            <div class="contactItem col s6 row">
-                <span class="contactType col s4">Email</span>
-                <span class="contactValue temp-text-dark-blue col s7 right"><a href="mailto:jinoplatform@gmail.com"
+            <div class="contactItem col m12 l6 row">
+                <span class="contactType col s12 m4">Email</span>
+                <span class="contactValue temp-text-dark-blue col s12 m7 right"><a href="mailto:jinoplatform@gmail.com"
                                                                                class="temp-text-dark-blue temp-text-underline">jinoplatform@gmail.com</a></span>
             </div>
-            <div class="contactItem col s6 row">
-                <span class="contactType col s4">Юредический и почтовый адрес</span>
-                <span class="contactValue temp-text-dark-blue col s7 right">612002, г Пермь ул. Чернышевского 31, кв. 10</span>
+            <div class="contactItem col m12 l6 row">
+                <span class="contactType col s12 m4">Юридический и почтовый адрес</span>
+                <span class="contactValue temp-text-dark-blue col s12 m7 right">612002, г Пермь ул. Чернышевского 31, кв. 10</span>
             </div>
-            <div class="contactItem col s6 row">
-                <span class="contactType col s4">Название</span>
-                <span class="contactValue temp-text-dark-blue col s7 right">ИП Сатюков С. Р.</span>
+            <div class="contactItem col m12 l6 row">
+                <span class="contactType col s12 m4">Название</span>
+                <span class="contactValue temp-text-dark-blue col s12 m7 right">ИП Сатюков С. Р.</span>
             </div>
-            <div class="contactItem col s6 row">
-                <span class="contactType col s4">Время работы</span>
-                <span class="contactValue temp-text-dark-blue col s7 right">8:00 -  23:00</span>
+            <div class="contactItem col m12 l6 row">
+                <span class="contactType col s12 m4">Время работы</span>
+                <span class="contactValue temp-text-dark-blue col s12 m7 right">8:00 -  23:00</span>
             </div>
-            <div class="contactItem col s6 row">
-                <span class="contactType col s4">ОГРН ип</span>
-                <span class="contactValue temp-text-dark-blue col s7 right">318595800156010</span>
+            <div class="contactItem col m12 l6 row">
+                <span class="contactType col s12 m4">ОГРН ип</span>
+                <span class="contactValue temp-text-dark-blue col s12 m7 right">318595800156010</span>
             </div>
         </div>
     </div>
@@ -191,24 +274,23 @@
         <div class="row">
             <div class="col s6 m3 l3">
                 <div class="row">
-                    <a href="/" class="brand-logo col xl2">
-                        <img src="/static/jino/img/logo-white-bg.png"/>
+                    <a href="#" class="brand-logo col xl2">
+                        <img src="../../static/jino/img/logo-white-bg.png"/>
                     </a>
                 </div>
                 <ul>
-                    <li><a class="footerLink temp-footer-text" href="#!">О нас</a></li>
-                    <li><a class="footerLink temp-footer-text" href="#!">Пользовательское соглашение</a></li>
+                    <li class="footerNavItem"><a class="footerLink temp-footer-text" href="/about">О нас</a></li>
+                    <li class="footerNavItem"><a class="footerLink temp-footer-text" href="/agreement">Пользовательское соглашение</a></li>
+                    <li class="footerNavItem"><a class="footerLink temp-footer-text" href="/pool">Вход для клиник</a></li>
                 </ul>
             </div>
             <div class="col s1 m1 l1 offset-s4 offset-l2 hide-on-med-and-up">
                 <ul>
-                    <li><a class="" href="https://www.facebook.com/jinoplatform"><img
-                            src="/static/jino/img/social-icon-1.png"/></a>
+                    <li><a class="" href="https://www.facebook.com/jinoplatform" target="_blank"><img src="../../static/jino/img/social-icon-1.png"/></a>
                     </li>
-                    <li><a class="" href="https://www.instagram.com/jinoplatform/?hl=ru"><img
-                            src="/static/jino/img/social-icon-2.png"/></a></li>
-                    <li><a class="" href="https://vk.com/jinoplatform"><img
-                            src="/static/jino/img/social-icon-3.png"/></a></li>
+                    <li><a class="" href="https://www.instagram.com/jinoplatform/?hl=ru" target="_blank"><img
+                            src="../../static/jino/img/social-icon-2.png"/></a></li>
+                    <li><a class="" href="https://vk.com/jinoplatform" target="_blank"><img src="../../static/jino/img/social-icon-3.png"/></a></li>
                 </ul>
             </div>
             <div class="col s12 m6 l6">
@@ -220,13 +302,11 @@
             </div>
             <div class="col m1 l1 offset-l2 hide-on-small-only">
                 <ul>
-                    <li><a class="" href="https://www.facebook.com/jinoplatform"><img
-                            src="/static/jino/img/social-icon-1.png"/></a>
+                    <li><a class="" href="https://www.facebook.com/jinoplatform" target="_blank"><img src="../../static/jino/img/social-icon-1.png"/></a>
                     </li>
-                    <li><a class="" href="https://www.instagram.com/jinoplatform/?hl=ru"><img
-                            src="/static/jino/img/social-icon-2.png"/></a></li>
-                    <li><a class="" href="https://vk.com/jinoplatform"><img
-                            src="/static/jino/img/social-icon-3.png"/></a></li>
+                    <li><a class="" href="https://www.instagram.com/jinoplatform/?hl=ru" target="_blank"><img
+                            src="../../static/jino/img/social-icon-2.png"/></a></li>
+                    <li><a class="" href="https://vk.com/jinoplatform" target="_blank"><img src="../../static/jino/img/social-icon-3.png"/></a></li>
                 </ul>
             </div>
         </div>
@@ -243,6 +323,6 @@
 
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script type="text/javascript" src="/static/jino/js/main.js"></script>
+<script type="text/javascript" src="../../static/jino/js/main.js"></script>
 </body>
 </html>

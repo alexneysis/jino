@@ -1,3 +1,4 @@
+import datetime
 import smtplib
 from email.header import Header
 from email.mime.text import MIMEText
@@ -6,6 +7,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
 
+import secret
 from users.forms import FormClient
 from users.models import Client, Status
 
@@ -20,6 +22,10 @@ def task_3(request):
 
 def task_4(request):
     return render(request, 'homework/task_4.html')
+
+
+def agreement(request):
+    return render(request, 'jino/agreement.html')
 
 
 def about(request):
@@ -41,19 +47,24 @@ def data(request):
             if form.is_valid():
                 FIO = form.cleaned_data["FIO"]
                 phone = form.cleaned_data["phone"]
+                phone = phone.replace(" ", "")
                 email = form.cleaned_data["email"]
+                address = form.cleaned_data["address"]
                 first_name = FIO.strip().split(" ")[0]
-                surname = FIO.strip().split(" ")[1]
+                surname = ""
+                if len(FIO.strip().split(" ")) >= 2:
+                    surname = FIO.strip().split(" ")[1]
                 patronymic = ""
-                status = Status.objects.get(pk=10)
-                if len(FIO.strip().split(" ")) == 3:
+                if len(FIO.strip().split(" ")) >= 3:
                     patronymic = FIO.strip().split(" ")[2]
+                status = Status.objects.get(pk=10)
                 print("Create all fields")
                 client = Client(first_name=first_name, surname=surname, patronymic=patronymic, phone=phone, email=email,
-                                status=status)
-                print("don't save object", client)
+                                status=status, address=address)
+                print("don't save object", client.phone)
                 client.save()
-                print("save object", client)
+                print("save object")
+                # data_post(request, FIO, phone, email, address)
         except Exception as e:
             print(e)
     else:
@@ -63,21 +74,20 @@ def data(request):
     return render(request, "jino/index.html", {"from": form})
 
 
-def data_post(request):
+def data_post(request, FIO, phone, email, address):
     # if this is a POST request we need to process the form data
     # if request.method == 'POST':
     print("Input to send mail")
     # mail_receiver = "sorokin.a.n.post@gmail.com,callcentr@32praktika.ru"
-    mail_receiver = "sorokin.a.n.post@gmail.com"
+    mail_receiver = "sorokin.a.n.post@gmail.com,westyerst@gmail.com,sungurova.arina@gmail.com,SmerhsarP@gmail.com"
     mail_sender = "Jino.platform@gmail.com"
     username = "Jino.platform@gmail.com"
-    password = "546879Jino"
+    password = secret.PASSWORD_MAIL
     server = smtplib.SMTP('smtp.gmail.com:587')
 
     # Формируем тело письма
     subject = u'Запись'
-    print("FIO: , " + str(request.GET["FIO"]) + ". phone: " + str(request.GET["PHONE"]) + ", mail: " + str(
-        request.GET["MAIL"]))
+    print("FIO: , " + str(FIO) + ". phone: " + str(phone) + ", mail: " + str(email))
 
     html = """\
     <!doctype html>
@@ -99,7 +109,7 @@ def data_post(request):
                 </tr>
                 <tr>
                   <td style="padding: 20px 20px 0 20px; font-weight: bold;" colspan="2" align="center">
-                """ + str(request.GET["FIO"]) + """
+                """ + str(FIO) + """
                   </td>
                   <td></td>
                 </tr>
@@ -112,10 +122,14 @@ def data_post(request):
 
                 <tr>
                   <td style="padding: 30px">
-                  Телефон: """ + str(request.GET["PHONE"]) + """
+                  Телефон: """ + str(phone) + """
                   </td>
                   <td style="padding: 30px">
-                  E-mail: """ + str(request.GET["MAIL"]) + """
+                  E-mail: """ + str(email) + """
+                  </td>
+                  <td style="padding: 30px">
+                  Date: """ + str(datetime.datetime.now()) + """ UTC
+                  Адрес: """ + str(address) + """
                   </td>
                 </tr>
               </table>
@@ -126,7 +140,7 @@ def data_post(request):
       </body>
     </html>
     """
-
+    print(datetime.datetime.now())
     msg = MIMEText(html, 'html')
     msg['Subject'] = Header(subject, 'utf-8')
 

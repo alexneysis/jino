@@ -16,11 +16,11 @@ Including another URLconf
 from django.conf.urls import url
 from django.conf.urls.static import static
 
-
 from startup import settings
 from users import views
 
 urlpatterns = [
                   url('send', views.send_client),
+                  url('chat', views.chat),
                   url('', views.pool_clients)
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

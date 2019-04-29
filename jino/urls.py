@@ -25,5 +25,6 @@ urlpatterns = [
                   url('homework/task_3', views.task_3),
                   url('homework/task_4', views.task_4),
                   url('about', views.about),
+                  url('agreement', views.agreement),
                   url('', views.home)
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
