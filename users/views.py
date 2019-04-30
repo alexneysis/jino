@@ -28,8 +28,6 @@ def send_client(request):
         # print(json.dumps(list(all_clients)))
         # data = serializers.serialize("json", Client.objects.all())
         data = serialize('json', Client.objects.all(), ensure_ascii=False)
-        y = data.replace('%', '\\').decode('unicode-escape')
-        print(y)
         # data = Client.objects.all()
         # print(all_clients[0])
         # print(type(all_clients))
