@@ -92,6 +92,52 @@ $(".collection-item").on("click", function () {
            $("#patientPhone").text(JSONobjects[j].fields.phone);
            $("#patientEmail").attr("href", "mailto:" + JSONobjects[j].fields.email);
            $("#patientEmail").text(JSONobjects[j].fields.email);
+           $("#patientModalId").attr("value", JSONobjects[j].pk);
        }
    }
 });
+
+$(".modal-write").on("click", function (e) {
+    e.preventDefault(e);
+    let instance = M.Modal.getInstance($(".modal"));
+
+    let scriptURL = "https://jino24.ru/наЗапись";
+    sendClinicReaction(scriptURL);
+
+    instance.close();
+});
+
+$(".modal-not-write").on("click", function (e) {
+    e.preventDefault(e);
+    let instance = M.Modal.getInstance($(".modal"));
+
+    let scriptURL = "https://jino24.ru/наНеЗапись";
+    sendClinicReaction(scriptURL);
+
+    instance.close();
+});
+
+$(".modal-bad").on("click", function (e) {
+    e.preventDefault(e);
+    let instance = M.Modal.getInstance($(".modal"));
+
+    let scriptURL = "https://jino24.ru/наСпам";
+    sendClinicReaction(scriptURL);
+
+    instance.close();
+});
+
+var sendClinicReaction = function (scriptURL) {
+
+    alert($("#patientId").val())
+
+    $.ajax({
+        url: scriptURL,
+        type: "POST",
+        data: {patientId: $("#patientModalId").val()},
+        dataType: "text"
+    });
+
+};
+
+
