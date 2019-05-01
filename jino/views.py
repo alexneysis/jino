@@ -64,7 +64,7 @@ def data(request):
                 print("don't save object", client.phone)
                 client.save()
                 print("save object")
-                # data_post(request, FIO, phone, email, address)
+                data_post(request, FIO, phone, email, address)
         except Exception as e:
             print(e)
     else:
