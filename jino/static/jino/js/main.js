@@ -24,7 +24,7 @@ $(".switch").on("click", function(e) {
     }
 });
 
-// $("#phoneField").mask("+7 (999) 999 - 99 - 99", {placeholder: "-" }); //Подключение маски
+$("#phoneField").mask("+7 (999) 999 - 99 - 99", {placeholder: "-" }); //Подключение маски
 
 $(".collection-item").on("click", function () {
     var result = $(this).text().substring(12);
