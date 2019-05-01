@@ -134,7 +134,7 @@ var sendClinicReaction = function (scriptURL) {
     $.ajax({
         url: scriptURL,
         type: "POST",
-        data: {patientId: $("#patientId").val()},
+        data: {patientId: $("#patientModalId").val()},
         dataType: "text"
     });
 
