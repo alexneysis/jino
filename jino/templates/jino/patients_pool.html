@@ -149,10 +149,10 @@
 
             <h3 class="poolHeader temp-text-dark-blue">Список нуждающихся в помощи</h3>
             <div id="collection" class="collection">
-<!--                                    <a href="#modal1" class="collection-item modal-trigger">-->
-<!--                                        <span class="badge"><i class="material-icons temp-icon-green">brightness_1</i></span>Василий-->
-<!--                                        Петрович-->
-<!--                                    </a>-->
+                <!--                    <a href="#modal1" class="collection-item modal-trigger">-->
+                <!--                        <span class="badge"><i class="material-icons temp-icon-green">brightness_1</i></span>Василий-->
+                <!--                        Петрович-->
+                <!--                    </a>-->
                 <!--                    <a href="#modal1" class="collection-item modal-trigger">-->
                 <!--                        <span class="badge"><i class="material-icons temp-icon-green">brightness_1</i></span>Иван-->
                 <!--                        Васильевич-->
@@ -260,7 +260,6 @@
 
     var createList = function (responseText) {
         JSONobjects = JSON.parse(responseText);
-        //alert(responseText);
 
 
         for (let i = 0; i < JSONobjects.length; i++) {
@@ -337,6 +336,64 @@
     }
     // каждые 200 мс проверяем, есть ли новые сообщения
     setInterval(updateMessages, 1000 * 60);
+
+
+    //Обработка кликов в pool
+    $(".collection-item").on("click", function () {
+        let itemId = $(this).attr("id");
+        let objectId = itemId.substring(10);
+        for (let j = 0; j < JSONobjects.length; j++) {
+            if (JSONobjects[j].pk == objectId) {
+                $("#patientName").text(JSONobjects[j].fields.first_name + " " + JSONobjects[j].fields.surname + " " + JSONobjects[j].fields.patronymic);
+                $("#patientPhone").attr("href", "tel:" + JSONobjects[j].fields.phone);
+                $("#patientPhone").text(JSONobjects[j].fields.phone);
+                $("#patientEmail").attr("href", "mailto:" + JSONobjects[j].fields.email);
+                $("#patientEmail").text(JSONobjects[j].fields.email);
+                $("#patientModalId").attr("value", JSONobjects[j].pk);
+            }
+        }
+    });
+
+    $(".modal-write").on("click", function (e) {
+        e.preventDefault(e);
+        let instance = M.Modal.getInstance($(".modal"));
+
+        let scriptURL = "https://jino24.ru/наЗапись";
+        sendClinicReaction(scriptURL);
+
+        instance.close();
+    });
+
+    $(".modal-not-write").on("click", function (e) {
+        e.preventDefault(e);
+        let instance = M.Modal.getInstance($(".modal"));
+
+        let scriptURL = "https://jino24.ru/наНеЗапись";
+        sendClinicReaction(scriptURL);
+
+        instance.close();
+    });
+
+    $(".modal-bad").on("click", function (e) {
+        e.preventDefault(e);
+        let instance = M.Modal.getInstance($(".modal"));
+
+        let scriptURL = "https://jino24.ru/наСпам";
+        sendClinicReaction(scriptURL);
+
+        instance.close();
+    });
+
+    var sendClinicReaction = function (scriptURL) {
+
+        $.ajax({
+            url: scriptURL,
+            type: "POST",
+            data: {patientId: $("#patientModalId").val()},
+            dataType: "text"
+        });
+
+    };
 </script>
 </body>
 </html>
