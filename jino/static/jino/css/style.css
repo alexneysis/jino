@@ -649,6 +649,10 @@ cursor: pointer;
     right: 200px;
   }
 
+  .collapsible-header:hover .faqArrow {
+    top: 25px;
+  }
+
   .collapsible-body {
     margin-left: 0;
   }
