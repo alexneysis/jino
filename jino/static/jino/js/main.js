@@ -24,31 +24,30 @@ $(".switch").on("click", function(e) {
     }
 });
 
-// $("#phoneField").mask("+7 (999) 999 - 99 - 99", {placeholder: "-" }); //Подключение маски
+$("#phoneField").mask("+7 (999) 999 - 99 - 99", {placeholder: "-" }); //Подключение маски
 
-$(".collection-item").on("click", function () {
-    var result = $(this).text().substring(12);
-    var URL = "https://jino24.ru/clinic/send";
-    var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
-    console.log(result);
-
-
-    $.ajax({
-        url: URL,
-        type: "POST",
-        data: {name: result},
-        dataType: "text",
-        beforeSend: function (xhr, settings) {
-            xhr.setRequestHeader("X-CSRFToken", csrftoken);
-        },
-        success: function (response) {
-            console.log("Success response" + " " + result);
-        },
-        error: function (response) {
-            console.log("Error in method");
-        }
-    });
-});
+// $(".collection-item").on("click", function () {
+//     var result = $(this).text().substring(12);
+//     var URL = "https://jino24.ru/clinic/send";
+//     var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
+//
+//
+//     $.ajax({
+//         url: URL,
+//         type: "POST",
+//         data: {name: result},
+//         dataType: "text",
+//         beforeSend: function (xhr, settings) {
+//             xhr.setRequestHeader("X-CSRFToken", csrftoken);
+//         },
+//         success: function (response) {
+//             console.log("Success response" + " " + result);
+//         },
+//         error: function (response) {
+//             console.log("Error in method");
+//         }
+//     });
+// });
 
 
 $(".callBtn").on("click", function (e) {
@@ -82,7 +81,8 @@ $(".closeIcon").on("click", function () {
 });
 
 //Обработка кликов в pool
-$(".collection-item").on("click", function () {
+$(".kek").on("click", function () {
+    alert(JSONobjects);
     let itemId = $(this).attr("id");
     let objectId = itemId.substring(10);
     for (let j = 0; j < JSONobjects.length; j++) {
@@ -92,6 +92,52 @@ $(".collection-item").on("click", function () {
            $("#patientPhone").text(JSONobjects[j].fields.phone);
            $("#patientEmail").attr("href", "mailto:" + JSONobjects[j].fields.email);
            $("#patientEmail").text(JSONobjects[j].fields.email);
+           $("#patientModalId").attr("value", JSONobjects[j].pk);
        }
    }
 });
+
+$(".modal-write").on("click", function (e) {
+    e.preventDefault(e);
+    let instance = M.Modal.getInstance($(".modal"));
+
+    let scriptURL = "https://jino24.ru/наЗапись";
+    sendClinicReaction(scriptURL);
+
+    instance.close();
+});
+
+$(".modal-not-write").on("click", function (e) {
+    e.preventDefault(e);
+    let instance = M.Modal.getInstance($(".modal"));
+
+    let scriptURL = "https://jino24.ru/наНеЗапись";
+    sendClinicReaction(scriptURL);
+
+    instance.close();
+});
+
+$(".modal-bad").on("click", function (e) {
+    e.preventDefault(e);
+    let instance = M.Modal.getInstance($(".modal"));
+
+    let scriptURL = "https://jino24.ru/наСпам";
+    sendClinicReaction(scriptURL);
+
+    instance.close();
+});
+
+var sendClinicReaction = function (scriptURL) {
+
+    alert($("#patientId").val())
+
+    $.ajax({
+        url: scriptURL,
+        type: "POST",
+        data: {patientId: $("#patientId").val()},
+        dataType: "text"
+    });
+
+};
+
+

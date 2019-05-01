@@ -149,10 +149,10 @@
 
             <h3 class="poolHeader temp-text-dark-blue">Список нуждающихся в помощи</h3>
             <div id="collection" class="collection">
-                <!--                    <a href="#modal1" class="collection-item modal-trigger">-->
-                <!--                        <span class="badge"><i class="material-icons temp-icon-green">brightness_1</i></span>Василий-->
-                <!--                        Петрович-->
-                <!--                    </a>-->
+<!--                                    <a href="#modal1" class="collection-item modal-trigger">-->
+<!--                                        <span class="badge"><i class="material-icons temp-icon-green">brightness_1</i></span>Василий-->
+<!--                                        Петрович-->
+<!--                                    </a>-->
                 <!--                    <a href="#modal1" class="collection-item modal-trigger">-->
                 <!--                        <span class="badge"><i class="material-icons temp-icon-green">brightness_1</i></span>Иван-->
                 <!--                        Васильевич-->
@@ -184,9 +184,12 @@
         <p><b>E-mail:</b> <a id="patientEmail"></a></p>
     </div>
     <div class="modal-footer">
-        <a class="waves-effect waves-light btn teal accent-3">Записали</a>
-        <a class="waves-effect waves-light btn red accent-4">Не записали</a>
-        <a class="waves-effect waves-light btn grey">Неадекват</a>
+        <form>
+            <input type="hidden" id="patientModalId" name="patientId1" value="">
+            <a type="submit" class="modal-write waves-effect waves-light btn teal accent-3">Записали</a>
+            <a type="submit" class="modal-not-write waves-effect waves-light btn red accent-4">Не записали</a>
+            <a type="submit" class="modal-bad waves-effect waves-light btn grey">Неадекват</a>
+        </form>
     </div>
 </div>
 
@@ -245,11 +248,19 @@
     </div>
 </footer>
 
+<script src="https://code.jquery.com/jquery-3.4.0.js" integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="
+        crossorigin="anonymous"></script>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="../../static/jino/js/jquery.maskedinput.min.js"></script>
+<script type="text/javascript" src="../../static/jino/js/main.js"></script>
+
 <script>
     var JSONobjects;
 
     var createList = function (responseText) {
         JSONobjects = JSON.parse(responseText);
+        //alert(responseText);
 
 
         for (let i = 0; i < JSONobjects.length; i++) {
@@ -327,11 +338,5 @@
     // каждые 200 мс проверяем, есть ли новые сообщения
     setInterval(updateMessages, 1000 * 60);
 </script>
-
-<script src="https://code.jquery.com/jquery-3.4.0.js" integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="
-        crossorigin="anonymous"></script>
-<!-- Compiled and minified JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script type="text/javascript" src="../../static/jino/js/main.js"></script>
 </body>
 </html>
