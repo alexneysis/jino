@@ -1,50 +1,84 @@
+import logging
+
 from django.core.serializers import serialize
 from django.http import HttpResponse
 from django.shortcuts import render
 # Create your views here.
 from django.views.decorators.csrf import csrf_exempt
 
-from users.models import Client
+from users.models import Client, Status
 
 
 def pool_clients(request):
     return render(request, 'jino/patients_pool.html')
 
 
-def send_client_old(request):
-    if request.method == "POST":
-        return HttpResponse(status=200)
-    else:
-        return HttpResponse(status=404, content="It is't POST request")
+def record_client(request):
+    logging.basicConfig(level=logging.DEBUG)
+    logging.debug("Recording client")
+    logging.debug("Request body = " + str(request.body))
+    try:
+        logging.debug("Request id = " + str(request.POST["patientId"]))
+        logging.debug("Request body = " + str(request.body))
+        id = int(request.POST["patientId"])
+        client = Client.objects.get(pk=id)
+        logging.debug("Status before = " + str(client.status))
+        client.status = Status.objects.get(pk=31)
+        client.save()
+        logging.debug("Status after = " + str(client.status))
+    except Exception as e:
+        print(e)
+        logging.critical("Error in record client = " + str(e))
+    return HttpResponse(status=200)
+
+
+def dont_record_client(request):
+    logging.basicConfig(level=logging.DEBUG)
+    logging.debug("Don't recording client ")
+    logging.debug("Request body = " + str(request.body))
+    try:
+        logging.debug("Request id = " + str(request.POST["patientId"]))
+        logging.debug("Request body = " + str(request.body))
+        id = int(request.POST["patientId"])
+        client = Client.objects.get(pk=id)
+        logging.debug("Status before = " + str(client.status))
+        client.status = Status.objects.get(pk=20)
+        client.save()
+        logging.debug("Status after = " + str(client.status))
+    except Exception as e:
+        print(e)
+        logging.critical("Error in don't record client = " + str(e))
+    return HttpResponse(status=200)
+
+def spam_client(request):
+    logging.basicConfig(level=logging.DEBUG)
+    logging.debug("Spam client ")
+    logging.debug("Request body = " + str(request.body))
+    try:
+        logging.debug("Request id = " + str(request.POST["patientId"]))
+        logging.debug("Request body = " + str(request.body))
+        id = int(request.POST["patientId"])
+        client = Client.objects.get(pk=id)
+        logging.debug("Status before = " + str(client.status))
+        client.status = Status.objects.get(pk=30)
+        client.save()
+        logging.debug("Status after = " + str(client.status))
+    except Exception as e:
+        print(e)
+        logging.critical("Error in spam client = " + str(e))
+    return HttpResponse(status=200)
 
 
 @csrf_exempt
 def send_client(request):
-    data = {"name": "alex"}
+    data = {"Result": "error"}
     try:
         print(request.body)
         print(request.method)
-        all_clients = Client.objects.all()
-        # print(json.dumps(list(all_clients)))
-        # data = serializers.serialize("json", Client.objects.all())
-        data = serialize('json', Client.objects.all(), ensure_ascii=False)
-        # data = Client.objects.all()
-        # print(all_clients[0])
-        # print(type(all_clients))
-        # json_string = json.dumps(all_clients)
-        # print(json_string)
-        # print(type(json_string))
-
+        all_client = Client.objects.all().exclude(status=30).exclude(status=31)
+        data = serialize('json', all_client, ensure_ascii=False)
         print(data)
         print(type(data))
-
-        # all_clients= []
-        # for i in data:
-        #     all_clients.append()
-
-        # just return a JsonResponse
-        # return JsonResponse(data)
-        # header('Content-Type: application/json; charset=utf-8');
     except Exception as e:
         print(e)
     return HttpResponse(data, charset="utf-8")
