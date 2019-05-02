@@ -5,7 +5,19 @@ $(document).ready(function () {
 
     $('.collapsible').collapsible();
 
-    $('.modal').modal();
+    $('.modal').modal({
+        //При закрытии формы изменить статус на 20 и обновить список
+        onCloseEnd: function() {
+            $.ajax({
+                url: "https://jino24.ru/clinic/ИЗМЕНЕНИЕ_СТАТУСА_НА_20",
+                type: "POST",
+                data: {patientId: $("#patientModalId").val()},
+                dataType: "text"
+            });
+
+            updateMessages;
+        }
+    });
 });
 
 var nearest = false;

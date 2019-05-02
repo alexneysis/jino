@@ -259,29 +259,34 @@
     var JSONobjects;
 
     var createList = function (responseText) {
+        console.log(responseText);
         JSONobjects = JSON.parse(responseText);
 
         for (let i = 0; i < JSONobjects.length; i++) {
-            let listElement = document.createElement("a");
-            listElement.setAttribute("href", "#modal1");
-            listElement.setAttribute("class", "collection-item modal-trigger");
-            listElement.setAttribute("id", "patientId-" + JSONobjects[i].pk);
-            listElement.innerText = JSONobjects[i].fields.first_name + " " + JSONobjects[i].fields.surname + " " + JSONobjects[i].fields.patronymic;
-
-            let spanElement = document.createElement("span");
-            spanElement.setAttribute("class", "badge");
-
-            let iElement = document.createElement("i");
-            if (JSONobjects[i].fields.status == "10") {
-                iElement.setAttribute("class", "material-icons temp-icon-green");
+            if (Number(JSONobjects[i].fields.status) >= 30) {
+                continue;
             } else {
-                iElement.setAttribute("class", "material-icons temp-icon-red");
-            }
-            iElement.innerText = "brightness_1";
+                let listElement = document.createElement("a");
+                listElement.setAttribute("href", "#modal1");
+                listElement.setAttribute("class", "collection-item modal-trigger");
+                listElement.setAttribute("id", "patientId-" + JSONobjects[i].pk);
+                listElement.innerText = JSONobjects[i].fields.first_name + " " + JSONobjects[i].fields.surname + " " + JSONobjects[i].fields.patronymic;
 
-            spanElement.appendChild(iElement);
-            listElement.appendChild(spanElement);
-            collection.appendChild(listElement);
+                let spanElement = document.createElement("span");
+                spanElement.setAttribute("class", "badge");
+
+                let iElement = document.createElement("i");
+                if (JSONobjects[i].fields.status == "10" || JSONobjects[i].fields.status == "20") {
+                    iElement.setAttribute("class", "material-icons temp-icon-green");
+                } else {
+                    iElement.setAttribute("class", "material-icons temp-icon-red");
+                }
+                iElement.innerText = "brightness_1";
+
+                spanElement.appendChild(iElement);
+                listElement.appendChild(spanElement);
+                collection.appendChild(listElement);
+            }
         }
     }
 
@@ -323,14 +328,34 @@
     $(".collection-item").on("click", function () {
         let itemId = $(this).attr("id");
         let objectId = itemId.substring(10);
+
+        //Обновление списка
+        updateMessages;
+
         for (let j = 0; j < JSONobjects.length; j++) {
             if (JSONobjects[j].pk == objectId) {
-                $("#patientName").text(JSONobjects[j].fields.first_name + " " + JSONobjects[j].fields.surname + " " + JSONobjects[j].fields.patronymic);
-                $("#patientPhone").attr("href", "tel:" + JSONobjects[j].fields.phone);
-                $("#patientPhone").text(JSONobjects[j].fields.phone);
-                $("#patientEmail").attr("href", "mailto:" + JSONobjects[j].fields.email);
-                $("#patientEmail").text(JSONobjects[j].fields.email);
-                $("#patientModalId").attr("value", JSONobjects[j].pk);
+                if (Number(JSONobjects[j].fields.status) <= 20) {
+
+                    //Запрос на изменение статуса занятого пациента
+                    $.ajax({
+                        url: "https://jino24.ru/clinic/ИЗМЕНЕНИЕ_СТАТУСА_НА_21",
+                        type: "POST",
+                        data: {patientId: objectId}, //Передаю ID клиента, которого открыла клиника
+                        dataType: "text"
+                    });
+
+                    //Отображение в модальном окне информации о посетителе
+                    $("#patientName").text(JSONobjects[j].fields.first_name + " " + JSONobjects[j].fields.surname + " " + JSONobjects[j].fields.patronymic);
+                    $("#patientPhone").attr("href", "tel:" + JSONobjects[j].fields.phone);
+                    $("#patientPhone").text(JSONobjects[j].fields.phone);
+                    $("#patientEmail").attr("href", "mailto:" + JSONobjects[j].fields.email);
+                    $("#patientEmail").text(JSONobjects[j].fields.email);
+                    $("#patientModalId").attr("value", JSONobjects[j].pk);
+                } else {
+                    let instance = M.Modal.getInstance($(".modal"));
+                    instance.close();
+                }
+                return;
             }
         }
     });
@@ -342,6 +367,7 @@
         let scriptURL = "https://jino24.ru/clinic/record";
         sendClinicReaction(scriptURL);
 
+        updateMessages;
         instance.close();
     });
 
@@ -352,6 +378,7 @@
         let scriptURL = "https://jino24.ru/clinic/dontrecord";
         sendClinicReaction(scriptURL);
 
+        updateMessages;
         instance.close();
     });
 
@@ -362,13 +389,13 @@
         let scriptURL = "https://jino24.ru/clinic/spam";
         sendClinicReaction(scriptURL);
 
+        updateMessages;
         instance.close();
     });
 
     var sendClinicReaction = function (scriptURL) {
         var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
         $.ajax({
-
             url: scriptURL,
             type: "POST",
             data: {patientId: $("#patientModalId").val()},
