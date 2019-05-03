@@ -12,6 +12,42 @@ from users.models import Client, Status
 def pool_clients(request):
     return render(request, 'jino/patients_pool.html')
 
+def wait(request):
+    logging.basicConfig(level=logging.DEBUG)
+    logging.debug("Wait client")
+    logging.debug("Request body = " + str(request.body))
+    try:
+        logging.debug("Request id = " + str(request.POST["patientId"]))
+        logging.debug("Request body = " + str(request.body))
+        id = int(request.POST["patientId"])
+        client = Client.objects.get(pk=id)
+        logging.debug("Status before = " + str(client.status))
+        client.status = Status.objects.get(pk=20)
+        client.save()
+        logging.debug("Status after = " + str(client.status))
+    except Exception as e:
+        print(e)
+        logging.critical("Error in record client = " + str(e))
+    return HttpResponse(status=200)
+
+def busy(request):
+    logging.basicConfig(level=logging.DEBUG)
+    logging.debug("Busy client")
+    logging.debug("Request body = " + str(request.body))
+    try:
+        logging.debug("Request id = " + str(request.POST["patientId"]))
+        logging.debug("Request body = " + str(request.body))
+        id = int(request.POST["patientId"])
+        client = Client.objects.get(pk=id)
+        logging.debug("Status before = " + str(client.status))
+        client.status = Status.objects.get(pk=21)
+        client.save()
+        logging.debug("Status after = " + str(client.status))
+    except Exception as e:
+        print(e)
+        logging.critical("Error in record client = " + str(e))
+    return HttpResponse(status=200)
+
 
 def record_client(request):
     logging.basicConfig(level=logging.DEBUG)
