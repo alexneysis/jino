@@ -1,6 +1,7 @@
 @font-face {
   font-family: 'Futura Book C';
   src: url('../fonts/futurabookc.otf') format('opentype');
+  font-display: swap;
 }
 
 /*=====[Block]Header=====*/
@@ -246,6 +247,8 @@
   letter-spacing: 1px;
 }
 .popupInput {
+  box-sizing: border-box !important;
+  padding: 0 10px !important;
   height: 48px !important;
   border-radius: 13px !important;
   background-color: #ffffff !important;
@@ -316,7 +319,8 @@
   line-height: 18px;
   letter-spacing: 0.2px;
 }
-.reviewLogo, .reviewText {
+.reviewLogo,
+.reviewText {
   font-size: 20px;
   font-weight: bold;
   line-height: 24px;
