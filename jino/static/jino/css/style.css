@@ -1,56 +1,17 @@
 @font-face {
   font-family: 'Futura Book C';
   src: url('../fonts/futurabookc.otf') format('opentype');
+  font-display: swap;
 }
 
-* {
-  font-family: "Futura Book C";
-}
-h1 {
-  font-family: Roboto;
-  font-size: 46px;
-  font-weight: 700;
-  line-height: 48px;
-  letter-spacing: 1.15px;
-  text-transform: uppercase;
-}
-h2 {
-  color: #00c8ff;
-  font-family: "Futura Book C";
-  font-size: 30px;
-  font-weight: 400;
-  letter-spacing: 0.35px;
-  line-height: 25px;
-}
-
-.temp-text-dark-blue {
-  color: #001d62;
-}
-.temp-footer-text {
-  color: #3246ae;
-  font-weight: bold;
-  font-family: "Futura Book C";
-}
-.temp-inline-icon {
-  display: inline-block !important;
-  line-height: inherit !important;
-  height: auto !important;
-  vertical-align: bottom;
-}
-.temp-inline-dropdown {
-  height: auto !important;
-}
-.temp-w-100 {
-  width: 100%;
-}
+/*=====[Block]Header=====*/
 .pageNavigation-text {
   padding: 0 0 6px 0 !important;
   margin: 0 15px;
   font-size: 21px;
   font-weight: 400;
   line-height: 11px;
-  letter-spacing: 0.21px;
-  font-family: "Futura Book C";
+  letter-spacing: 0.2px;
   text-transform: none;
 }
 .pageNavigation-text:hover {
@@ -60,59 +21,13 @@ h2 {
 }
 .sidenavLink {
   font-size: 18px !important;
-  letter-spacing: 0.18px;
+  letter-spacing: 0.2px;
   color: #001d62 !important;
 }
-h3 {
-  font-size: 1.17em;
-}
-.sectionHeaderBg {
-  background-color: #fee96d;
-}
-.sectionHeader {
-  position: relative;
-  right: 3px;
-  font-family: Roboto;
-  font-size: 36px;
-  font-weight: bold;
-  line-height: 15px;
-  letter-spacing: 0.12px;
-}
+.pageNavigation { margin: 40px 0 -985px 0; }
+.navigationList { margin-top: 53px; }
 
-
-
-.pageNavigation {
-  margin: 40px 0 -985px 0;
-}
-.navigationList {
-  margin-top: 53px;
-}
-.mainSection {
-  overflow: hidden;
-  margin-bottom: -535px;
-}
-.headers {
-  margin-top: 150px;
-}
-.callBtn {
-  max-width: 236px;
-  height: 58px;
-  box-shadow: 1px 3px 15px 3px rgba(0, 40, 137, 0.07);
-  border-radius: 25px;
-  background-color: #fee96d;
-  cursor: pointer;
-}
-.callBtn:hover {
-  box-shadow: 0 1px 10px 1px rgba(0, 40, 137, 0.07);
-  background-color: #fee990;
-}
-.callBtnText {
-  margin: auto;
-  font-family: "Futura Book C";
-  font-size: 36px;
-  font-weight: bold;
-  letter-spacing: 0.27px;
-}
+/*=====[Block]Social=====*/
 .socialBlock {
   position: relative;
   top: 100px;
@@ -127,9 +42,7 @@ h3 {
   height: 2px;
   background-color: #8e9dba;
 }
-.socialItem {
-  margin-left: 50px;
-}
+.socialItem { margin-left: 50px; }
 .socialItemIcon {
   width: 22px;
   height: 22px;
@@ -138,25 +51,75 @@ h3 {
   position: relative;
   bottom: 6px;
   opacity: 0.54;
-  font-family: Roboto;
+  font-family: Roboto, serif;
   font-size: 12px;
   font-weight: bold;
   line-height: 11px;
-  letter-spacing: 0.12px;
+  letter-spacing: 0.1px;
 }
 
-/* Секция "как работает" */
+/*=====[Block]Footer=====*/
+.page-footer {
+  padding: 40px 0 20px;
+  background: #c3ebff;
+}
+.footerNavItem { margin-bottom: 15px; }
+.footerLink {
+  font-size: 18px;
+  line-height: 0;
+  text-decoration: underline;
+  letter-spacing: 0.2px;
+}
+.connectToUs {
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+}
+.copyright {
+  margin-top: 40px;
+  opacity: 0.65;
+  color: #3246ae;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 22px;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+}
+
+/*=====index.html=====*/
+/*---[Section]mainSection---*/
+.mainSection {
+  overflow: hidden;
+  margin-bottom: -535px;
+}
+.headers { margin-top: 150px; }
+.callBtn {
+  max-width: 236px;
+  height: 58px;
+  box-shadow: 1px 3px 15px 3px rgba(0, 40, 137, 0.07);
+  border-radius: 25px;
+  background-color: #fee96d;
+  cursor: pointer;
+}
+.callBtn:hover {
+  box-shadow: 0 1px 10px 1px rgba(0, 40, 137, 0.07);
+  background-color: #fee990;
+}
+.callBtnText {
+  margin: auto;
+  font-size: 36px;
+  font-weight: bold;
+  letter-spacing: 0.3px;
+}
+/*---[Section]howWorkSection---*/
 .howWorkSection {
   margin-bottom: 80px;
   overflow: hidden;
   margin-top: 370px;
 }
-.instructionBlock {
-  margin-top: -620px;
-}
+.instructionBlock { margin-top: -620px; }
 .instructionItemText {
   position: relative;
-  font-family: "Futura Book C";
   font-size: 36px;
   font-weight: bold;
   line-height: 36px;
@@ -166,12 +129,7 @@ h3 {
   bottom: 190px;
   left: 108px;
 }
-.secondPoint {
-  margin-top: -100px;
-  /* max-width: 300px;
-  bottom: 160px;
-  right: 180px; */
-}
+.secondPoint { margin-top: -100px; }
 .thirdPoint {
   max-width: 292px;
   left: 153px;
@@ -182,8 +140,7 @@ h3 {
   right: 300px;
   bottom: 250px;
 }
-
-/* Наши партнеры */
+/*---[Section]partnersSection---*/
 .partnersSection {
   padding: 130px 0 130px 0;
   border-top-left-radius: 300px;
@@ -191,43 +148,29 @@ h3 {
   background-color: #84d6ff;
   box-shadow: 4px 8px 59px rgba(0, 0, 0, 0.13);
 }
-.partnersBlock {
-  margin-top: 175px;
-}
-.partrersItem {
-  cursor: pointer;
-}
-.partrersItem:hover .partnersItemText {
-  border-bottom: 5px solid #fee96d;
-}
+.partnersBlock { margin-top: 175px; }
+.partrersItem { cursor: pointer; }
+.partrersItem:hover .partnersItemText { border-bottom: 5px solid #fee96d; }
 .partnersItemText {
-  font-family: "Futura Book C";
   font-size: 24px;
   font-weight: bold;
   line-height: 24px;
-  letter-spacing: 0.24px;
+  letter-spacing: 0.25px;
 }
-
-/* FAQ */
+/*---[Section]faqSection---*/
 .faqSection {
   overflow: hidden;
-  /* margin: -150px 0 -540px 0; old variation*/
   margin: -150px 0 -150px 0;
   padding-bottom: 160px;
 }
-.faqBlock {
-  margin-top: 100px;
-}
-.collapsible {
-  border: 0 !important;
-}
+.faqBlock { margin-top: 100px; }
+.collapsible { border: 0 !important; }
 .collapsible-header {
   padding-bottom: 6px;
-  font-family: "Futura Book C";
   font-size: 34px;
   font-weight: bold;
-  line-height: 35.59px;
-  letter-spacing: 0.11px;
+  line-height: 35.6px;
+  letter-spacing: 0.1px;
   border: 0;
   background-color: transparent;
 }
@@ -235,12 +178,8 @@ h3 {
   font-size: 50px !important;
   color: #fee96d;
 }
-.collapsible-header:hover {
-  padding-bottom: 0;
-}
-.collapsible-header:hover .faqQuestion {
-  border-bottom: 6px solid #fee96d;
-}
+.collapsible-header:hover { padding-bottom: 0; }
+.collapsible-header:hover .faqQuestion { border-bottom: 6px solid #fee96d; }
 .collapsible-header:hover .faqArrow {
   position: relative;
   transform: rotate(-90deg);
@@ -253,45 +192,181 @@ h3 {
   border-radius: 10px;
   background-color: #c0e6f6;
   opacity: 0.73;
-  font-family: "Futura Book C";
   font-size: 18px;
   font-weight: bold;
   line-height: 24px;
-  letter-spacing: 0.17px;
+  letter-spacing: 0.2px;
+}
+/*---[Section]popupSection---*/
+.popupSection {
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 991;
+}
+.popupBackground {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(151, 220, 255, 0.5);
+}
+.popupFormBlock {
+  padding: 25px 30px 1px;
+  box-shadow: 0 0 22px 1px rgba(1, 0, 0, 0.16);
+  border-radius: 25px;
+  background-color: #002c85;
+}
+.popupHeader {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 15px;
+  /*???*/
+  /*max-width: auto;*/
+  display: inline-block;
+  text-transform: uppercase;
+  border-bottom: 3px solid #fee96d;
+  letter-spacing: 1.6px;
+}
+.popupSubtitle {
+  margin: 0 0 20px;
+  font-family: Roboto, serif;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 1px;
+}
+.popupLabel {
+  color: white;
+  font-family: Roboto, serif;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 32px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.popupInput {
+  box-sizing: border-box !important;
+  padding: 0 10px !important;
+  height: 48px !important;
+  border-radius: 13px !important;
+  background-color: #ffffff !important;
+}
+.switch { margin-bottom: 20px; }
+.nearestField { display: none; }
+.popupAddrDesc {
+  margin: 10px 0 20px;
+  font-family: Roboto, serif;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 10px;
+  letter-spacing: 1px;
+}
+.popupBtn {
+  padding: 10px 30px;
+  box-shadow: 1px 3px 15px 3px rgba(0, 40, 137, 0.18);
+  border-radius: 30px;
+  background-color: #fee96d;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 36px;
+  letter-spacing: 0.2px;
+}
+.closeIcon {
+  position: relative;
+  bottom: 65px;
+  left: 10px;
+  cursor: pointer;
 }
 
-/* Footer */
-.page-footer {
-  padding: 40px 0 20px;
-  background: #c3ebff;
+/*=====patients_pool.html=====*/
+.poolHeader {
+  font-family: Roboto, serif;
+  font-size: 36px;
+  font-weight: bold;
+  letter-spacing: 0.1px;
 }
-.footerNavItem {
-  margin-bottom: 15px;
-}
-.footerLink {
+.patientsList { margin: 200px 0; }
+.collection-item {
+  color: #3246ae !important;
+  font-weight: bold;
   font-size: 18px;
-  line-height: 0px;
-  text-decoration: underline;
-  letter-spacing: 0.18px;
 }
-.connectToUs {
-font-size: 20px;
-line-height: 24px;
-letter-spacing: 0.2px;
+
+/*=====about.html=====*/
+/*---[Section]aboutMainSection---*/
+.aboutMainSection { overflow: hidden; }
+.mainTextBlock {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 36px;
+  letter-spacing: 0.4px;
 }
-.copyright {
-  margin-top: 40px;
-  opacity: 0.65;
-  color: #3246ae;
-  font-family: "Futura Book C";
+.naming { font-size: 48px; }
+.triggerHeader {
+  font-family: Roboto, serif;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 11px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+/*---[Section]partnersSection---*/
+.triggerDescription {
   font-size: 18px;
   font-weight: bold;
-  line-height: 22.04px;
-  text-transform: uppercase;
-  letter-spacing: 0.18px;
+  line-height: 18px;
+  letter-spacing: 0.2px;
+}
+.reviewLogo,
+.reviewText {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 24px;
+  letter-spacing: 0.25px;
+}
+.moreReviews {
+  padding-bottom: 55px;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 40px;
+  letter-spacing: 0.35px;
+}
+/*---[Section]contactSection---*/
+.contactSection {
+  overflow: hidden;
+  margin-top: 100px;
+}
+.contactsBlock {
+  margin-top: 100px;
+  margin-bottom: 125px;
+}
+.contactType {
+  color: #5b94b1;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 24px;
+  letter-spacing: 0.25px;
+}
+.contactValue {
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 22px;
+  letter-spacing: 0.3px;
 }
 
-/* Circles */
+/*======agreement.html=====*/
+.agreementText {
+  text-indent: 1.5em;
+  text-align: justify;
+  font-size: 24px;
+  line-height: 24px;
+  letter-spacing: 0.25px;
+}
+.agreementList { list-style-type: disc; }
+
+/*---[Elements]Circles---*/
 .circle {
   border-radius: 50%;
   z-index: 980;
@@ -375,10 +450,7 @@ letter-spacing: 0.2px;
   opacity: 0.5;
 }
 
-/*Decorarions*/
-.decore {
-
-}
+/*---[Elements]Decorarions---*/
 .decore-1 {
    position: relative;
    left: 45%;
@@ -405,290 +477,73 @@ letter-spacing: 0.2px;
   z-index: 991;
 }
 
-/* patients_pool.html */
-.poolHeader {
-  font-family: Roboto;
-  font-size: 36px;
-  font-weight: bold;
-  letter-spacing: 0.12px;
-}
-
-.patientsList {
-  margin: 200px 0;
-}
-.collection-item {
-  color: #3246ae !important;
-  font-weight: bold;
-  font-family: "Futura Book C";
-  font-size: 18px;
-}
-.temp-icon-green {
-  color: green;
-}
-.temp-icon-red {
-  color: red;
-}
-
-/* about.html */
-.temp-mb-0 {
-  margin-bottom: 0;
-}
-.temp-mt-0 {
-  margin-top: 0;
-}
-.temp-pb-0 {
-  padding-bottom: 0;
-}
-.temp-text-underline {
-  text-decoration: underline;
-}
-.aboutMainSection {
-  overflow: hidden;
-}
-.mainTextBlock {
-  /* color: #183682; */
-  /* Style for "Jino — это" */
-/* font-family: "Futura Book C"; */
-font-size: 30px;
-font-weight: 400;
-line-height: 36px;
-/* Text style for "J, ino" */
-/* font-size: 48px;
-letter-spacing: 0.56px; */
-/* Text style for "— это моло" */
-letter-spacing: 0.42px;
-}
-.naming {
-  font-size: 48px;
-}
-.triggerHeader {
-
-font-family: Roboto;
-font-size: 30px;
-font-weight: bold;
-line-height: 11px;
-/* Text style for "б, лизко" */
-letter-spacing: 0.3px;
-  text-transform: uppercase;
-}
-.triggerDescription {
-
-font-family: "Futura Book C";
-font-size: 18px;
-font-weight: bold;
-line-height: 18px;
-/* Text style for "Готовы пря" */
-letter-spacing: 0.18px;
-}
-.reviewLogo {
-  /* Style for "17.02.19" */
-font-size: 20px;
-font-weight: bold;
-line-height: 24px;
-/* Text style for "1, 7.02.19" */
-letter-spacing: 0.24px;
-}
-.reviewText {
-  /* Style for "«По критер" */
-font-size: 20px;
-font-weight: bold;
-line-height: 24px;
-/* Text style for "«По критер" */
-letter-spacing: 0.24px;
-}
-.moreReviews {
-  padding-bottom: 55px;
-font-size: 30px;
-font-weight: bold;
-line-height: 40px;
-/* Text style for "М, ы делае" */
-letter-spacing: 0.36px;
-}
-
-.contactSection {
-  overflow: hidden;
-  margin-top: 100px;
-}
-.contactsBlock {
-  margin-top: 100px;
-  margin-bottom: 125px;
-}
-.contactType {
-color: #5b94b1;
-font-size: 18px;
-font-weight: bold;
-line-height: 24px;
-/* Text style for "Email" */
-letter-spacing: 0.24px;
-}
-.contactValue {
-font-size: 22px;
-font-weight: bold;
-line-height: 22px;
-/* Text style for "jinoplatfo" */
-letter-spacing: 0.3px;
-}
-
-/* popup */
-.popupSection {
-  display: none;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 991;
-}
-.popupBackground {
-  width: 100%;
-  height: 100%;
-  background-color: rgba(151, 220, 255, 0.5);
-}
-.popupFormBlock {
-  padding: 25px 30px 1px;
-  box-shadow: 0 0 22px 1px rgba(1, 0, 0, 0.16);
-  border-radius: 25px;
-  background-color: #002c85;
-}
-.popupHeader {
-  margin: 0;
-font-size: 16px;
-font-weight: bold;
-line-height: 15px;
-max-width: auto;
-display: inline-block;
-text-transform: uppercase;
-border-bottom: 3px solid #fee96d;
-/* Text style for "Заполните" */
-letter-spacing: 1.6px;
-}
-.popupSubtitle {
-  margin: 0 0 20px;
-font-family: Roboto;
-font-size: 10px;
-font-weight: 400;
-line-height: 15 px;
-/* Text style for "Остальное" */
-letter-spacing: 1px;
-}
-.popupLabel {
-  color: white;
-font-family: Roboto;
-font-size: 11px;
-font-weight: 700;
-line-height: 32.05px;
-text-transform: uppercase;
-/* Text style for "ф, ио" */
-letter-spacing: 1.1px;
-}
-.popupInput {
-  height: 48px !important;
-border-radius: 13px !important;
-background-color: #ffffff !important;
-}
-.switch {
-  margin-bottom: 20px;
-}
-.nearestField {
-  display: none;
-}
-.popupAddrDesc {
-  margin: 10px 0 20px;
-font-family: Roboto;
-font-size: 10px;
-font-weight: 400;
-line-height: 10px;
-/* Text style for "Укажите гд" */
-letter-spacing: 1px;
-}
-.popupBtn {
-  font-family: "Futura Book C";
-  padding: 10px 30px;
-box-shadow: 1px 3px 15px 3px rgba(0, 40, 137, 0.18);
-border-radius: 30px;
-background-color: #fee96d;
-font-size: 24px;
-font-weight: bold;
-line-height: 36px;
-/* Text style for "Отправить" */
-letter-spacing: 0.2px;
-}
-.closeIcon {
-  position: relative;
-  bottom: 65px;
-left: 10px;
-cursor: pointer;
-}
-
-/*agreement.html*/
-.agreementText {
-  text-indent: 1.5em;
-  text-align: justify;
-  font-size: 24px;
-  line-height: 24px;
-  letter-spacing: 0.24px;
-}
-.agreementList {
-  list-style-type: disc;
-}
-
-
-@media screen and (max-width: 1400px) {
-.contactType {
-  /*font-size: 20px;*/
-}
-.contactValue {
-  /*font-size: 26px;*/
-}
-}
+/*=====mobile styles=====*/
 @media screen and (max-width: 993px) {
-  .socialBlock {
-    top: 200px;
-  }
+  .socialBlock { top: 200px; }
   .fourPoint {
     min-width: 375px;
     right: 200px;
   }
-
-  .collapsible-header:hover .faqArrow {
-    top: 25px;
-  }
-
-  .collapsible-body {
-    margin-left: 0;
-  }
-
-  .contactValue {
-    font-size: 18px;
-  }
+  .collapsible-header:hover .faqArrow { top: 25px; }
+  .collapsible-body { margin-left: 0; }
+  .contactValue { font-size: 18px; }
+}
+@media screen and (max-width: 600px) {
+  h1 { font-size: 40px; }
+  h2 { font-size: 24px; }
+  .mainTextBlock { font-size: 30px; }
+  .socialBlock { top: 300px; }
+  .instructionItem img { max-width: 100%; }
+  .partnersHeader { text-align: center; }
+  .agreementHeader { font-size: 34px; }
+  .circle-2 { right: 120%; }
 }
 
-@media screen and (max-width: 600px) {
-  h1 {
-    font-size: 40px;
-  }
-  h2 {
-    font-size: 24px;
-  }
-  .mainTextBlock {
-    font-size: 30px;
-  }
-  .socialBlock {
-    top: 300px;
-  }
+/*=====Templates=====*/
+* { font-family: "Futura Book C", serif;}
+h1 {
+  font-family: Roboto, serif;
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: 1.15px;
+  text-transform: uppercase;
+}
+h2 {
+  color: #00c8ff;
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: 0.35px;
+  line-height: 25px;
+}
+h3 { font-size: 1.17em; }
+.temp-text-dark-blue { color: #001d62; }
+.temp-footer-text {
+  color: #3246ae;
+  font-weight: bold;
+}
+.temp-inline-icon {
+  display: inline-block !important;
+  line-height: inherit !important;
+  height: auto !important;
+  vertical-align: bottom;
+}
+.temp-inline-dropdown { height: auto !important; }
+.temp-w-100 { width: 100%; }
+.temp-icon-green { color: green; }
+.temp-icon-red { color: red; }
+.temp-mb-0 { margin-bottom: 0; }
+.temp-mt-0 { margin-top: 0; }
+.temp-pb-0 { padding-bottom: 0; }
+.temp-text-underline { text-decoration: underline; }
 
-  .instructionItem img {
-    max-width: 100%;
-  }
-
-  .partnersHeader {
-    text-align: center;
-  }
-
-  .agreementHeader {
-    font-size: 34px;
-  }
-
-  .circle-2 {
-    right: 120%;
-  }
+.sectionHeaderBg { background-color: #fee96d; }
+.sectionHeader {
+  position: relative;
+  right: 3px;
+  font-family: Roboto, serif;
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 15px;
+  letter-spacing: 0.15px;
 }
