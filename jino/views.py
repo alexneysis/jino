@@ -17,11 +17,14 @@ def home(request):
 
 
 def task_3(request):
-    return render(request, 'homework/task_3.html')
+    return render(request, 'homework/materialize/task_3.html')
 
 
 def task_4(request):
-    return render(request, 'homework/task_4.html')
+    return render(request, 'homework/materialize/task_4.html')
+
+def task_4_html(request):
+    return render(request, 'homework/html/task_4.html')
 
 
 def agreement(request):
