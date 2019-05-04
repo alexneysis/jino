@@ -1,20 +1,17 @@
 $(document).ready(function () {
-    // $('.dropdown-trigger').dropdown();
-
     $('.sidenav').sidenav();
 
     $('.collapsible').collapsible();
 
     $('.modal').modal({
         //При закрытии формы изменить статус на 20 и обновить список
-        onCloseEnd: function() {
+        onCloseEnd: function () {
             $.ajax({
                 url: "https://jino24.ru/clinic/wait",
                 type: "POST",
                 data: {patientId: $("#patientModalId").val()},
                 dataType: "text"
             });
-
             updateMessages;
         }
     });
@@ -22,7 +19,7 @@ $(document).ready(function () {
 
 var nearest = false;
 var nearestClick = 0;
-$(".switch").on("click", function(e) {
+$(".switch").on("click", function (e) {
     nearestClick++;
     if (nearestClick == 2) {
         console.log("НАЖАЛИ");
@@ -37,39 +34,14 @@ $(".switch").on("click", function(e) {
 });
 
 try { //Выполняется функция, если maskedinput подеключен
-    $("#phoneField").mask("+7 (999) 999 - 99 - 99", {placeholder: "-" }); //Подключение маски
+    $("#phoneField").mask("+7 (999) 999 - 99 - 99", {placeholder: "-"}); //Подключение маски
 } catch (e) {
     //Просто пропускается эта строка, если не подключен
 }
 
-// $(".collection-item").on("click", function () {
-//     var result = $(this).text().substring(12);
-//     var URL = "https://jino24.ru/clinic/send";
-//     var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
-//
-//
-//     $.ajax({
-//         url: URL,
-//         type: "POST",
-//         data: {name: result},
-//         dataType: "text",
-//         beforeSend: function (xhr, settings) {
-//             xhr.setRequestHeader("X-CSRFToken", csrftoken);
-//         },
-//         success: function (response) {
-//             console.log("Success response" + " " + result);
-//         },
-//         error: function (response) {
-//             console.log("Error in method");
-//         }
-//     });
-// });
-
-
 $(".callBtn").on("click", function (e) {
     $(".popupSection").show();
 });
-
 
 var closeIconFlag = false;
 var formFlag = false;
