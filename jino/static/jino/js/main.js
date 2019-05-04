@@ -36,7 +36,11 @@ $(".switch").on("click", function(e) {
     }
 });
 
-$("#phoneField").mask("+7 (999) 999 - 99 - 99", {placeholder: "-" }); //Подключение маски
+try { //Выполняется функция, если maskedinput подеключен
+    $("#phoneField").mask("+7 (999) 999 - 99 - 99", {placeholder: "-" }); //Подключение маски
+} catch (e) {
+    //Просто пропускается эта строка, если не подключен
+}
 
 // $(".collection-item").on("click", function () {
 //     var result = $(this).text().substring(12);

@@ -161,7 +161,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="callBtn foregroundForCircle">
+            <div class="callBtn foregroundForCircle" onclick="ym(52553323, 'reachGoal', 'vyzov_click'); return true;">
                 <span class="callBtnText temp-text-dark-blue center-align col s12">Вызов</span>
             </div>
         </div>
@@ -336,12 +336,12 @@
             </div>
             <div class="col s1 m1 l1 offset-s4 offset-l2 hide-on-med-and-up">
                 <ul>
-                    <li><a class="" href="https://www.facebook.com/jinoplatform" target="_blank"><img
+                    <li><a class="" href="//www.facebook.com/jinoplatform" target="_blank"><img
                             src="../../static/jino/img/social-icon-1.png" alt="facebook"/></a>
                     </li>
-                    <li><a class="" href="https://www.instagram.com/jinoplatform/?hl=ru" target="_blank"><img
+                    <li><a class="" href="//www.instagram.com/jinoplatform/?hl=ru" target="_blank"><img
                             src="../../static/jino/img/social-icon-2.png" alt="instagram"/></a></li>
-                    <li><a class="" href="https://vk.com/jinoplatform" target="_blank"><img
+                    <li><a class="" href="//vk.com/jinoplatform" target="_blank"><img
                             src="../../static/jino/img/social-icon-3.png" alt="вконтакте"/></a></li>
                 </ul>
             </div>
@@ -354,12 +354,12 @@
             </div>
             <div class="col m1 l1 offset-l2 hide-on-small-only">
                 <ul>
-                    <li><a class="" href="https://www.facebook.com/jinoplatform" target="_blank"><img
+                    <li><a class="" href="//www.facebook.com/jinoplatform" target="_blank"><img
                             src="../../static/jino/img/social-icon-1.png" alt="facebook"/></a>
                     </li>
-                    <li><a class="" href="https://www.instagram.com/jinoplatform/?hl=ru" target="_blank"><img
+                    <li><a class="" href="//www.instagram.com/jinoplatform/?hl=ru" target="_blank"><img
                             src="../../static/jino/img/social-icon-2.png" alt="instagram"/></a></li>
-                    <li><a class="" href="https://vk.com/jinoplatform" target="_blank"><img
+                    <li><a class="" href="//vk.com/jinoplatform" target="_blank"><img
                             src="../../static/jino/img/social-icon-3.png" alt="вконтакте"/></a></li>
                 </ul>
             </div>
@@ -382,7 +382,7 @@
                     <img src="../../static/jino/img/close-icon.png" alt=""/>
                 </div>
                 {{ form.non_field_errors }}
-                <form method="post" action="/data">
+                <form method="post" action="/data" onsubmit="ym(52553323, 'reachGoal', 'form_submit'); return true;">
                     {% csrf_token %}
                     {{ form.FIO.errors }}
                     <label class="popupLabel">
@@ -435,6 +435,6 @@
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="../../static/jino/js/jquery.maskedinput.min.js"></script>
-<script type="text/javascript" src="../../static/jino/js/main.js"></script>
+<script src="../../static/jino/js/main.js"></script>
 </body>
 </html>
