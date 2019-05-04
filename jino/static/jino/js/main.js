@@ -9,7 +9,7 @@ $(document).ready(function () {
         //При закрытии формы изменить статус на 20 и обновить список
         onCloseEnd: function() {
             $.ajax({
-                url: "https://jino24.ru/clinic/ИЗМЕНЕНИЕ_СТАТУСА_НА_20",
+                url: "https://jino24.ru/clinic/wait",
                 type: "POST",
                 data: {patientId: $("#patientModalId").val()},
                 dataType: "text"

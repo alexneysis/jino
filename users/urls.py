@@ -24,6 +24,8 @@ urlpatterns = [
                   url('chat', views.chat),
                   url('dontrecord', views.dont_record_client),
                   url('record', views.record_client),
+                  url('wait', views.wait),
+                  url('busy', views.busy),
                   url('spam', views.spam_client),
                   url('', views.pool_clients)
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

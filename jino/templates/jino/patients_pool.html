@@ -258,7 +258,6 @@
     var JSONobjects;
 
     var createList = function (responseText) {
-        console.log(responseText);
         JSONobjects = JSON.parse(responseText);
 
         for (let i = 0; i < JSONobjects.length; i++) {
@@ -337,7 +336,7 @@
 
                     //Запрос на изменение статуса занятого пациента
                     $.ajax({
-                        url: "https://jino24.ru/clinic/ИЗМЕНЕНИЕ_СТАТУСА_НА_21",
+                        url: "https://jino24.ru/clinic/busy",
                         type: "POST",
                         data: {patientId: objectId}, //Передаю ID клиента, которого открыла клиника
                         dataType: "text"
