@@ -1,10 +1,13 @@
 import datetime
+import logging
 import smtplib
+import xml.etree.ElementTree as xml
 from email.header import Header
 from email.mime.text import MIMEText
 
 from django.http import HttpResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect, render
+from django.template.context_processors import csrf
 from django.views.decorators.csrf import csrf_exempt
 
 import secret
@@ -16,15 +19,104 @@ def home(request):
     return render(request, 'jino/index.html')
 
 
-def task_3(request):
-    return render(request, 'homework/materialize/task_3.html')
+def task_3_html(request):
+    return render(request, 'homework/html/task_3.html')
 
-
-def task_4(request):
-    return render(request, 'homework/materialize/task_4.html')
 
 def task_4_html(request):
     return render(request, 'homework/html/task_4.html')
+
+
+def task_3_mat(request):
+    return render(request, 'homework/materialize/task_3.html')
+
+
+def task_4_mat(request):
+    return render(request, 'homework/materialize/task_4.html')
+
+
+def send_form(request):
+    try:
+        c = {}
+        c.update(csrf(request))
+        logging.basicConfig(level=logging.DEBUG)
+        logging.debug("Request post = " + str(request.POST))
+        logging.debug("Type request post = " + str(type(request.POST)))
+        logging.debug("Request post superpowers = " + str(request.POST["superpowers"]))
+        logging.debug("Type request post superpowers = " + str(type(request.POST["superpowers"])))
+        logging.debug("Request post selectCountry = " + str(request.POST.getlist("selectCountry")))
+        logging.debug("Type request post selectCountry = " + str(type(request.POST.getlist("selectCountry"))))
+        data = request.POST
+        root = xml.Element("form")
+        contactInf = xml.Element("contact_Information")
+        aboutYou = xml.Element("about_you")
+        rate_form = xml.Element("rate_form")
+        root.append(contactInf)
+        root.append(aboutYou)
+        root.append(rate_form)
+
+        # contact_Information
+        surname = xml.SubElement(contactInf, "surname")
+        surname.text = data.getlist("surname")[0]
+
+        first_name = xml.SubElement(contactInf, "first_name")
+        first_name.text = data.getlist("firstName")[0]
+
+        patronomic = xml.SubElement(contactInf, "patronomic")
+        patronomic.text = data.getlist("patronomic")[0]
+
+        email = xml.SubElement(contactInf, "email")
+        email.text = data.getlist("email")[0]
+
+        # about you
+        birthday = xml.SubElement(aboutYou, "birthday")
+        birthday.text = data.getlist("birthday")[0]
+
+        sex = xml.SubElement(aboutYou, "sex")
+        sex.text = data.getlist("sex")[0]
+
+        extremity = xml.SubElement(aboutYou, "extremity")
+        extremity.text = data.getlist("member")[0]
+
+        interesting_facts = xml.SubElement(aboutYou, "interesting_facts")
+        interesting_facts.text = data.getlist("interesting_facts")[0]
+
+        ##Superowers
+        superpowerEl = xml.Element("superpowers")
+        aboutYou.append(superpowerEl)
+
+        for i in data.getlist("superpowers"):
+            superpower = xml.SubElement(superpowerEl, "superpower")
+            superpower.text = i
+
+        ##Black list
+        black_listEl = xml.Element("black_list")
+        aboutYou.append(black_listEl)
+
+        for i in data.getlist("selectCountry"):
+            country = xml.SubElement(black_listEl, "country")
+            country.text = i
+
+        property = xml.SubElement(aboutYou, "property")
+        property.text = data.getlist("property")[0]
+
+        # Form rate
+        rate = xml.SubElement(rate_form, "rate")
+        rate.text = data.getlist("rate")[0]
+
+        tree = xml.ElementTree(root)
+        file_name = "form_" + str(datetime.datetime.now()) + ".xml"
+        tree.write(file_name, encoding="UTF-8")
+        logging.debug("This all")
+    except Exception as e:
+        logging.critical(str(e))
+    return HttpResponse(status=200)
+
+
+@csrf_exempt
+def task_7(request):
+    print(request)
+    return render(request, 'homework/html/task_7.html')
 
 
 def agreement(request):
@@ -74,7 +166,8 @@ def data(request):
         form = FormClient()
         args["login_error"] = "Используйте метод POST для отправки"
     print("This all")
-    return render(request, "jino/index.html", {"from": form})
+    # return render(request, "jino/index.html", {"from": form})
+    return redirect("/")
 
 
 def data_post(request, FIO, phone, email, address):
