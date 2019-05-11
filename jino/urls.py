@@ -30,5 +30,5 @@ urlpatterns = [
                   url('homework/send_form', views.send_form),
                   url('about', views.about),
                   url('agreement', views.agreement),
-                  url('', views.home)
+                  url(r'^$', views.home)
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
