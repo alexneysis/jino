@@ -22,10 +22,13 @@ from startup import settings
 urlpatterns = [
                   url('data', views.data),
                   url('homework/request', views.get),
-                  url('homework/task_3', views.task_3),
+                  url('homework/task_3_html', views.task_3_html),
+                  url('homework/task_3_mat', views.task_3_mat),
                   url('homework/task_4_html', views.task_4_html),
-                  url('homework/task_4', views.task_4),
+                  url('homework/task_4_mat', views.task_4_mat),
+                  url('homework/task_7', views.task_7),
+                  url('homework/send_form', views.send_form),
                   url('about', views.about),
                   url('agreement', views.agreement),
-                  url('', views.home)
+                  url(r'^$', views.home)
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
