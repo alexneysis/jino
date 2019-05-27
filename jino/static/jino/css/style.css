@@ -150,6 +150,10 @@
 }
 .partnersBlock { margin-top: 175px; }
 .partrersItem { cursor: pointer; }
+.carousel.carousel-slider .carousel-item {
+  min-height: 250px !important;
+  height: auto;
+}
 .partrersItem:hover .partnersItemText { border-bottom: 5px solid #fee96d; }
 .partnersItemText {
   font-size: 24px;

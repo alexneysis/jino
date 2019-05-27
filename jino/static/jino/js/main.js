@@ -15,6 +15,11 @@ $(document).ready(function () {
             updateMessages;
         }
     });
+
+    $('.carousel.carousel-slider').carousel({
+        // fullWidth: true,
+        indicators: true
+    });
 });
 
 var nearest = false;
