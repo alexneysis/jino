@@ -360,7 +360,7 @@
   letter-spacing: 0.3px;
 }
 
-/*======agreement.html=====*/
+/*=====agreement.html=====*/
 .agreementText {
   text-indent: 1.5em;
   text-align: justify;
@@ -369,6 +369,16 @@
   letter-spacing: 0.25px;
 }
 .agreementList { list-style-type: disc; }
+
+/*======quiz_page.html=====*/
+.quizSection {
+    height: 1200px;
+}
+.quizField {
+    width: 100%;
+    height: 1200px;
+    border: 0;
+}
 
 /*---[Elements]Circles---*/
 .circle {
@@ -501,6 +511,8 @@
   .partnersHeader { text-align: center; }
   .agreementHeader { font-size: 34px; }
   .circle-2 { right: 120%; }
+  .quizSection { height: 830px; }
+  .quizField { height: 830px; }
 }
 
 /*=====Templates=====*/
