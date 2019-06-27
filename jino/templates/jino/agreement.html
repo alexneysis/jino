@@ -2,6 +2,21 @@
 <html lang="ru">
 <head>
     {# BEGGIN #}
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-N6P62G8');</script>
+    <!-- End Google Tag Manager -->
     {# Open grapg begin#}
     <meta property="og:title" content="Jino"/>
     <meta property="og:type" content="website"/>
@@ -16,9 +31,11 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-93952064-3"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
+
         function gtag() {
             dataLayer.push(arguments);
         }
+
         gtag('js', new Date());
         gtag('config', 'UA-93952064-3');
     </script>
@@ -26,9 +43,11 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-93952064-2"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
+
         function gtag() {
             dataLayer.push(arguments);
         }
+
         gtag('js', new Date());
         gtag('config', 'UA-93952064-2');
     </script>
@@ -61,16 +80,16 @@
     </noscript>
     <!— /Yandex.Metrika counter —>
     <script type="application/ld+json">
-    {
-    "@context": "http://schema.org",
-    "@type": "Organization",
-    "url" : "https://jino24.ru",
-    "logo" : "https://jino24.ru/static/jino/img/logo-white-bg.png",
-    "email": "jino.platform@gmail.com",
-    "name": "Jino",
-    "telephone": "+79523338228"
-    }
-</script>
+        {
+            "@context": "http://schema.org",
+            "@type": "Organization",
+            "url": "https://jino24.ru",
+            "logo": "https://jino24.ru/static/jino/img/logo-white-bg.png",
+            "email": "jino.platform@gmail.com",
+            "name": "Jino",
+            "telephone": "+79523338228"
+        }
+    </script>
     {# END#}
 
     <meta name="description"
@@ -88,7 +107,10 @@
 
 </head>
 <body>
-
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N6P62G8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <!-- menu for mobile -->
 <ul class="sidenav" id="mobile-demo">
     <li><a href="/about">О нас</a></li>
@@ -108,13 +130,13 @@
             <div class="cityChooser col s5 m4 l3 xl2 offset-s3 valign-wrapper">
                 <!-- Dropdown Trigger -->
                 <a class='temp-inline-dropdown dropdown-trigger btn N/A transparent temp-text-dark-blue pageNavigation-text z-depth-0'
-                    data-target='dropdown1'>Пермь<i
+                   data-target='dropdown1'>Пермь<i
                         class="temp-inline-icon material-icons">arrow_drop_down</i></a>
 
                 <!-- Dropdown Structure -->
                 <ul id='dropdown1' class='dropdown-content'>
-                    <li><a >Пермь</a></li>
-                    <li><a >Екатеринбург</a></li>
+                    <li><a>Пермь</a></li>
+                    <li><a>Екатеринбург</a></li>
                 </ul>
             </div>
             <a href="#" data-target="mobile-demo"
