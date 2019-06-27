@@ -142,13 +142,13 @@
 }
 /*---[Section]partnersSection---*/
 .partnersSection {
-  padding: 130px 0 130px 0;
+  padding: 70px 0 0 0; /*130px 0 130px 0*/
   border-top-left-radius: 300px;
   border-bottom-right-radius: 300px;
   background-color: #84d6ff;
   box-shadow: 4px 8px 59px rgba(0, 0, 0, 0.13);
 }
-.partnersBlock { margin-top: 175px; }
+.partnersBlock { margin-top: 50px; } /*175px*/
 .partrersItem { cursor: pointer; }
 .carousel.carousel-slider .carousel-item {
   min-height: 250px !important;
