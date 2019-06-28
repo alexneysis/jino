@@ -1,3 +1,4 @@
+import base64
 import datetime
 import logging
 import smtplib
@@ -17,6 +18,42 @@ from users.models import Client, Status
 
 def home(request):
     return render(request, 'jino/index.html')
+
+
+def not_found(request):
+    return render(request, 'loginsys/error.html')
+
+@csrf_exempt
+def logout(request):
+    # response = render(request, 'homework/html/task_10.html', status=401)
+    # response["WWW-Authenticate"] = "Basic realm=\"Jino24.ru\""
+    if "HTTP_AUTHORIZATION" in request.META:
+        del request.META["HTTP_AUTHORIZATION"]
+    return render(request, "homework/html/task_10.html", status=401)
+
+@csrf_exempt
+def login(request):
+    try:
+        if "HTTP_AUTHORIZATION" in request.META:
+            print("in HTTP_AUTHORIZATION")
+            auth = request.META["HTTP_AUTHORIZATION"].split()
+            if len(auth) == 2 and auth[0].lower() == "basic":
+                auth = base64.b64decode(auth[1])
+                auth = auth.decode("utf-8")
+                username, password = auth.split(":")
+                if username == "admin" and password == "1111":
+                    args = {}
+                    args["answer"] = "Вы авторизированы"
+                    return render(request, 'homework/html/task_10.html', args, status=200)
+        response = render(request, 'homework/html/task_10.html', status=401)
+        response["WWW-Authenticate"] = "Basic realm=\"Jino24.ru\""
+        return response
+    except Exception as e:
+        print(e)
+
+
+def task_10(request):
+    return render(request, 'homework/html/task_10.html')
 
 
 def task_3_html(request):

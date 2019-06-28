@@ -27,8 +27,11 @@ urlpatterns = [
                   url('homework/task_4_html', views.task_4_html),
                   url('homework/task_4_mat', views.task_4_mat),
                   url('homework/task_7', views.task_7),
+                  url('homework/login', views.login),
+                  url('homework/logout', views.logout),
                   url('homework/send_form', views.send_form),
                   url('about', views.about),
                   url('agreement', views.agreement),
-                  url(r'^$', views.home)
+                  url(r'^$', views.home),
+                  # url('', views.not_found)
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
