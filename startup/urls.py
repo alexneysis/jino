@@ -19,10 +19,10 @@ from django.conf.urls.static import static
 from django.contrib import admin
 
 urlpatterns = [
-                  url('admin', admin.site.urls),
-                  url('auth', include('loginsys.urls')),
-                  url('clinic', include('users.urls')),
-                  url('', include('jino.urls'))
+                  url(r'^admins', admin.site.urls),
+                  url(r'^auth', include('loginsys.urls')),
+                  url(r'^clinic', include('users.urls')),
+                  url(r'^', include('jino.urls'))
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 # urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -1,6 +1,8 @@
 import base64
 import datetime
+import json
 import logging
+import os
 import smtplib
 import xml.etree.ElementTree as xml
 from email.header import Header
@@ -31,6 +33,16 @@ def logout(request):
         del request.META["HTTP_AUTHORIZATION"]
     return render(request, "homework/html/task_10.html", status=401)
 
+def delete(request):
+    print(request.GET["name"])
+    myfile = "./forms/" + str(request.GET["name"])
+
+    if os.path.isfile(myfile):
+        os.remove(myfile)
+    else:  ## Show an error ##
+        print("Error: %s file not found" % myfile)
+    return HttpResponse(status=200)
+
 @csrf_exempt
 def login(request):
     try:
@@ -42,9 +54,16 @@ def login(request):
                 auth = auth.decode("utf-8")
                 username, password = auth.split(":")
                 if username == "admin" and password == "1111":
-                    args = {}
-                    args["answer"] = "Вы авторизированы"
-                    return render(request, 'homework/html/task_10.html', args, status=200)
+                    context = {"forms" : []}
+                    forms = context["forms"]
+                    for top, dirs, files in os.walk("./forms/"):
+                        for nm in files:
+                            form = {"path" : os.path.join(top, nm), "name":nm}
+                            forms.append(form)
+                    context["range"] = str(len(context["forms"]))
+                    context["answer"] = "Вы авторизированы"
+                    print(context)
+                    return render(request, 'homework/html/task_10.html', context, status=200)
         response = render(request, 'homework/html/task_10.html', status=401)
         response["WWW-Authenticate"] = "Basic realm=\"Jino24.ru\""
         return response
@@ -71,6 +90,28 @@ def task_3_mat(request):
 def task_4_mat(request):
     return render(request, 'homework/materialize/task_4.html')
 
+def edit(request):
+    print(request.GET["name"])
+    myfile = "./forms/" + str(request.GET["name"])
+
+    if os.path.isfile(myfile):
+        try:
+            f = open(myfile, "r")
+            all_file = u"test"
+            buf = b""
+            # all_file = f
+            for i in f:
+                buf += bytes(i.encode("utf-8"))
+            all_file = buf.decode("utf-8")
+            f.close()
+        except Exception as e:
+            print(e)
+
+    else:  ## Show an error ##
+        print("Error: %s file not found" % myfile)
+    response = render(request, "homework/html/edit_form.html")
+    response.cookies["edit"] = all_file
+    return response
 
 def send_form(request):
     try:
@@ -135,19 +176,23 @@ def send_form(request):
             country.text = i
 
         property = xml.SubElement(aboutYou, "property")
-        property.text = data.getlist("property")[0]
+        if len(data.getlist("property")) > 0:
+            property.text = data.getlist("property")[0]
 
         # Form rate
         rate = xml.SubElement(rate_form, "rate")
-        rate.text = data.getlist("rate")[0]
+        if len(data.getlist("rate")) > 0:
+            rate.text = data.getlist("rate")[0]
 
         tree = xml.ElementTree(root)
-        file_name = "form_" + str(datetime.datetime.now()) + ".xml"
+        file_name = "./forms/form_" + str(datetime.datetime.now()) + ".xml"
         tree.write(file_name, encoding="UTF-8")
         logging.debug("This all")
     except Exception as e:
         logging.critical(str(e))
-    return HttpResponse(status=200)
+    response = HttpResponse(status=200)
+    # response.cookies["surnameDjango"] = "mySurname"
+    return response
 
 
 @csrf_exempt

@@ -75,16 +75,16 @@ WSGI_APPLICATION = 'startup.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': secret.DB_NAME,
-        'USER': secret.LOGIN_DB,
-        'PASSWORD': secret.PASSWORD_DB,
-        'HOST': 'localhost',
-        'PORT': '',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': secret.DB_NAME,
+#         'USER': secret.LOGIN_DB,
+#         'PASSWORD': secret.PASSWORD_DB,
+#         'HOST': 'localhost',
+#         'PORT': '',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
