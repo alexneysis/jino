@@ -63,8 +63,8 @@
   padding: 40px 0 20px;
   background: #c3ebff;
 }
-#footer { background-color: #f0f2f3; }
-.footerNavItem { margin-bottom: 15px; }
+#footer { background-color: #f0f2f3 }
+.footerNavItem { margin-bottom: 15px }
 .footerLink {
   font-size: 18px;
   line-height: 0;
@@ -86,8 +86,10 @@
   text-transform: uppercase;
   letter-spacing: 0.2px;
 }
+.copyright-row { margin-bottom: 0 }
 #copyright {
   color: #b8bec3;
+  margin-bottom: 0;
 }
 
 /*=====index.html=====*/
@@ -96,7 +98,7 @@
   overflow: hidden;
   margin-bottom: -535px;
 }
-.headers { margin-top: 150px; }
+.headers { margin-top: 150px }
 .callBtn {
   max-width: 236px;
   height: 58px;
@@ -382,7 +384,7 @@
     border: 0;
 }
 .footer-social-item img { filter: grayscale(100%); }
-.footer-brand-logo { filter: grayscale(85%); }
+/*.footer-brand-logo { filter: grayscale(85%); }*/
 
 /*---[Elements]Circles---*/
 .circle {
