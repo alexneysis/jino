@@ -63,6 +63,7 @@
   padding: 40px 0 20px;
   background: #c3ebff;
 }
+#footer { background-color: #f0f2f3; }
 .footerNavItem { margin-bottom: 15px; }
 .footerLink {
   font-size: 18px;
@@ -84,6 +85,9 @@
   line-height: 22px;
   text-transform: uppercase;
   letter-spacing: 0.2px;
+}
+#copyright {
+  color: #b8bec3;
 }
 
 /*=====index.html=====*/
@@ -371,14 +375,14 @@
 .agreementList { list-style-type: disc; }
 
 /*======quiz_page.html=====*/
-.quizSection {
-    height: 1200px;
-}
+.quizSection { height: 1200px; }
 .quizField {
     width: 100%;
     height: 1200px;
     border: 0;
 }
+.footer-social-item img { filter: grayscale(100%); }
+.footer-brand-logo { filter: grayscale(85%); }
 
 /*---[Elements]Circles---*/
 .circle {
