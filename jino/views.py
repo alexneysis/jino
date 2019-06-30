@@ -214,6 +214,8 @@ def get(request):
     print("I get request: ", request.body)
     return HttpResponse(status=200)
 
+def quiz(request):
+    return render(request, "jino/quiz_page.html")
 
 def data(request):
     print("In data method")

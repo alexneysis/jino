@@ -30,6 +30,8 @@ def wait(request):
         logging.critical("Error in record client = " + str(e))
     return HttpResponse(status=200)
 
+
+
 def busy(request):
     logging.basicConfig(level=logging.DEBUG)
     logging.debug("Busy client")
