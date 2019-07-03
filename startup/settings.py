@@ -26,7 +26,7 @@ SECRET_KEY = secret.SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['jino24.ru', '127.0.0.1', secret.PRIVATE_IP]
+ALLOWED_HOSTS = ['jino24.ru', '127.0.0.1', secret.PRIVATE_IP, 'jino-test.ru']
 
 # Application definition
 INSTALLED_APPS = [
@@ -75,16 +75,16 @@ WSGI_APPLICATION = 'startup.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': secret.DB_NAME,
-#         'USER': secret.LOGIN_DB,
-#         'PASSWORD': secret.PASSWORD_DB,
-#         'HOST': 'localhost',
-#         'PORT': '',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': secret.DB_NAME,
+        'USER': secret.LOGIN_DB,
+        'PASSWORD': secret.PASSWORD_DB,
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
