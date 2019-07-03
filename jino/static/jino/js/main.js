@@ -73,6 +73,8 @@ $(".closeIcon").on("click", function () {
     closeIconFlag = true;
 });
 
+$("#iframe1").
+
 
 
 
