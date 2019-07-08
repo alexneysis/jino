@@ -235,21 +235,24 @@ def data_post(request, FIO, phone, email, address):
             <td align="center">
               <table style="background-color: #fff; border-radius: 10px;" cellspacing="0">
                 <tr>
-                  <td style="background-color: #52C5FF; padding: 10px;" colspan="2" align="center">
-                    <a href="http://jino24.ru"><img src="http://jino24.ru/static/jino/img/logo_w.png" alt="Jino" width="100px" /></a>
+                  <td style="background-color: #c3ebf; padding: 10px;" colspan="3" align="center">
+                    <a href="http://jino24.ru"><img src="https://jino24.ru/static/jino/img/logo-white-bg.png" alt="Jino" width="100px" /></a>
                   </td>
+                  <td></td>
                   <td></td>
                 </tr>
                 <tr>
-                  <td style="padding: 20px 20px 0 20px; font-weight: bold;" colspan="2" align="center">
+                  <td style="padding: 20px 20px 0 20px; font-weight: bold;" colspan="3" align="center">
                 """ + str(FIO) + """
                   </td>
                   <td></td>
+                  <td></td>
                 </tr>
                 <tr>
-                  <td style="padding: 0 20px" colspan="2" align="center">
+                  <td style="padding: 0 20px" colspan="3" align="center">
                     нуждается в вашей скорой помощи.
                   </td>
+                  <td></td>
                   <td></td>
                 </tr>
 
